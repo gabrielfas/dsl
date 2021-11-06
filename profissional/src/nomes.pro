@@ -1,1 +1,2 @@
-Nome: Yuri,Empresa: TCE,Linguagens:{C}
+Nome: Gabriel,Empresa: TCE,Linguagens:{Pentaho, RandomForest}
+Nome: Ormazabal,Empresa: TCE,Linguagens:{C Typescript}

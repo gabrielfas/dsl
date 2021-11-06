@@ -140,9 +140,9 @@ ruleLinguagens
 	}
 	:
 	(
-		{ before(grammarAccess.getLinguagensAccess().getNameAssignment()); }
-		(rule__Linguagens__NameAssignment)
-		{ after(grammarAccess.getLinguagensAccess().getNameAssignment()); }
+		{ before(grammarAccess.getLinguagensAccess().getGroup()); }
+		(rule__Linguagens__Group__0)
+		{ after(grammarAccess.getLinguagensAccess().getGroup()); }
 	)
 ;
 finally {
@@ -392,6 +392,60 @@ finally {
 }
 
 
+rule__Linguagens__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Linguagens__Group__0__Impl
+	rule__Linguagens__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Linguagens__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getLinguagensAccess().getNameAssignment_0()); }
+	(rule__Linguagens__NameAssignment_0)
+	{ after(grammarAccess.getLinguagensAccess().getNameAssignment_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Linguagens__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Linguagens__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Linguagens__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getLinguagensAccess().getCommaKeyword_1()); }
+	(',')?
+	{ after(grammarAccess.getLinguagensAccess().getCommaKeyword_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__Model__ProfissionalAssignment
 	@init {
 		int stackSize = keepStackSize();
@@ -467,15 +521,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Linguagens__NameAssignment
+rule__Linguagens__NameAssignment_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getLinguagensAccess().getNameIDTerminalRuleCall_0()); }
+		{ before(grammarAccess.getLinguagensAccess().getNameIDTerminalRuleCall_0_0()); }
 		RULE_ID
-		{ after(grammarAccess.getLinguagensAccess().getNameIDTerminalRuleCall_0()); }
+		{ after(grammarAccess.getLinguagensAccess().getNameIDTerminalRuleCall_0_0()); }
 	)
 ;
 finally {

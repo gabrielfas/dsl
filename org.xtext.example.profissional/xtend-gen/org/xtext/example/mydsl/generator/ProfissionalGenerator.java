@@ -34,6 +34,8 @@ public class ProfissionalGenerator extends AbstractGenerator {
     {
       EList<Pessoa> _profissional = sm.getProfissional();
       for(final Pessoa c : _profissional) {
+        _builder.append("<Profissional>");
+        _builder.newLine();
         _builder.append("<Nome>");
         String _name = c.getName();
         _builder.append(_name);
@@ -47,6 +49,8 @@ public class ProfissionalGenerator extends AbstractGenerator {
             _builder.append(_name_1);
             _builder.append("</Empresa>");
             _builder.newLineIfNotEmpty();
+            _builder.append("<Linguagens>");
+            _builder.newLine();
             {
               EList<Linguagens> _linguagens = em.getLinguagens();
               for(final Linguagens prog : _linguagens) {
@@ -57,8 +61,12 @@ public class ProfissionalGenerator extends AbstractGenerator {
                 _builder.newLineIfNotEmpty();
               }
             }
+            _builder.append("</Linguagens>");
+            _builder.newLine();
           }
         }
+        _builder.append("</Profissional>");
+        _builder.newLine();
       }
     }
     return _builder;

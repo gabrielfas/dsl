@@ -1,3 +1,16 @@
-<Nome>Yuri</Nome>
+<Profissional>
+<Nome>Gabriel</Nome>
 <Empresa>TCE</Empresa>
+<Linguagens>
+<Linguagem>Pentaho</Linguagem>
+<Linguagem>RandomForest</Linguagem>
+</Linguagens>
+</Profissional>
+<Profissional>
+<Nome>Ormazabal</Nome>
+<Empresa>TCE</Empresa>
+<Linguagens>
 <Linguagem>C</Linguagem>
+<Linguagem>Typescript</Linguagem>
+</Linguagens>
+</Profissional>

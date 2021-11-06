@@ -116,18 +116,26 @@ public class ProfissionalGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	public class LinguagensElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Profissional.Linguagens");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cCommaKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//Linguagens:
-		//    name=ID;
+		//    name=ID ','?;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//name=ID ','?
+		public Group getGroup() { return cGroup; }
+		
 		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//','?
+		public Keyword getCommaKeyword_1() { return cCommaKeyword_1; }
 	}
 	
 	
@@ -211,7 +219,7 @@ public class ProfissionalGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//Linguagens:
-	//    name=ID;
+	//    name=ID ','?;
 	public LinguagensElements getLinguagensAccess() {
 		return pLinguagens;
 	}

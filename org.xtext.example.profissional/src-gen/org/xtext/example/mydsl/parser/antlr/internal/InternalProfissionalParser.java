@@ -543,39 +543,67 @@ public class InternalProfissionalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinguagens"
-    // InternalProfissional.g:239:1: ruleLinguagens returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalProfissional.g:239:1: ruleLinguagens returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ',' )? ) ;
     public final EObject ruleLinguagens() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
+        Token otherlv_1=null;
 
 
         	enterRule();
 
         try {
-            // InternalProfissional.g:245:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalProfissional.g:246:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalProfissional.g:245:2: ( ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ',' )? ) )
+            // InternalProfissional.g:246:2: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ',' )? )
             {
-            // InternalProfissional.g:246:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalProfissional.g:247:3: (lv_name_0_0= RULE_ID )
+            // InternalProfissional.g:246:2: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ',' )? )
+            // InternalProfissional.g:247:3: ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ',' )?
             {
-            // InternalProfissional.g:247:3: (lv_name_0_0= RULE_ID )
-            // InternalProfissional.g:248:4: lv_name_0_0= RULE_ID
+            // InternalProfissional.g:247:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalProfissional.g:248:4: (lv_name_0_0= RULE_ID )
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            // InternalProfissional.g:248:4: (lv_name_0_0= RULE_ID )
+            // InternalProfissional.g:249:5: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
-            				newLeafNode(lv_name_0_0, grammarAccess.getLinguagensAccess().getNameIDTerminalRuleCall_0());
-            			
+            					newLeafNode(lv_name_0_0, grammarAccess.getLinguagensAccess().getNameIDTerminalRuleCall_0_0());
+            				
 
-            				if (current==null) {
-            					current = createModelElement(grammarAccess.getLinguagensRule());
-            				}
-            				setWithLastConsumed(
-            					current,
-            					"name",
-            					lv_name_0_0,
-            					"org.eclipse.xtext.common.Terminals.ID");
-            			
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getLinguagensRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_0_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalProfissional.g:265:3: (otherlv_1= ',' )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==12) ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalProfissional.g:266:4: otherlv_1= ','
+                    {
+                    otherlv_1=(Token)match(input,12,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getLinguagensAccess().getCommaKeyword_1());
+                    			
+
+                    }
+                    break;
 
             }
 
@@ -613,5 +641,6 @@ public class InternalProfissionalParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008010L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000001002L});
 
 }

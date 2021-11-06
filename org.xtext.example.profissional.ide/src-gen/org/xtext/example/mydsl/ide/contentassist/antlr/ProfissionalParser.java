@@ -33,12 +33,13 @@ public class ProfissionalParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ProfissionalGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getPessoaAccess().getGroup(), "rule__Pessoa__Group__0");
 			builder.put(grammarAccess.getEmpresaAccess().getGroup(), "rule__Empresa__Group__0");
+			builder.put(grammarAccess.getLinguagensAccess().getGroup(), "rule__Linguagens__Group__0");
 			builder.put(grammarAccess.getModelAccess().getProfissionalAssignment(), "rule__Model__ProfissionalAssignment");
 			builder.put(grammarAccess.getPessoaAccess().getNameAssignment_1(), "rule__Pessoa__NameAssignment_1");
 			builder.put(grammarAccess.getPessoaAccess().getEmpresaAssignment_3(), "rule__Pessoa__EmpresaAssignment_3");
 			builder.put(grammarAccess.getEmpresaAccess().getNameAssignment_1(), "rule__Empresa__NameAssignment_1");
 			builder.put(grammarAccess.getEmpresaAccess().getLinguagensAssignment_3(), "rule__Empresa__LinguagensAssignment_3");
-			builder.put(grammarAccess.getLinguagensAccess().getNameAssignment(), "rule__Linguagens__NameAssignment");
+			builder.put(grammarAccess.getLinguagensAccess().getNameAssignment_0(), "rule__Linguagens__NameAssignment_0");
 		}
 	}
 	

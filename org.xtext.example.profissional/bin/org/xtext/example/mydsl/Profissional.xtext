@@ -14,4 +14,4 @@ Empresa:
 	linguagens+=Linguagens* '}';
 
 Linguagens:
-	name=ID;
+	name=ID ','?;

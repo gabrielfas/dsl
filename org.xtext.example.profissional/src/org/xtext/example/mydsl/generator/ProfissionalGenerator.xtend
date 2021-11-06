@@ -22,13 +22,17 @@ class ProfissionalGenerator extends AbstractGenerator {
 	
 	def toXML(Model sm) '''
 	«FOR c : sm.profissional»
+	<Profissional>
 	<Nome>«c.name»</Nome>
 	«FOR em : c.empresa»
 	<Empresa>«em.name»</Empresa>
+	<Linguagens>
 	«FOR prog : em.linguagens»
 	<Linguagem>«prog.name»</Linguagem>
 	«ENDFOR»
+	</Linguagens>
 	«ENDFOR»
+	</Profissional>
 	«ENDFOR»
 	'''
 	
