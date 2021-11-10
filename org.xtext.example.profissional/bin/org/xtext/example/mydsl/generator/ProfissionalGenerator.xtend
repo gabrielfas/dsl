@@ -18,6 +18,7 @@ class ProfissionalGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		fsa.generateFile('profissional.xml', toXML(resource.contents.head as Model))
+		fsa.generateFile('profissional.html', toHtml(resource.contents.head as Model))
 	}
 	
 	def toXML(Model sm) '''
@@ -34,6 +35,36 @@ class ProfissionalGenerator extends AbstractGenerator {
 	«ENDFOR»
 	</Profissional>
 	«ENDFOR»
+	'''
+	
+	def toHtml(Model sm) '''
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+			<meta http-equiv="Content-Language" content="en-us">
+			<title>Funcionarios</title>
+			<style>
+				.bk {
+					background-color: blue;
+					color: white;
+				}
+			</style>
+		</head>
+		<body class="bk">
+			«FOR c : sm.profissional»
+			Nome: «c.name» <br>
+			«FOR em : c.empresa»
+			Empresa: «em.name» <br>
+			Linguagens de Programação:
+			«FOR prog : em.linguagens»
+			«prog.name»
+			«ENDFOR»
+			«ENDFOR»
+			<br><br>
+			«ENDFOR»
+		</body>
+		</html>
 	'''
 	
 }

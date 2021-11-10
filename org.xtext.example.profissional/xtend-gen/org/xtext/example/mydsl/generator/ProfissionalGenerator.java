@@ -27,6 +27,8 @@ public class ProfissionalGenerator extends AbstractGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     EObject _head = IterableExtensions.<EObject>head(resource.getContents());
     fsa.generateFile("profissional.xml", this.toXML(((Model) _head)));
+    EObject _head_1 = IterableExtensions.<EObject>head(resource.getContents());
+    fsa.generateFile("profissional.html", this.toHtml(((Model) _head_1)));
   }
   
   public CharSequence toXML(final Model sm) {
@@ -69,6 +71,89 @@ public class ProfissionalGenerator extends AbstractGenerator {
         _builder.newLine();
       }
     }
+    return _builder;
+  }
+  
+  public CharSequence toHtml(final Model sm) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<!DOCTYPE html>");
+    _builder.newLine();
+    _builder.append("<html>");
+    _builder.newLine();
+    _builder.append("<head>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<meta http-equiv=\"Content-Language\" content=\"en-us\">");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<title>Funcionarios</title>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<style>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".bk {");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("background-color: blue;");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("color: white;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("</style>");
+    _builder.newLine();
+    _builder.append("</head>");
+    _builder.newLine();
+    _builder.append("<body class=\"bk\">");
+    _builder.newLine();
+    {
+      EList<Pessoa> _profissional = sm.getProfissional();
+      for(final Pessoa c : _profissional) {
+        _builder.append("\t");
+        _builder.append("Nome: ");
+        String _name = c.getName();
+        _builder.append(_name, "\t");
+        _builder.append(" <br>");
+        _builder.newLineIfNotEmpty();
+        {
+          EList<Empresa> _empresa = c.getEmpresa();
+          for(final Empresa em : _empresa) {
+            _builder.append("\t");
+            _builder.append("Empresa: ");
+            String _name_1 = em.getName();
+            _builder.append(_name_1, "\t");
+            _builder.append(" <br>");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("Linguagens de Programação:");
+            _builder.newLine();
+            {
+              EList<Linguagens> _linguagens = em.getLinguagens();
+              for(final Linguagens prog : _linguagens) {
+                _builder.append("\t");
+                String _name_2 = prog.getName();
+                _builder.append(_name_2, "\t");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+          }
+        }
+        _builder.append("\t");
+        _builder.append("<br><br>");
+        _builder.newLine();
+      }
+    }
+    _builder.append("</body>");
+    _builder.newLine();
+    _builder.append("</html>");
+    _builder.newLine();
     return _builder;
   }
 }
