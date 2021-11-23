@@ -8,7 +8,6 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.example.mydsl.memorando.Model
-import javax.swing.text.html.parser.Entity
 import org.xtext.example.mydsl.memorando.Memorando
 
 /**

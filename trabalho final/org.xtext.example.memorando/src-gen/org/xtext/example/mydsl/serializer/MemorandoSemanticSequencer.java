@@ -76,19 +76,19 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         numero=INT+ 
-	 *         setorDestinatario=ID+ 
-	 *         setorRemetente=ID+ 
-	 *         cidade=ID+ 
-	 *         estado=ID+ 
-	 *         dia=INT+ 
-	 *         mes=ID+ 
-	 *         ano=INT+ 
-	 *         cargoDestinatario=STRING+ 
-	 *         assunto=STRING+ 
+	 *         numero=INT 
+	 *         setorDestinatario=ID 
+	 *         setorRemetente=ID 
+	 *         cidade=ID 
+	 *         estado=ID 
+	 *         dia=INT 
+	 *         mes=ID 
+	 *         ano=INT 
+	 *         cargoDestinatario=STRING 
+	 *         assunto=STRING 
 	 *         destinos+=Destino* 
 	 *         paragrafos+=Paragrafo* 
-	 *         remetente=STRING+ 
+	 *         remetente=STRING 
 	 *         cargoRemetente=STRING
 	 *     )
 	 */

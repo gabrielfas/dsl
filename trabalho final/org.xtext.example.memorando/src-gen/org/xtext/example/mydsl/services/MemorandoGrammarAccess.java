@@ -40,202 +40,271 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Memorando.Memorando");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cNumeroKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNumeroAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNumeroINTTerminalRuleCall_1_0 = (RuleCall)cNumeroAssignment_1.eContents().get(0);
-		private final Keyword cSetorDestinatarioKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSetorDestinatarioAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSetorDestinatarioIDTerminalRuleCall_3_0 = (RuleCall)cSetorDestinatarioAssignment_3.eContents().get(0);
-		private final Keyword cSetorRemetenteKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSetorRemetenteAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSetorRemetenteIDTerminalRuleCall_5_0 = (RuleCall)cSetorRemetenteAssignment_5.eContents().get(0);
-		private final Keyword cCidadeKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cCidadeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cCidadeIDTerminalRuleCall_7_0 = (RuleCall)cCidadeAssignment_7.eContents().get(0);
-		private final Keyword cEstadoKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cEstadoAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cEstadoIDTerminalRuleCall_9_0 = (RuleCall)cEstadoAssignment_9.eContents().get(0);
-		private final Keyword cDataKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cDiaAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cDiaINTTerminalRuleCall_11_0 = (RuleCall)cDiaAssignment_11.eContents().get(0);
-		private final Keyword cSolidusKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Assignment cMesAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final RuleCall cMesIDTerminalRuleCall_13_0 = (RuleCall)cMesAssignment_13.eContents().get(0);
-		private final Keyword cSolidusKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Assignment cAnoAssignment_15 = (Assignment)cGroup.eContents().get(15);
-		private final RuleCall cAnoINTTerminalRuleCall_15_0 = (RuleCall)cAnoAssignment_15.eContents().get(0);
-		private final Keyword cCargoDestinatarioKeyword_16 = (Keyword)cGroup.eContents().get(16);
-		private final Assignment cCargoDestinatarioAssignment_17 = (Assignment)cGroup.eContents().get(17);
-		private final RuleCall cCargoDestinatarioSTRINGTerminalRuleCall_17_0 = (RuleCall)cCargoDestinatarioAssignment_17.eContents().get(0);
-		private final Keyword cAssuntoKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Assignment cAssuntoAssignment_19 = (Assignment)cGroup.eContents().get(19);
-		private final RuleCall cAssuntoSTRINGTerminalRuleCall_19_0 = (RuleCall)cAssuntoAssignment_19.eContents().get(0);
-		private final Keyword cDestinosKeyword_20 = (Keyword)cGroup.eContents().get(20);
-		private final Assignment cDestinosAssignment_21 = (Assignment)cGroup.eContents().get(21);
-		private final RuleCall cDestinosDestinoParserRuleCall_21_0 = (RuleCall)cDestinosAssignment_21.eContents().get(0);
-		private final Keyword cMensagemKeyword_22 = (Keyword)cGroup.eContents().get(22);
-		private final Assignment cParagrafosAssignment_23 = (Assignment)cGroup.eContents().get(23);
-		private final RuleCall cParagrafosParagrafoParserRuleCall_23_0 = (RuleCall)cParagrafosAssignment_23.eContents().get(0);
-		private final Keyword cRemetenteKeyword_24 = (Keyword)cGroup.eContents().get(24);
-		private final Assignment cRemetenteAssignment_25 = (Assignment)cGroup.eContents().get(25);
-		private final RuleCall cRemetenteSTRINGTerminalRuleCall_25_0 = (RuleCall)cRemetenteAssignment_25.eContents().get(0);
-		private final Keyword cCargoRemetenteKeyword_26 = (Keyword)cGroup.eContents().get(26);
-		private final Assignment cCargoRemetenteAssignment_27 = (Assignment)cGroup.eContents().get(27);
-		private final RuleCall cCargoRemetenteSTRINGTerminalRuleCall_27_0 = (RuleCall)cCargoRemetenteAssignment_27.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNumeroAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNumeroINTTerminalRuleCall_2_0 = (RuleCall)cNumeroAssignment_2.eContents().get(0);
+		private final Keyword cSetorDestinatarioKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cSetorDestinatarioAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSetorDestinatarioIDTerminalRuleCall_5_0 = (RuleCall)cSetorDestinatarioAssignment_5.eContents().get(0);
+		private final Keyword cSetorRemetenteKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cSetorRemetenteAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cSetorRemetenteIDTerminalRuleCall_8_0 = (RuleCall)cSetorRemetenteAssignment_8.eContents().get(0);
+		private final Keyword cCidadeKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cCidadeAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cCidadeIDTerminalRuleCall_11_0 = (RuleCall)cCidadeAssignment_11.eContents().get(0);
+		private final Keyword cEstadoKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cColonKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cEstadoAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cEstadoIDTerminalRuleCall_14_0 = (RuleCall)cEstadoAssignment_14.eContents().get(0);
+		private final Keyword cDataKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cColonKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Assignment cDiaAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final RuleCall cDiaINTTerminalRuleCall_17_0 = (RuleCall)cDiaAssignment_17.eContents().get(0);
+		private final Keyword cSolidusKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Assignment cMesAssignment_19 = (Assignment)cGroup.eContents().get(19);
+		private final RuleCall cMesIDTerminalRuleCall_19_0 = (RuleCall)cMesAssignment_19.eContents().get(0);
+		private final Keyword cSolidusKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Assignment cAnoAssignment_21 = (Assignment)cGroup.eContents().get(21);
+		private final RuleCall cAnoINTTerminalRuleCall_21_0 = (RuleCall)cAnoAssignment_21.eContents().get(0);
+		private final Keyword cCargoDestinatarioKeyword_22 = (Keyword)cGroup.eContents().get(22);
+		private final Keyword cColonKeyword_23 = (Keyword)cGroup.eContents().get(23);
+		private final Assignment cCargoDestinatarioAssignment_24 = (Assignment)cGroup.eContents().get(24);
+		private final RuleCall cCargoDestinatarioSTRINGTerminalRuleCall_24_0 = (RuleCall)cCargoDestinatarioAssignment_24.eContents().get(0);
+		private final Keyword cAssuntoKeyword_25 = (Keyword)cGroup.eContents().get(25);
+		private final Keyword cColonKeyword_26 = (Keyword)cGroup.eContents().get(26);
+		private final Assignment cAssuntoAssignment_27 = (Assignment)cGroup.eContents().get(27);
+		private final RuleCall cAssuntoSTRINGTerminalRuleCall_27_0 = (RuleCall)cAssuntoAssignment_27.eContents().get(0);
+		private final Keyword cDestinosKeyword_28 = (Keyword)cGroup.eContents().get(28);
+		private final Keyword cColonKeyword_29 = (Keyword)cGroup.eContents().get(29);
+		private final Keyword cLeftSquareBracketKeyword_30 = (Keyword)cGroup.eContents().get(30);
+		private final Assignment cDestinosAssignment_31 = (Assignment)cGroup.eContents().get(31);
+		private final RuleCall cDestinosDestinoParserRuleCall_31_0 = (RuleCall)cDestinosAssignment_31.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_32 = (Keyword)cGroup.eContents().get(32);
+		private final Keyword cMensagemKeyword_33 = (Keyword)cGroup.eContents().get(33);
+		private final Keyword cColonKeyword_34 = (Keyword)cGroup.eContents().get(34);
+		private final Keyword cLeftSquareBracketKeyword_35 = (Keyword)cGroup.eContents().get(35);
+		private final Assignment cParagrafosAssignment_36 = (Assignment)cGroup.eContents().get(36);
+		private final RuleCall cParagrafosParagrafoParserRuleCall_36_0 = (RuleCall)cParagrafosAssignment_36.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_37 = (Keyword)cGroup.eContents().get(37);
+		private final Keyword cRemetenteKeyword_38 = (Keyword)cGroup.eContents().get(38);
+		private final Keyword cColonKeyword_39 = (Keyword)cGroup.eContents().get(39);
+		private final Assignment cRemetenteAssignment_40 = (Assignment)cGroup.eContents().get(40);
+		private final RuleCall cRemetenteSTRINGTerminalRuleCall_40_0 = (RuleCall)cRemetenteAssignment_40.eContents().get(0);
+		private final Keyword cCargoRemetenteKeyword_41 = (Keyword)cGroup.eContents().get(41);
+		private final Keyword cColonKeyword_42 = (Keyword)cGroup.eContents().get(42);
+		private final Assignment cCargoRemetenteAssignment_43 = (Assignment)cGroup.eContents().get(43);
+		private final RuleCall cCargoRemetenteSTRINGTerminalRuleCall_43_0 = (RuleCall)cCargoRemetenteAssignment_43.eContents().get(0);
+		private final Keyword cSemicolonKeyword_44 = (Keyword)cGroup.eContents().get(44);
 		
 		//Memorando:
-		//    "Numero: " + numero=INT +
-		//    ", Setor Destinatario: " + setorDestinatario=ID +
-		//    ", Setor Remetente: " + setorRemetente=ID +
-		//    ", Cidade: " cidade=ID +
-		//    ", Estado: " estado=ID +
-		//    ", Data: " dia=INT + "/" mes=ID + "/" ano=INT +
-		//    ", Cargo Destinatario: " cargoDestinatario=STRING +
-		//    ", Assunto: " + assunto=STRING +
-		//    ", Destinos: [" + (destinos+=Destino*) +
-		//    "], Mensagem: [" + (paragrafos+=Paragrafo*) +
-		//    "], Remetente: " + remetente=STRING +
-		//    ", Cargo Remetente: " + cargoRemetente=STRING;
+		//    "Numero" ':' numero=INT
+		//    "Setor Destinatario" ':' setorDestinatario=ID
+		//    "Setor Remetente" ':' setorRemetente=ID
+		//    "Cidade" ':' cidade=ID
+		//    "Estado" ':' estado=ID
+		//    "Data" ':' dia=INT '/' mes=ID '/' ano=INT
+		//    "Cargo Destinatario" ':' cargoDestinatario=STRING
+		//    "Assunto" ':' assunto=STRING
+		//    "Destinos" ':' '[' (destinos+=Destino*) ']'
+		//    "Mensagem" ':' '[' (paragrafos+=Paragrafo*) ']'
+		//    "Remetente" ':' remetente=STRING
+		//    "Cargo Remetente" ':' cargoRemetente=STRING ';'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Numero: " + numero=INT +
-		//", Setor Destinatario: " + setorDestinatario=ID +
-		//", Setor Remetente: " + setorRemetente=ID +
-		//", Cidade: " cidade=ID +
-		//", Estado: " estado=ID +
-		//", Data: " dia=INT + "/" mes=ID + "/" ano=INT +
-		//", Cargo Destinatario: " cargoDestinatario=STRING +
-		//", Assunto: " + assunto=STRING +
-		//", Destinos: [" + (destinos+=Destino*) +
-		//"], Mensagem: [" + (paragrafos+=Paragrafo*) +
-		//"], Remetente: " + remetente=STRING +
-		//", Cargo Remetente: " + cargoRemetente=STRING
+		//"Numero" ':' numero=INT
+		//"Setor Destinatario" ':' setorDestinatario=ID
+		//"Setor Remetente" ':' setorRemetente=ID
+		//"Cidade" ':' cidade=ID
+		//"Estado" ':' estado=ID
+		//"Data" ':' dia=INT '/' mes=ID '/' ano=INT
+		//"Cargo Destinatario" ':' cargoDestinatario=STRING
+		//"Assunto" ':' assunto=STRING
+		//"Destinos" ':' '[' (destinos+=Destino*) ']'
+		//"Mensagem" ':' '[' (paragrafos+=Paragrafo*) ']'
+		//"Remetente" ':' remetente=STRING
+		//"Cargo Remetente" ':' cargoRemetente=STRING ';'
 		public Group getGroup() { return cGroup; }
 		
-		//"Numero: " +
+		//"Numero"
 		public Keyword getNumeroKeyword_0() { return cNumeroKeyword_0; }
 		
-		//numero=INT +
-		public Assignment getNumeroAssignment_1() { return cNumeroAssignment_1; }
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//numero=INT
+		public Assignment getNumeroAssignment_2() { return cNumeroAssignment_2; }
 		
 		//INT
-		public RuleCall getNumeroINTTerminalRuleCall_1_0() { return cNumeroINTTerminalRuleCall_1_0; }
+		public RuleCall getNumeroINTTerminalRuleCall_2_0() { return cNumeroINTTerminalRuleCall_2_0; }
 		
-		//", Setor Destinatario: " +
-		public Keyword getSetorDestinatarioKeyword_2() { return cSetorDestinatarioKeyword_2; }
+		//"Setor Destinatario"
+		public Keyword getSetorDestinatarioKeyword_3() { return cSetorDestinatarioKeyword_3; }
 		
-		//setorDestinatario=ID +
-		public Assignment getSetorDestinatarioAssignment_3() { return cSetorDestinatarioAssignment_3; }
+		//':'
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
 		
-		//ID
-		public RuleCall getSetorDestinatarioIDTerminalRuleCall_3_0() { return cSetorDestinatarioIDTerminalRuleCall_3_0; }
-		
-		//", Setor Remetente: " +
-		public Keyword getSetorRemetenteKeyword_4() { return cSetorRemetenteKeyword_4; }
-		
-		//setorRemetente=ID +
-		public Assignment getSetorRemetenteAssignment_5() { return cSetorRemetenteAssignment_5; }
+		//setorDestinatario=ID
+		public Assignment getSetorDestinatarioAssignment_5() { return cSetorDestinatarioAssignment_5; }
 		
 		//ID
-		public RuleCall getSetorRemetenteIDTerminalRuleCall_5_0() { return cSetorRemetenteIDTerminalRuleCall_5_0; }
+		public RuleCall getSetorDestinatarioIDTerminalRuleCall_5_0() { return cSetorDestinatarioIDTerminalRuleCall_5_0; }
 		
-		//", Cidade: "
-		public Keyword getCidadeKeyword_6() { return cCidadeKeyword_6; }
+		//"Setor Remetente"
+		public Keyword getSetorRemetenteKeyword_6() { return cSetorRemetenteKeyword_6; }
 		
-		//cidade=ID +
-		public Assignment getCidadeAssignment_7() { return cCidadeAssignment_7; }
+		//':'
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
 		
-		//ID
-		public RuleCall getCidadeIDTerminalRuleCall_7_0() { return cCidadeIDTerminalRuleCall_7_0; }
-		
-		//", Estado: "
-		public Keyword getEstadoKeyword_8() { return cEstadoKeyword_8; }
-		
-		//estado=ID +
-		public Assignment getEstadoAssignment_9() { return cEstadoAssignment_9; }
+		//setorRemetente=ID
+		public Assignment getSetorRemetenteAssignment_8() { return cSetorRemetenteAssignment_8; }
 		
 		//ID
-		public RuleCall getEstadoIDTerminalRuleCall_9_0() { return cEstadoIDTerminalRuleCall_9_0; }
+		public RuleCall getSetorRemetenteIDTerminalRuleCall_8_0() { return cSetorRemetenteIDTerminalRuleCall_8_0; }
 		
-		//", Data: "
-		public Keyword getDataKeyword_10() { return cDataKeyword_10; }
+		//"Cidade"
+		public Keyword getCidadeKeyword_9() { return cCidadeKeyword_9; }
 		
-		//dia=INT +
-		public Assignment getDiaAssignment_11() { return cDiaAssignment_11; }
+		//':'
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+		
+		//cidade=ID
+		public Assignment getCidadeAssignment_11() { return cCidadeAssignment_11; }
+		
+		//ID
+		public RuleCall getCidadeIDTerminalRuleCall_11_0() { return cCidadeIDTerminalRuleCall_11_0; }
+		
+		//"Estado"
+		public Keyword getEstadoKeyword_12() { return cEstadoKeyword_12; }
+		
+		//':'
+		public Keyword getColonKeyword_13() { return cColonKeyword_13; }
+		
+		//estado=ID
+		public Assignment getEstadoAssignment_14() { return cEstadoAssignment_14; }
+		
+		//ID
+		public RuleCall getEstadoIDTerminalRuleCall_14_0() { return cEstadoIDTerminalRuleCall_14_0; }
+		
+		//"Data"
+		public Keyword getDataKeyword_15() { return cDataKeyword_15; }
+		
+		//':'
+		public Keyword getColonKeyword_16() { return cColonKeyword_16; }
+		
+		//dia=INT
+		public Assignment getDiaAssignment_17() { return cDiaAssignment_17; }
 		
 		//INT
-		public RuleCall getDiaINTTerminalRuleCall_11_0() { return cDiaINTTerminalRuleCall_11_0; }
+		public RuleCall getDiaINTTerminalRuleCall_17_0() { return cDiaINTTerminalRuleCall_17_0; }
 		
-		//"/"
-		public Keyword getSolidusKeyword_12() { return cSolidusKeyword_12; }
+		//'/'
+		public Keyword getSolidusKeyword_18() { return cSolidusKeyword_18; }
 		
-		//mes=ID +
-		public Assignment getMesAssignment_13() { return cMesAssignment_13; }
+		//mes=ID
+		public Assignment getMesAssignment_19() { return cMesAssignment_19; }
 		
 		//ID
-		public RuleCall getMesIDTerminalRuleCall_13_0() { return cMesIDTerminalRuleCall_13_0; }
+		public RuleCall getMesIDTerminalRuleCall_19_0() { return cMesIDTerminalRuleCall_19_0; }
 		
-		//"/"
-		public Keyword getSolidusKeyword_14() { return cSolidusKeyword_14; }
+		//'/'
+		public Keyword getSolidusKeyword_20() { return cSolidusKeyword_20; }
 		
-		//ano=INT +
-		public Assignment getAnoAssignment_15() { return cAnoAssignment_15; }
+		//ano=INT
+		public Assignment getAnoAssignment_21() { return cAnoAssignment_21; }
 		
 		//INT
-		public RuleCall getAnoINTTerminalRuleCall_15_0() { return cAnoINTTerminalRuleCall_15_0; }
+		public RuleCall getAnoINTTerminalRuleCall_21_0() { return cAnoINTTerminalRuleCall_21_0; }
 		
-		//", Cargo Destinatario: "
-		public Keyword getCargoDestinatarioKeyword_16() { return cCargoDestinatarioKeyword_16; }
+		//"Cargo Destinatario"
+		public Keyword getCargoDestinatarioKeyword_22() { return cCargoDestinatarioKeyword_22; }
 		
-		//cargoDestinatario=STRING +
-		public Assignment getCargoDestinatarioAssignment_17() { return cCargoDestinatarioAssignment_17; }
+		//':'
+		public Keyword getColonKeyword_23() { return cColonKeyword_23; }
+		
+		//cargoDestinatario=STRING
+		public Assignment getCargoDestinatarioAssignment_24() { return cCargoDestinatarioAssignment_24; }
 		
 		//STRING
-		public RuleCall getCargoDestinatarioSTRINGTerminalRuleCall_17_0() { return cCargoDestinatarioSTRINGTerminalRuleCall_17_0; }
+		public RuleCall getCargoDestinatarioSTRINGTerminalRuleCall_24_0() { return cCargoDestinatarioSTRINGTerminalRuleCall_24_0; }
 		
-		//", Assunto: " +
-		public Keyword getAssuntoKeyword_18() { return cAssuntoKeyword_18; }
+		//"Assunto"
+		public Keyword getAssuntoKeyword_25() { return cAssuntoKeyword_25; }
 		
-		//assunto=STRING +
-		public Assignment getAssuntoAssignment_19() { return cAssuntoAssignment_19; }
+		//':'
+		public Keyword getColonKeyword_26() { return cColonKeyword_26; }
+		
+		//assunto=STRING
+		public Assignment getAssuntoAssignment_27() { return cAssuntoAssignment_27; }
 		
 		//STRING
-		public RuleCall getAssuntoSTRINGTerminalRuleCall_19_0() { return cAssuntoSTRINGTerminalRuleCall_19_0; }
+		public RuleCall getAssuntoSTRINGTerminalRuleCall_27_0() { return cAssuntoSTRINGTerminalRuleCall_27_0; }
 		
-		//", Destinos: [" +
-		public Keyword getDestinosKeyword_20() { return cDestinosKeyword_20; }
+		//"Destinos"
+		public Keyword getDestinosKeyword_28() { return cDestinosKeyword_28; }
 		
-		//(destinos+=Destino*) +
-		public Assignment getDestinosAssignment_21() { return cDestinosAssignment_21; }
+		//':'
+		public Keyword getColonKeyword_29() { return cColonKeyword_29; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_30() { return cLeftSquareBracketKeyword_30; }
+		
+		//(destinos+=Destino*)
+		public Assignment getDestinosAssignment_31() { return cDestinosAssignment_31; }
 		
 		//Destino
-		public RuleCall getDestinosDestinoParserRuleCall_21_0() { return cDestinosDestinoParserRuleCall_21_0; }
+		public RuleCall getDestinosDestinoParserRuleCall_31_0() { return cDestinosDestinoParserRuleCall_31_0; }
 		
-		//"], Mensagem: [" +
-		public Keyword getMensagemKeyword_22() { return cMensagemKeyword_22; }
+		//']'
+		public Keyword getRightSquareBracketKeyword_32() { return cRightSquareBracketKeyword_32; }
 		
-		//(paragrafos+=Paragrafo*) +
-		public Assignment getParagrafosAssignment_23() { return cParagrafosAssignment_23; }
+		//"Mensagem"
+		public Keyword getMensagemKeyword_33() { return cMensagemKeyword_33; }
+		
+		//':'
+		public Keyword getColonKeyword_34() { return cColonKeyword_34; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_35() { return cLeftSquareBracketKeyword_35; }
+		
+		//(paragrafos+=Paragrafo*)
+		public Assignment getParagrafosAssignment_36() { return cParagrafosAssignment_36; }
 		
 		//Paragrafo
-		public RuleCall getParagrafosParagrafoParserRuleCall_23_0() { return cParagrafosParagrafoParserRuleCall_23_0; }
+		public RuleCall getParagrafosParagrafoParserRuleCall_36_0() { return cParagrafosParagrafoParserRuleCall_36_0; }
 		
-		//"], Remetente: " +
-		public Keyword getRemetenteKeyword_24() { return cRemetenteKeyword_24; }
+		//']'
+		public Keyword getRightSquareBracketKeyword_37() { return cRightSquareBracketKeyword_37; }
 		
-		//remetente=STRING +
-		public Assignment getRemetenteAssignment_25() { return cRemetenteAssignment_25; }
+		//"Remetente"
+		public Keyword getRemetenteKeyword_38() { return cRemetenteKeyword_38; }
+		
+		//':'
+		public Keyword getColonKeyword_39() { return cColonKeyword_39; }
+		
+		//remetente=STRING
+		public Assignment getRemetenteAssignment_40() { return cRemetenteAssignment_40; }
 		
 		//STRING
-		public RuleCall getRemetenteSTRINGTerminalRuleCall_25_0() { return cRemetenteSTRINGTerminalRuleCall_25_0; }
+		public RuleCall getRemetenteSTRINGTerminalRuleCall_40_0() { return cRemetenteSTRINGTerminalRuleCall_40_0; }
 		
-		//", Cargo Remetente: " +
-		public Keyword getCargoRemetenteKeyword_26() { return cCargoRemetenteKeyword_26; }
+		//"Cargo Remetente"
+		public Keyword getCargoRemetenteKeyword_41() { return cCargoRemetenteKeyword_41; }
+		
+		//':'
+		public Keyword getColonKeyword_42() { return cColonKeyword_42; }
 		
 		//cargoRemetente=STRING
-		public Assignment getCargoRemetenteAssignment_27() { return cCargoRemetenteAssignment_27; }
+		public Assignment getCargoRemetenteAssignment_43() { return cCargoRemetenteAssignment_43; }
 		
 		//STRING
-		public RuleCall getCargoRemetenteSTRINGTerminalRuleCall_27_0() { return cCargoRemetenteSTRINGTerminalRuleCall_27_0; }
+		public RuleCall getCargoRemetenteSTRINGTerminalRuleCall_43_0() { return cCargoRemetenteSTRINGTerminalRuleCall_43_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_44() { return cSemicolonKeyword_44; }
 	}
 	public class DestinoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Memorando.Destino");
@@ -343,18 +412,19 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Memorando:
-	//    "Numero: " + numero=INT +
-	//    ", Setor Destinatario: " + setorDestinatario=ID +
-	//    ", Setor Remetente: " + setorRemetente=ID +
-	//    ", Cidade: " cidade=ID +
-	//    ", Estado: " estado=ID +
-	//    ", Data: " dia=INT + "/" mes=ID + "/" ano=INT +
-	//    ", Cargo Destinatario: " cargoDestinatario=STRING +
-	//    ", Assunto: " + assunto=STRING +
-	//    ", Destinos: [" + (destinos+=Destino*) +
-	//    "], Mensagem: [" + (paragrafos+=Paragrafo*) +
-	//    "], Remetente: " + remetente=STRING +
-	//    ", Cargo Remetente: " + cargoRemetente=STRING;
+	//    "Numero" ':' numero=INT
+	//    "Setor Destinatario" ':' setorDestinatario=ID
+	//    "Setor Remetente" ':' setorRemetente=ID
+	//    "Cidade" ':' cidade=ID
+	//    "Estado" ':' estado=ID
+	//    "Data" ':' dia=INT '/' mes=ID '/' ano=INT
+	//    "Cargo Destinatario" ':' cargoDestinatario=STRING
+	//    "Assunto" ':' assunto=STRING
+	//    "Destinos" ':' '[' (destinos+=Destino*) ']'
+	//    "Mensagem" ':' '[' (paragrafos+=Paragrafo*) ']'
+	//    "Remetente" ':' remetente=STRING
+	//    "Cargo Remetente" ':' cargoRemetente=STRING ';'
+	//    ;
 	public MemorandoElements getMemorandoAccess() {
 		return pMemorando;
 	}
