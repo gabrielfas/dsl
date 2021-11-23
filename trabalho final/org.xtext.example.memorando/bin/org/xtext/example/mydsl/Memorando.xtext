@@ -1,0 +1,26 @@
+grammar org.xtext.example.mydsl.Memorando with org.eclipse.xtext.common.Terminals
+
+generate memorando "http://www.xtext.org/example/mydsl/Memorando"
+
+Model:
+	memorandos+=Memorando*;
+	
+Memorando:
+	"Numero: " + numero=INT +
+	", Setor Destinatario: " + setorDestinatario=ID +
+	", Setor Remetente: " + setorRemetente=ID + 
+	", Cidade: " cidade=ID + 
+	", Estado: " estado=ID + 
+	", Data: " dia=INT + "/" mes=ID + "/" ano=INT + 
+	", Cargo Destinatario: " cargoDestinatario=STRING + 
+	", Assunto: " + assunto=STRING + 
+	", Destinos: " + (destinos+=Destino*) +
+	", Mensagem: " + (paragrafos+=Paragrafo*) +
+	", Remetente: " + remetente=STRING +
+	", Cargo Remetente: " + cargoRemetente=STRING;
+
+Destino:
+	destino=ID;
+	
+Paragrafo:
+	paragrafo=STRING;
