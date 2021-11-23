@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMemorandoParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Numero: '", "', Setor Destinatario: '", "', Setor Remetente: '", "', Cidade: '", "', Estado: '", "', Data: '", "'/'", "', Cargo Destinatario: '", "', Assunto: '", "', Destinos: '", "', Mensagem: '", "', Remetente: '", "', Cargo Remetente: '"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Numero: '", "', Setor Destinatario: '", "', Setor Remetente: '", "', Cidade: '", "', Estado: '", "', Data: '", "'/'", "', Cargo Destinatario: '", "', Assunto: '", "', Destinos: ['", "'], Mensagem: ['", "'], Remetente: '", "', Cargo Remetente: '", "' '"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -42,6 +42,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
+    public static final int T__24=24;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -240,7 +241,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMemorando"
-    // InternalMemorando.g:107:1: ruleMemorando returns [EObject current=null] : ( (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: ' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= ', Mensagem: ' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= ', Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) ) ) ;
+    // InternalMemorando.g:107:1: ruleMemorando returns [EObject current=null] : ( (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: [' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= '], Mensagem: [' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= '], Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) ) ) ;
     public final EObject ruleMemorando() throws RecognitionException {
         EObject current = null;
 
@@ -279,11 +280,11 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMemorando.g:113:2: ( ( (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: ' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= ', Mensagem: ' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= ', Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) ) ) )
-            // InternalMemorando.g:114:2: ( (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: ' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= ', Mensagem: ' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= ', Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) ) )
+            // InternalMemorando.g:113:2: ( ( (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: [' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= '], Mensagem: [' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= '], Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) ) ) )
+            // InternalMemorando.g:114:2: ( (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: [' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= '], Mensagem: [' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= '], Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) ) )
             {
-            // InternalMemorando.g:114:2: ( (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: ' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= ', Mensagem: ' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= ', Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) ) )
-            // InternalMemorando.g:115:3: (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: ' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= ', Mensagem: ' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= ', Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) )
+            // InternalMemorando.g:114:2: ( (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: [' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= '], Mensagem: [' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= '], Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) ) )
+            // InternalMemorando.g:115:3: (otherlv_0= 'Numero: ' )+ ( (lv_numero_1_0= RULE_INT ) )+ (otherlv_2= ', Setor Destinatario: ' )+ ( (lv_setorDestinatario_3_0= RULE_ID ) )+ (otherlv_4= ', Setor Remetente: ' )+ ( (lv_setorRemetente_5_0= RULE_ID ) )+ otherlv_6= ', Cidade: ' ( (lv_cidade_7_0= RULE_ID ) )+ otherlv_8= ', Estado: ' ( (lv_estado_9_0= RULE_ID ) )+ otherlv_10= ', Data: ' ( (lv_dia_11_0= RULE_INT ) )+ otherlv_12= '/' ( (lv_mes_13_0= RULE_ID ) )+ otherlv_14= '/' ( (lv_ano_15_0= RULE_INT ) )+ otherlv_16= ', Cargo Destinatario: ' ( (lv_cargoDestinatario_17_0= RULE_STRING ) )+ (otherlv_18= ', Assunto: ' )+ ( (lv_assunto_19_0= RULE_STRING ) )+ (otherlv_20= ', Destinos: [' )+ ( (lv_destinos_21_0= ruleDestino ) )* (otherlv_22= '], Mensagem: [' )+ ( (lv_paragrafos_23_0= ruleParagrafo ) )* (otherlv_24= '], Remetente: ' )+ ( (lv_remetente_25_0= RULE_STRING ) )+ (otherlv_26= ', Cargo Remetente: ' )+ ( (lv_cargoRemetente_27_0= RULE_STRING ) )
             {
             // InternalMemorando.g:115:3: (otherlv_0= 'Numero: ' )+
             int cnt2=0;
@@ -931,7 +932,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
                 cnt15++;
             } while (true);
 
-            // InternalMemorando.g:343:3: (otherlv_20= ', Destinos: ' )+
+            // InternalMemorando.g:343:3: (otherlv_20= ', Destinos: [' )+
             int cnt16=0;
             loop16:
             do {
@@ -945,7 +946,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalMemorando.g:344:4: otherlv_20= ', Destinos: '
+            	    // InternalMemorando.g:344:4: otherlv_20= ', Destinos: ['
             	    {
             	    otherlv_20=(Token)match(input,20,FOLLOW_19); 
 
@@ -1013,7 +1014,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalMemorando.g:368:3: (otherlv_22= ', Mensagem: ' )+
+            // InternalMemorando.g:368:3: (otherlv_22= '], Mensagem: [' )+
             int cnt18=0;
             loop18:
             do {
@@ -1027,7 +1028,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalMemorando.g:369:4: otherlv_22= ', Mensagem: '
+            	    // InternalMemorando.g:369:4: otherlv_22= '], Mensagem: ['
             	    {
             	    otherlv_22=(Token)match(input,21,FOLLOW_21); 
 
@@ -1095,7 +1096,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalMemorando.g:393:3: (otherlv_24= ', Remetente: ' )+
+            // InternalMemorando.g:393:3: (otherlv_24= '], Remetente: ' )+
             int cnt20=0;
             loop20:
             do {
@@ -1109,7 +1110,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
                 switch (alt20) {
             	case 1 :
-            	    // InternalMemorando.g:394:4: otherlv_24= ', Remetente: '
+            	    // InternalMemorando.g:394:4: otherlv_24= '], Remetente: '
             	    {
             	    otherlv_24=(Token)match(input,22,FOLLOW_22); 
 
@@ -1295,39 +1296,67 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDestino"
-    // InternalMemorando.g:452:1: ruleDestino returns [EObject current=null] : ( (lv_destino_0_0= RULE_ID ) ) ;
+    // InternalMemorando.g:452:1: ruleDestino returns [EObject current=null] : ( ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )? ) ;
     public final EObject ruleDestino() throws RecognitionException {
         EObject current = null;
 
         Token lv_destino_0_0=null;
+        Token otherlv_1=null;
 
 
         	enterRule();
 
         try {
-            // InternalMemorando.g:458:2: ( ( (lv_destino_0_0= RULE_ID ) ) )
-            // InternalMemorando.g:459:2: ( (lv_destino_0_0= RULE_ID ) )
+            // InternalMemorando.g:458:2: ( ( ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )? ) )
+            // InternalMemorando.g:459:2: ( ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )? )
             {
-            // InternalMemorando.g:459:2: ( (lv_destino_0_0= RULE_ID ) )
-            // InternalMemorando.g:460:3: (lv_destino_0_0= RULE_ID )
+            // InternalMemorando.g:459:2: ( ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )? )
+            // InternalMemorando.g:460:3: ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )?
             {
-            // InternalMemorando.g:460:3: (lv_destino_0_0= RULE_ID )
-            // InternalMemorando.g:461:4: lv_destino_0_0= RULE_ID
+            // InternalMemorando.g:460:3: ( (lv_destino_0_0= RULE_ID ) )
+            // InternalMemorando.g:461:4: (lv_destino_0_0= RULE_ID )
             {
-            lv_destino_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            // InternalMemorando.g:461:4: (lv_destino_0_0= RULE_ID )
+            // InternalMemorando.g:462:5: lv_destino_0_0= RULE_ID
+            {
+            lv_destino_0_0=(Token)match(input,RULE_ID,FOLLOW_24); 
 
-            				newLeafNode(lv_destino_0_0, grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0());
-            			
+            					newLeafNode(lv_destino_0_0, grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0_0());
+            				
 
-            				if (current==null) {
-            					current = createModelElement(grammarAccess.getDestinoRule());
-            				}
-            				setWithLastConsumed(
-            					current,
-            					"destino",
-            					lv_destino_0_0,
-            					"org.eclipse.xtext.common.Terminals.ID");
-            			
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getDestinoRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"destino",
+            						lv_destino_0_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalMemorando.g:478:3: (otherlv_1= ' ' )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
+
+            if ( (LA23_0==24) ) {
+                alt23=1;
+            }
+            switch (alt23) {
+                case 1 :
+                    // InternalMemorando.g:479:4: otherlv_1= ' '
+                    {
+                    otherlv_1=(Token)match(input,24,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getDestinoAccess().getSpaceKeyword_1());
+                    			
+
+                    }
+                    break;
 
             }
 
@@ -1354,7 +1383,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParagrafo"
-    // InternalMemorando.g:480:1: entryRuleParagrafo returns [EObject current=null] : iv_ruleParagrafo= ruleParagrafo EOF ;
+    // InternalMemorando.g:488:1: entryRuleParagrafo returns [EObject current=null] : iv_ruleParagrafo= ruleParagrafo EOF ;
     public final EObject entryRuleParagrafo() throws RecognitionException {
         EObject current = null;
 
@@ -1362,8 +1391,8 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMemorando.g:480:50: (iv_ruleParagrafo= ruleParagrafo EOF )
-            // InternalMemorando.g:481:2: iv_ruleParagrafo= ruleParagrafo EOF
+            // InternalMemorando.g:488:50: (iv_ruleParagrafo= ruleParagrafo EOF )
+            // InternalMemorando.g:489:2: iv_ruleParagrafo= ruleParagrafo EOF
             {
              newCompositeNode(grammarAccess.getParagrafoRule()); 
             pushFollow(FOLLOW_1);
@@ -1390,39 +1419,67 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParagrafo"
-    // InternalMemorando.g:487:1: ruleParagrafo returns [EObject current=null] : ( (lv_paragrafo_0_0= RULE_STRING ) ) ;
+    // InternalMemorando.g:495:1: ruleParagrafo returns [EObject current=null] : ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) ;
     public final EObject ruleParagrafo() throws RecognitionException {
         EObject current = null;
 
         Token lv_paragrafo_0_0=null;
+        Token otherlv_1=null;
 
 
         	enterRule();
 
         try {
-            // InternalMemorando.g:493:2: ( ( (lv_paragrafo_0_0= RULE_STRING ) ) )
-            // InternalMemorando.g:494:2: ( (lv_paragrafo_0_0= RULE_STRING ) )
+            // InternalMemorando.g:501:2: ( ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) )
+            // InternalMemorando.g:502:2: ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
             {
-            // InternalMemorando.g:494:2: ( (lv_paragrafo_0_0= RULE_STRING ) )
-            // InternalMemorando.g:495:3: (lv_paragrafo_0_0= RULE_STRING )
+            // InternalMemorando.g:502:2: ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
+            // InternalMemorando.g:503:3: ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )?
             {
-            // InternalMemorando.g:495:3: (lv_paragrafo_0_0= RULE_STRING )
-            // InternalMemorando.g:496:4: lv_paragrafo_0_0= RULE_STRING
+            // InternalMemorando.g:503:3: ( (lv_paragrafo_0_0= RULE_STRING ) )
+            // InternalMemorando.g:504:4: (lv_paragrafo_0_0= RULE_STRING )
             {
-            lv_paragrafo_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+            // InternalMemorando.g:504:4: (lv_paragrafo_0_0= RULE_STRING )
+            // InternalMemorando.g:505:5: lv_paragrafo_0_0= RULE_STRING
+            {
+            lv_paragrafo_0_0=(Token)match(input,RULE_STRING,FOLLOW_24); 
 
-            				newLeafNode(lv_paragrafo_0_0, grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0());
-            			
+            					newLeafNode(lv_paragrafo_0_0, grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0_0());
+            				
 
-            				if (current==null) {
-            					current = createModelElement(grammarAccess.getParagrafoRule());
-            				}
-            				setWithLastConsumed(
-            					current,
-            					"paragrafo",
-            					lv_paragrafo_0_0,
-            					"org.eclipse.xtext.common.Terminals.STRING");
-            			
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getParagrafoRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"paragrafo",
+            						lv_paragrafo_0_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            // InternalMemorando.g:521:3: (otherlv_1= ' ' )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
+
+            if ( (LA24_0==24) ) {
+                alt24=1;
+            }
+            switch (alt24) {
+                case 1 :
+                    // InternalMemorando.g:522:4: otherlv_1= ' '
+                    {
+                    otherlv_1=(Token)match(input,24,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getParagrafoAccess().getSpaceKeyword_1());
+                    			
+
+                    }
+                    break;
 
             }
 
@@ -1475,5 +1532,6 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000600040L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000400040L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000800040L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000001000002L});
 
 }

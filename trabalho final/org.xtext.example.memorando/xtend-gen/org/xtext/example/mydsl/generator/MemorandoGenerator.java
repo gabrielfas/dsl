@@ -3,6 +3,7 @@
  */
 package org.xtext.example.mydsl.generator;
 
+import com.google.common.collect.Iterables;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -10,7 +11,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.mydsl.memorando.Destino;
 import org.xtext.example.mydsl.memorando.Memorando;
 import org.xtext.example.mydsl.memorando.Model;
@@ -25,11 +26,22 @@ import org.xtext.example.mydsl.memorando.Paragrafo;
 public class MemorandoGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    EObject _head = IterableExtensions.<EObject>head(resource.getContents());
-    fsa.generateFile("memorando.html", this.toHtml(((Model) _head)));
+    Iterable<Model> _filter = Iterables.<Model>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Model.class);
+    for (final Model e : _filter) {
+      {
+        int i = 1;
+        EList<Memorando> _memorandos = e.getMemorandos();
+        for (final Memorando x : _memorandos) {
+          {
+            fsa.generateFile((("memorando" + Integer.valueOf(i)) + ".html"), this.toHtml(x));
+            i = (i + 1);
+          }
+        }
+      }
+    }
   }
   
-  public CharSequence toHtml(final Model sm) {
+  public CharSequence toHtml(final Memorando c) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<!DOCTYPE html>");
     _builder.newLine();
@@ -287,113 +299,108 @@ public class MemorandoGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<DIV class=\"dclr\"></DIV>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<P class=\"p0 ft0\">.</P>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<P class=\"p1 ft1\">Memorando nº ");
+    int _numero = c.getNumero();
+    _builder.append(_numero, "\t");
+    _builder.append("/ ");
+    int _ano = c.getAno();
+    _builder.append(_ano, "\t");
+    _builder.append(" - ");
+    String _setorRemetente = c.getSetorRemetente();
+    _builder.append(_setorRemetente, "\t");
+    _builder.append("</P>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<P class=\"p2 ft1\">");
+    String _cidade = c.getCidade();
+    _builder.append(_cidade, "\t");
+    _builder.append(" (");
+    String _estado = c.getEstado();
+    _builder.append(_estado, "\t");
+    _builder.append("), ");
+    int _dia = c.getDia();
+    _builder.append(_dia, "\t");
+    _builder.append(" de ");
+    String _mes = c.getMes();
+    _builder.append(_mes, "\t");
+    _builder.append(" de ");
+    int _ano_1 = c.getAno();
+    _builder.append(_ano_1, "\t");
+    _builder.append(".</P>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<P class=\"p3 ft2\">Ao Sr ");
+    String _cargoDestinatario = c.getCargoDestinatario();
+    _builder.append(_cargoDestinatario, "\t");
+    _builder.append(" da ");
+    String _setorDestinatario = c.getSetorDestinatario();
+    _builder.append(_setorDestinatario, "\t");
+    _builder.append("</P>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<P class=\"p4 ft1\"><SPAN class=\"ft2\">Assunto: </SPAN>");
+    String _assunto = c.getAssunto();
+    _builder.append(_assunto, "\t");
+    _builder.append("</P>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<P class=\"p3 ft2\">Destinos: ");
+    _builder.newLine();
     {
-      EList<Memorando> _memorandos = sm.getMemorandos();
-      for(final Memorando c : _memorandos) {
+      EList<Destino> _destinos = c.getDestinos();
+      for(final Destino d : _destinos) {
         _builder.append("\t");
-        _builder.append("<DIV class=\"dclr\"></DIV>");
+        String _destino = d.getDestino();
+        _builder.append(_destino, "\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t");
+    _builder.append("</P>");
+    _builder.newLine();
+    {
+      EList<Paragrafo> _paragrafos = c.getParagrafos();
+      for(final Paragrafo e : _paragrafos) {
+        _builder.append("\t");
+        _builder.append("<P class=\"p5 ft3\">");
         _builder.newLine();
         _builder.append("\t");
-        _builder.append("<P class=\"p0 ft0\">.</P>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<P class=\"p1 ft1\">Memorando nº ");
-        int _numero = c.getNumero();
-        _builder.append(_numero, "\t");
-        _builder.append("/ ");
-        int _ano = c.getAno();
-        _builder.append(_ano, "\t");
-        _builder.append(" - ");
-        String _setorRemetente = c.getSetorRemetente();
-        _builder.append(_setorRemetente, "\t");
-        _builder.append("</P>");
+        String _paragrafo = e.getParagrafo();
+        _builder.append(_paragrafo, "\t");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        _builder.append("<P class=\"p2 ft1\">");
-        String _cidade = c.getCidade();
-        _builder.append(_cidade, "\t");
-        _builder.append(" (");
-        String _estado = c.getEstado();
-        _builder.append(_estado, "\t");
-        _builder.append("), ");
-        int _dia = c.getDia();
-        _builder.append(_dia, "\t");
-        _builder.append(" de ");
-        String _mes = c.getMes();
-        _builder.append(_mes, "\t");
-        _builder.append(" de ");
-        int _ano_1 = c.getAno();
-        _builder.append(_ano_1, "\t");
-        _builder.append(".</P>");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t");
-        _builder.append("<P class=\"p3 ft2\">Ao Sr ");
-        String _cargoDestinatario = c.getCargoDestinatario();
-        _builder.append(_cargoDestinatario, "\t");
-        _builder.append(" da ");
-        String _setorDestinatario = c.getSetorDestinatario();
-        _builder.append(_setorDestinatario, "\t");
         _builder.append("</P>");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t");
-        _builder.append("<P class=\"p4 ft1\"><SPAN class=\"ft2\">Assunto: </SPAN>");
-        String _assunto = c.getAssunto();
-        _builder.append(_assunto, "\t");
-        _builder.append("</P>");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t");
-        _builder.append("<P class=\"p3 ft2\">Destinos: ");
-        _builder.newLine();
-        {
-          EList<Destino> _destinos = c.getDestinos();
-          for(final Destino d : _destinos) {
-            _builder.append("\t");
-            String _destino = d.getDestino();
-            _builder.append(_destino, "\t");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        _builder.append("\t");
-        _builder.append("</P>");
-        _builder.newLine();
-        {
-          EList<Paragrafo> _paragrafos = c.getParagrafos();
-          for(final Paragrafo e : _paragrafos) {
-            _builder.append("\t");
-            _builder.append("<P class=\"p5 ft3\">");
-            _builder.newLine();
-            _builder.append("\t");
-            String _paragrafo = e.getParagrafo();
-            _builder.append(_paragrafo, "\t");
-            _builder.newLineIfNotEmpty();
-            _builder.append("\t");
-            _builder.append("</P>");
-            _builder.newLine();
-          }
-        }
-        _builder.append("\t");
-        _builder.append("<P class=\"p6 ft2\">Atenciosamente,</P>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<P class=\"p7 ft2\">");
-        String _remetente = c.getRemetente();
-        _builder.append(_remetente, "\t");
-        _builder.append("</P>");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t");
-        _builder.append("<P class=\"p8 ft4\">");
-        String _cargoRemetente = c.getCargoRemetente();
-        _builder.append(_cargoRemetente, "\t");
-        _builder.append("</P>");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t");
-        _builder.append("<P class=\"p9 ft4\">Código de autenticação</P>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<P class=\"p10 ft4\">ae176ead9e8ffea1ede08a4347203ecd</P>");
         _builder.newLine();
       }
     }
+    _builder.append("\t");
+    _builder.append("<P class=\"p6 ft2\">Atenciosamente,</P>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<P class=\"p7 ft2\">");
+    String _remetente = c.getRemetente();
+    _builder.append(_remetente, "\t");
+    _builder.append("</P>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<P class=\"p8 ft4\">");
+    String _cargoRemetente = c.getCargoRemetente();
+    _builder.append(_cargoRemetente, "\t");
+    _builder.append("</P>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<P class=\"p9 ft4\">Código de autenticação</P>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<P class=\"p10 ft4\">ae176ead9e8ffea1ede08a4347203ecd</P>");
+    _builder.newLine();
     _builder.append("\t");
     _builder.append("</DIV>");
     _builder.newLine();

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMemorandoParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Numero: '", "', Setor Destinatario: '", "', Setor Remetente: '", "', Cidade: '", "', Estado: '", "', Data: '", "'/'", "', Cargo Destinatario: '", "', Assunto: '", "', Destinos: '", "', Mensagem: '", "', Remetente: '", "', Cargo Remetente: '"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Numero: '", "', Setor Destinatario: '", "', Setor Remetente: '", "', Cidade: '", "', Estado: '", "', Data: '", "'/'", "', Cargo Destinatario: '", "', Assunto: '", "', Destinos: ['", "'], Mensagem: ['", "'], Remetente: '", "', Cargo Remetente: '", "' '"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -43,6 +43,7 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
+    public static final int T__24=24;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -284,31 +285,31 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleDestino"
-    // InternalMemorando.g:112:1: ruleDestino : ( ( rule__Destino__DestinoAssignment ) ) ;
+    // InternalMemorando.g:112:1: ruleDestino : ( ( rule__Destino__Group__0 ) ) ;
     public final void ruleDestino() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:116:2: ( ( ( rule__Destino__DestinoAssignment ) ) )
-            // InternalMemorando.g:117:2: ( ( rule__Destino__DestinoAssignment ) )
+            // InternalMemorando.g:116:2: ( ( ( rule__Destino__Group__0 ) ) )
+            // InternalMemorando.g:117:2: ( ( rule__Destino__Group__0 ) )
             {
-            // InternalMemorando.g:117:2: ( ( rule__Destino__DestinoAssignment ) )
-            // InternalMemorando.g:118:3: ( rule__Destino__DestinoAssignment )
+            // InternalMemorando.g:117:2: ( ( rule__Destino__Group__0 ) )
+            // InternalMemorando.g:118:3: ( rule__Destino__Group__0 )
             {
-             before(grammarAccess.getDestinoAccess().getDestinoAssignment()); 
-            // InternalMemorando.g:119:3: ( rule__Destino__DestinoAssignment )
-            // InternalMemorando.g:119:4: rule__Destino__DestinoAssignment
+             before(grammarAccess.getDestinoAccess().getGroup()); 
+            // InternalMemorando.g:119:3: ( rule__Destino__Group__0 )
+            // InternalMemorando.g:119:4: rule__Destino__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Destino__DestinoAssignment();
+            rule__Destino__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDestinoAccess().getDestinoAssignment()); 
+             after(grammarAccess.getDestinoAccess().getGroup()); 
 
             }
 
@@ -361,31 +362,31 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleParagrafo"
-    // InternalMemorando.g:137:1: ruleParagrafo : ( ( rule__Paragrafo__ParagrafoAssignment ) ) ;
+    // InternalMemorando.g:137:1: ruleParagrafo : ( ( rule__Paragrafo__Group__0 ) ) ;
     public final void ruleParagrafo() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:141:2: ( ( ( rule__Paragrafo__ParagrafoAssignment ) ) )
-            // InternalMemorando.g:142:2: ( ( rule__Paragrafo__ParagrafoAssignment ) )
+            // InternalMemorando.g:141:2: ( ( ( rule__Paragrafo__Group__0 ) ) )
+            // InternalMemorando.g:142:2: ( ( rule__Paragrafo__Group__0 ) )
             {
-            // InternalMemorando.g:142:2: ( ( rule__Paragrafo__ParagrafoAssignment ) )
-            // InternalMemorando.g:143:3: ( rule__Paragrafo__ParagrafoAssignment )
+            // InternalMemorando.g:142:2: ( ( rule__Paragrafo__Group__0 ) )
+            // InternalMemorando.g:143:3: ( rule__Paragrafo__Group__0 )
             {
-             before(grammarAccess.getParagrafoAccess().getParagrafoAssignment()); 
-            // InternalMemorando.g:144:3: ( rule__Paragrafo__ParagrafoAssignment )
-            // InternalMemorando.g:144:4: rule__Paragrafo__ParagrafoAssignment
+             before(grammarAccess.getParagrafoAccess().getGroup()); 
+            // InternalMemorando.g:144:3: ( rule__Paragrafo__Group__0 )
+            // InternalMemorando.g:144:4: rule__Paragrafo__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Paragrafo__ParagrafoAssignment();
+            rule__Paragrafo__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getParagrafoAccess().getParagrafoAssignment()); 
+             after(grammarAccess.getParagrafoAccess().getGroup()); 
 
             }
 
@@ -2656,24 +2657,24 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__Group__20__Impl"
-    // InternalMemorando.g:802:1: rule__Memorando__Group__20__Impl : ( ( ( ', Destinos: ' ) ) ( ( ', Destinos: ' )* ) ) ;
+    // InternalMemorando.g:802:1: rule__Memorando__Group__20__Impl : ( ( ( ', Destinos: [' ) ) ( ( ', Destinos: [' )* ) ) ;
     public final void rule__Memorando__Group__20__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:806:1: ( ( ( ( ', Destinos: ' ) ) ( ( ', Destinos: ' )* ) ) )
-            // InternalMemorando.g:807:1: ( ( ( ', Destinos: ' ) ) ( ( ', Destinos: ' )* ) )
+            // InternalMemorando.g:806:1: ( ( ( ( ', Destinos: [' ) ) ( ( ', Destinos: [' )* ) ) )
+            // InternalMemorando.g:807:1: ( ( ( ', Destinos: [' ) ) ( ( ', Destinos: [' )* ) )
             {
-            // InternalMemorando.g:807:1: ( ( ( ', Destinos: ' ) ) ( ( ', Destinos: ' )* ) )
-            // InternalMemorando.g:808:2: ( ( ', Destinos: ' ) ) ( ( ', Destinos: ' )* )
+            // InternalMemorando.g:807:1: ( ( ( ', Destinos: [' ) ) ( ( ', Destinos: [' )* ) )
+            // InternalMemorando.g:808:2: ( ( ', Destinos: [' ) ) ( ( ', Destinos: [' )* )
             {
-            // InternalMemorando.g:808:2: ( ( ', Destinos: ' ) )
-            // InternalMemorando.g:809:3: ( ', Destinos: ' )
+            // InternalMemorando.g:808:2: ( ( ', Destinos: [' ) )
+            // InternalMemorando.g:809:3: ( ', Destinos: [' )
             {
              before(grammarAccess.getMemorandoAccess().getDestinosKeyword_20()); 
-            // InternalMemorando.g:810:3: ( ', Destinos: ' )
-            // InternalMemorando.g:810:4: ', Destinos: '
+            // InternalMemorando.g:810:3: ( ', Destinos: [' )
+            // InternalMemorando.g:810:4: ', Destinos: ['
             {
             match(input,20,FOLLOW_23); 
 
@@ -2683,11 +2684,11 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
             }
 
-            // InternalMemorando.g:813:2: ( ( ', Destinos: ' )* )
-            // InternalMemorando.g:814:3: ( ', Destinos: ' )*
+            // InternalMemorando.g:813:2: ( ( ', Destinos: [' )* )
+            // InternalMemorando.g:814:3: ( ', Destinos: [' )*
             {
              before(grammarAccess.getMemorandoAccess().getDestinosKeyword_20()); 
-            // InternalMemorando.g:815:3: ( ', Destinos: ' )*
+            // InternalMemorando.g:815:3: ( ', Destinos: [' )*
             loop16:
             do {
                 int alt16=2;
@@ -2700,7 +2701,7 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalMemorando.g:815:4: ', Destinos: '
+            	    // InternalMemorando.g:815:4: ', Destinos: ['
             	    {
             	    match(input,20,FOLLOW_23); 
 
@@ -2879,24 +2880,24 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__Group__22__Impl"
-    // InternalMemorando.g:863:1: rule__Memorando__Group__22__Impl : ( ( ( ', Mensagem: ' ) ) ( ( ', Mensagem: ' )* ) ) ;
+    // InternalMemorando.g:863:1: rule__Memorando__Group__22__Impl : ( ( ( '], Mensagem: [' ) ) ( ( '], Mensagem: [' )* ) ) ;
     public final void rule__Memorando__Group__22__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:867:1: ( ( ( ( ', Mensagem: ' ) ) ( ( ', Mensagem: ' )* ) ) )
-            // InternalMemorando.g:868:1: ( ( ( ', Mensagem: ' ) ) ( ( ', Mensagem: ' )* ) )
+            // InternalMemorando.g:867:1: ( ( ( ( '], Mensagem: [' ) ) ( ( '], Mensagem: [' )* ) ) )
+            // InternalMemorando.g:868:1: ( ( ( '], Mensagem: [' ) ) ( ( '], Mensagem: [' )* ) )
             {
-            // InternalMemorando.g:868:1: ( ( ( ', Mensagem: ' ) ) ( ( ', Mensagem: ' )* ) )
-            // InternalMemorando.g:869:2: ( ( ', Mensagem: ' ) ) ( ( ', Mensagem: ' )* )
+            // InternalMemorando.g:868:1: ( ( ( '], Mensagem: [' ) ) ( ( '], Mensagem: [' )* ) )
+            // InternalMemorando.g:869:2: ( ( '], Mensagem: [' ) ) ( ( '], Mensagem: [' )* )
             {
-            // InternalMemorando.g:869:2: ( ( ', Mensagem: ' ) )
-            // InternalMemorando.g:870:3: ( ', Mensagem: ' )
+            // InternalMemorando.g:869:2: ( ( '], Mensagem: [' ) )
+            // InternalMemorando.g:870:3: ( '], Mensagem: [' )
             {
              before(grammarAccess.getMemorandoAccess().getMensagemKeyword_22()); 
-            // InternalMemorando.g:871:3: ( ', Mensagem: ' )
-            // InternalMemorando.g:871:4: ', Mensagem: '
+            // InternalMemorando.g:871:3: ( '], Mensagem: [' )
+            // InternalMemorando.g:871:4: '], Mensagem: ['
             {
             match(input,21,FOLLOW_25); 
 
@@ -2906,11 +2907,11 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
             }
 
-            // InternalMemorando.g:874:2: ( ( ', Mensagem: ' )* )
-            // InternalMemorando.g:875:3: ( ', Mensagem: ' )*
+            // InternalMemorando.g:874:2: ( ( '], Mensagem: [' )* )
+            // InternalMemorando.g:875:3: ( '], Mensagem: [' )*
             {
              before(grammarAccess.getMemorandoAccess().getMensagemKeyword_22()); 
-            // InternalMemorando.g:876:3: ( ', Mensagem: ' )*
+            // InternalMemorando.g:876:3: ( '], Mensagem: [' )*
             loop18:
             do {
                 int alt18=2;
@@ -2923,7 +2924,7 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalMemorando.g:876:4: ', Mensagem: '
+            	    // InternalMemorando.g:876:4: '], Mensagem: ['
             	    {
             	    match(input,21,FOLLOW_25); 
 
@@ -3102,24 +3103,24 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__Group__24__Impl"
-    // InternalMemorando.g:924:1: rule__Memorando__Group__24__Impl : ( ( ( ', Remetente: ' ) ) ( ( ', Remetente: ' )* ) ) ;
+    // InternalMemorando.g:924:1: rule__Memorando__Group__24__Impl : ( ( ( '], Remetente: ' ) ) ( ( '], Remetente: ' )* ) ) ;
     public final void rule__Memorando__Group__24__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:928:1: ( ( ( ( ', Remetente: ' ) ) ( ( ', Remetente: ' )* ) ) )
-            // InternalMemorando.g:929:1: ( ( ( ', Remetente: ' ) ) ( ( ', Remetente: ' )* ) )
+            // InternalMemorando.g:928:1: ( ( ( ( '], Remetente: ' ) ) ( ( '], Remetente: ' )* ) ) )
+            // InternalMemorando.g:929:1: ( ( ( '], Remetente: ' ) ) ( ( '], Remetente: ' )* ) )
             {
-            // InternalMemorando.g:929:1: ( ( ( ', Remetente: ' ) ) ( ( ', Remetente: ' )* ) )
-            // InternalMemorando.g:930:2: ( ( ', Remetente: ' ) ) ( ( ', Remetente: ' )* )
+            // InternalMemorando.g:929:1: ( ( ( '], Remetente: ' ) ) ( ( '], Remetente: ' )* ) )
+            // InternalMemorando.g:930:2: ( ( '], Remetente: ' ) ) ( ( '], Remetente: ' )* )
             {
-            // InternalMemorando.g:930:2: ( ( ', Remetente: ' ) )
-            // InternalMemorando.g:931:3: ( ', Remetente: ' )
+            // InternalMemorando.g:930:2: ( ( '], Remetente: ' ) )
+            // InternalMemorando.g:931:3: ( '], Remetente: ' )
             {
              before(grammarAccess.getMemorandoAccess().getRemetenteKeyword_24()); 
-            // InternalMemorando.g:932:3: ( ', Remetente: ' )
-            // InternalMemorando.g:932:4: ', Remetente: '
+            // InternalMemorando.g:932:3: ( '], Remetente: ' )
+            // InternalMemorando.g:932:4: '], Remetente: '
             {
             match(input,22,FOLLOW_26); 
 
@@ -3129,11 +3130,11 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
             }
 
-            // InternalMemorando.g:935:2: ( ( ', Remetente: ' )* )
-            // InternalMemorando.g:936:3: ( ', Remetente: ' )*
+            // InternalMemorando.g:935:2: ( ( '], Remetente: ' )* )
+            // InternalMemorando.g:936:3: ( '], Remetente: ' )*
             {
              before(grammarAccess.getMemorandoAccess().getRemetenteKeyword_24()); 
-            // InternalMemorando.g:937:3: ( ', Remetente: ' )*
+            // InternalMemorando.g:937:3: ( '], Remetente: ' )*
             loop20:
             do {
                 int alt20=2;
@@ -3146,7 +3147,7 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
                 switch (alt20) {
             	case 1 :
-            	    // InternalMemorando.g:937:4: ', Remetente: '
+            	    // InternalMemorando.g:937:4: '], Remetente: '
             	    {
             	    match(input,22,FOLLOW_26); 
 
@@ -3511,18 +3512,362 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Memorando__Group__27__Impl"
 
 
+    // $ANTLR start "rule__Destino__Group__0"
+    // InternalMemorando.g:1041:1: rule__Destino__Group__0 : rule__Destino__Group__0__Impl rule__Destino__Group__1 ;
+    public final void rule__Destino__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMemorando.g:1045:1: ( rule__Destino__Group__0__Impl rule__Destino__Group__1 )
+            // InternalMemorando.g:1046:2: rule__Destino__Group__0__Impl rule__Destino__Group__1
+            {
+            pushFollow(FOLLOW_29);
+            rule__Destino__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Destino__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Destino__Group__0"
+
+
+    // $ANTLR start "rule__Destino__Group__0__Impl"
+    // InternalMemorando.g:1053:1: rule__Destino__Group__0__Impl : ( ( rule__Destino__DestinoAssignment_0 ) ) ;
+    public final void rule__Destino__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMemorando.g:1057:1: ( ( ( rule__Destino__DestinoAssignment_0 ) ) )
+            // InternalMemorando.g:1058:1: ( ( rule__Destino__DestinoAssignment_0 ) )
+            {
+            // InternalMemorando.g:1058:1: ( ( rule__Destino__DestinoAssignment_0 ) )
+            // InternalMemorando.g:1059:2: ( rule__Destino__DestinoAssignment_0 )
+            {
+             before(grammarAccess.getDestinoAccess().getDestinoAssignment_0()); 
+            // InternalMemorando.g:1060:2: ( rule__Destino__DestinoAssignment_0 )
+            // InternalMemorando.g:1060:3: rule__Destino__DestinoAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Destino__DestinoAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDestinoAccess().getDestinoAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Destino__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Destino__Group__1"
+    // InternalMemorando.g:1068:1: rule__Destino__Group__1 : rule__Destino__Group__1__Impl ;
+    public final void rule__Destino__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMemorando.g:1072:1: ( rule__Destino__Group__1__Impl )
+            // InternalMemorando.g:1073:2: rule__Destino__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Destino__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Destino__Group__1"
+
+
+    // $ANTLR start "rule__Destino__Group__1__Impl"
+    // InternalMemorando.g:1079:1: rule__Destino__Group__1__Impl : ( ( ' ' )? ) ;
+    public final void rule__Destino__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMemorando.g:1083:1: ( ( ( ' ' )? ) )
+            // InternalMemorando.g:1084:1: ( ( ' ' )? )
+            {
+            // InternalMemorando.g:1084:1: ( ( ' ' )? )
+            // InternalMemorando.g:1085:2: ( ' ' )?
+            {
+             before(grammarAccess.getDestinoAccess().getSpaceKeyword_1()); 
+            // InternalMemorando.g:1086:2: ( ' ' )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
+
+            if ( (LA23_0==24) ) {
+                alt23=1;
+            }
+            switch (alt23) {
+                case 1 :
+                    // InternalMemorando.g:1086:3: ' '
+                    {
+                    match(input,24,FOLLOW_2); 
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getDestinoAccess().getSpaceKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Destino__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__0"
+    // InternalMemorando.g:1095:1: rule__Paragrafo__Group__0 : rule__Paragrafo__Group__0__Impl rule__Paragrafo__Group__1 ;
+    public final void rule__Paragrafo__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMemorando.g:1099:1: ( rule__Paragrafo__Group__0__Impl rule__Paragrafo__Group__1 )
+            // InternalMemorando.g:1100:2: rule__Paragrafo__Group__0__Impl rule__Paragrafo__Group__1
+            {
+            pushFollow(FOLLOW_29);
+            rule__Paragrafo__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__0"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__0__Impl"
+    // InternalMemorando.g:1107:1: rule__Paragrafo__Group__0__Impl : ( ( rule__Paragrafo__ParagrafoAssignment_0 ) ) ;
+    public final void rule__Paragrafo__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMemorando.g:1111:1: ( ( ( rule__Paragrafo__ParagrafoAssignment_0 ) ) )
+            // InternalMemorando.g:1112:1: ( ( rule__Paragrafo__ParagrafoAssignment_0 ) )
+            {
+            // InternalMemorando.g:1112:1: ( ( rule__Paragrafo__ParagrafoAssignment_0 ) )
+            // InternalMemorando.g:1113:2: ( rule__Paragrafo__ParagrafoAssignment_0 )
+            {
+             before(grammarAccess.getParagrafoAccess().getParagrafoAssignment_0()); 
+            // InternalMemorando.g:1114:2: ( rule__Paragrafo__ParagrafoAssignment_0 )
+            // InternalMemorando.g:1114:3: rule__Paragrafo__ParagrafoAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__ParagrafoAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getParagrafoAccess().getParagrafoAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__1"
+    // InternalMemorando.g:1122:1: rule__Paragrafo__Group__1 : rule__Paragrafo__Group__1__Impl ;
+    public final void rule__Paragrafo__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMemorando.g:1126:1: ( rule__Paragrafo__Group__1__Impl )
+            // InternalMemorando.g:1127:2: rule__Paragrafo__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__1"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__1__Impl"
+    // InternalMemorando.g:1133:1: rule__Paragrafo__Group__1__Impl : ( ( ' ' )? ) ;
+    public final void rule__Paragrafo__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMemorando.g:1137:1: ( ( ( ' ' )? ) )
+            // InternalMemorando.g:1138:1: ( ( ' ' )? )
+            {
+            // InternalMemorando.g:1138:1: ( ( ' ' )? )
+            // InternalMemorando.g:1139:2: ( ' ' )?
+            {
+             before(grammarAccess.getParagrafoAccess().getSpaceKeyword_1()); 
+            // InternalMemorando.g:1140:2: ( ' ' )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
+
+            if ( (LA24_0==24) ) {
+                alt24=1;
+            }
+            switch (alt24) {
+                case 1 :
+                    // InternalMemorando.g:1140:3: ' '
+                    {
+                    match(input,24,FOLLOW_2); 
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getParagrafoAccess().getSpaceKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__1__Impl"
+
+
     // $ANTLR start "rule__Model__MemorandosAssignment"
-    // InternalMemorando.g:1041:1: rule__Model__MemorandosAssignment : ( ruleMemorando ) ;
+    // InternalMemorando.g:1149:1: rule__Model__MemorandosAssignment : ( ruleMemorando ) ;
     public final void rule__Model__MemorandosAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1045:1: ( ( ruleMemorando ) )
-            // InternalMemorando.g:1046:2: ( ruleMemorando )
+            // InternalMemorando.g:1153:1: ( ( ruleMemorando ) )
+            // InternalMemorando.g:1154:2: ( ruleMemorando )
             {
-            // InternalMemorando.g:1046:2: ( ruleMemorando )
-            // InternalMemorando.g:1047:3: ruleMemorando
+            // InternalMemorando.g:1154:2: ( ruleMemorando )
+            // InternalMemorando.g:1155:3: ruleMemorando
             {
              before(grammarAccess.getModelAccess().getMemorandosMemorandoParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -3553,17 +3898,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__NumeroAssignment_1"
-    // InternalMemorando.g:1056:1: rule__Memorando__NumeroAssignment_1 : ( RULE_INT ) ;
+    // InternalMemorando.g:1164:1: rule__Memorando__NumeroAssignment_1 : ( RULE_INT ) ;
     public final void rule__Memorando__NumeroAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1060:1: ( ( RULE_INT ) )
-            // InternalMemorando.g:1061:2: ( RULE_INT )
+            // InternalMemorando.g:1168:1: ( ( RULE_INT ) )
+            // InternalMemorando.g:1169:2: ( RULE_INT )
             {
-            // InternalMemorando.g:1061:2: ( RULE_INT )
-            // InternalMemorando.g:1062:3: RULE_INT
+            // InternalMemorando.g:1169:2: ( RULE_INT )
+            // InternalMemorando.g:1170:3: RULE_INT
             {
              before(grammarAccess.getMemorandoAccess().getNumeroINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3590,17 +3935,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__SetorDestinatarioAssignment_3"
-    // InternalMemorando.g:1071:1: rule__Memorando__SetorDestinatarioAssignment_3 : ( RULE_ID ) ;
+    // InternalMemorando.g:1179:1: rule__Memorando__SetorDestinatarioAssignment_3 : ( RULE_ID ) ;
     public final void rule__Memorando__SetorDestinatarioAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1075:1: ( ( RULE_ID ) )
-            // InternalMemorando.g:1076:2: ( RULE_ID )
+            // InternalMemorando.g:1183:1: ( ( RULE_ID ) )
+            // InternalMemorando.g:1184:2: ( RULE_ID )
             {
-            // InternalMemorando.g:1076:2: ( RULE_ID )
-            // InternalMemorando.g:1077:3: RULE_ID
+            // InternalMemorando.g:1184:2: ( RULE_ID )
+            // InternalMemorando.g:1185:3: RULE_ID
             {
              before(grammarAccess.getMemorandoAccess().getSetorDestinatarioIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3627,17 +3972,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__SetorRemetenteAssignment_5"
-    // InternalMemorando.g:1086:1: rule__Memorando__SetorRemetenteAssignment_5 : ( RULE_ID ) ;
+    // InternalMemorando.g:1194:1: rule__Memorando__SetorRemetenteAssignment_5 : ( RULE_ID ) ;
     public final void rule__Memorando__SetorRemetenteAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1090:1: ( ( RULE_ID ) )
-            // InternalMemorando.g:1091:2: ( RULE_ID )
+            // InternalMemorando.g:1198:1: ( ( RULE_ID ) )
+            // InternalMemorando.g:1199:2: ( RULE_ID )
             {
-            // InternalMemorando.g:1091:2: ( RULE_ID )
-            // InternalMemorando.g:1092:3: RULE_ID
+            // InternalMemorando.g:1199:2: ( RULE_ID )
+            // InternalMemorando.g:1200:3: RULE_ID
             {
              before(grammarAccess.getMemorandoAccess().getSetorRemetenteIDTerminalRuleCall_5_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3664,17 +4009,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__CidadeAssignment_7"
-    // InternalMemorando.g:1101:1: rule__Memorando__CidadeAssignment_7 : ( RULE_ID ) ;
+    // InternalMemorando.g:1209:1: rule__Memorando__CidadeAssignment_7 : ( RULE_ID ) ;
     public final void rule__Memorando__CidadeAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1105:1: ( ( RULE_ID ) )
-            // InternalMemorando.g:1106:2: ( RULE_ID )
+            // InternalMemorando.g:1213:1: ( ( RULE_ID ) )
+            // InternalMemorando.g:1214:2: ( RULE_ID )
             {
-            // InternalMemorando.g:1106:2: ( RULE_ID )
-            // InternalMemorando.g:1107:3: RULE_ID
+            // InternalMemorando.g:1214:2: ( RULE_ID )
+            // InternalMemorando.g:1215:3: RULE_ID
             {
              before(grammarAccess.getMemorandoAccess().getCidadeIDTerminalRuleCall_7_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3701,17 +4046,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__EstadoAssignment_9"
-    // InternalMemorando.g:1116:1: rule__Memorando__EstadoAssignment_9 : ( RULE_ID ) ;
+    // InternalMemorando.g:1224:1: rule__Memorando__EstadoAssignment_9 : ( RULE_ID ) ;
     public final void rule__Memorando__EstadoAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1120:1: ( ( RULE_ID ) )
-            // InternalMemorando.g:1121:2: ( RULE_ID )
+            // InternalMemorando.g:1228:1: ( ( RULE_ID ) )
+            // InternalMemorando.g:1229:2: ( RULE_ID )
             {
-            // InternalMemorando.g:1121:2: ( RULE_ID )
-            // InternalMemorando.g:1122:3: RULE_ID
+            // InternalMemorando.g:1229:2: ( RULE_ID )
+            // InternalMemorando.g:1230:3: RULE_ID
             {
              before(grammarAccess.getMemorandoAccess().getEstadoIDTerminalRuleCall_9_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3738,17 +4083,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__DiaAssignment_11"
-    // InternalMemorando.g:1131:1: rule__Memorando__DiaAssignment_11 : ( RULE_INT ) ;
+    // InternalMemorando.g:1239:1: rule__Memorando__DiaAssignment_11 : ( RULE_INT ) ;
     public final void rule__Memorando__DiaAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1135:1: ( ( RULE_INT ) )
-            // InternalMemorando.g:1136:2: ( RULE_INT )
+            // InternalMemorando.g:1243:1: ( ( RULE_INT ) )
+            // InternalMemorando.g:1244:2: ( RULE_INT )
             {
-            // InternalMemorando.g:1136:2: ( RULE_INT )
-            // InternalMemorando.g:1137:3: RULE_INT
+            // InternalMemorando.g:1244:2: ( RULE_INT )
+            // InternalMemorando.g:1245:3: RULE_INT
             {
              before(grammarAccess.getMemorandoAccess().getDiaINTTerminalRuleCall_11_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3775,17 +4120,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__MesAssignment_13"
-    // InternalMemorando.g:1146:1: rule__Memorando__MesAssignment_13 : ( RULE_ID ) ;
+    // InternalMemorando.g:1254:1: rule__Memorando__MesAssignment_13 : ( RULE_ID ) ;
     public final void rule__Memorando__MesAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1150:1: ( ( RULE_ID ) )
-            // InternalMemorando.g:1151:2: ( RULE_ID )
+            // InternalMemorando.g:1258:1: ( ( RULE_ID ) )
+            // InternalMemorando.g:1259:2: ( RULE_ID )
             {
-            // InternalMemorando.g:1151:2: ( RULE_ID )
-            // InternalMemorando.g:1152:3: RULE_ID
+            // InternalMemorando.g:1259:2: ( RULE_ID )
+            // InternalMemorando.g:1260:3: RULE_ID
             {
              before(grammarAccess.getMemorandoAccess().getMesIDTerminalRuleCall_13_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3812,17 +4157,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__AnoAssignment_15"
-    // InternalMemorando.g:1161:1: rule__Memorando__AnoAssignment_15 : ( RULE_INT ) ;
+    // InternalMemorando.g:1269:1: rule__Memorando__AnoAssignment_15 : ( RULE_INT ) ;
     public final void rule__Memorando__AnoAssignment_15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1165:1: ( ( RULE_INT ) )
-            // InternalMemorando.g:1166:2: ( RULE_INT )
+            // InternalMemorando.g:1273:1: ( ( RULE_INT ) )
+            // InternalMemorando.g:1274:2: ( RULE_INT )
             {
-            // InternalMemorando.g:1166:2: ( RULE_INT )
-            // InternalMemorando.g:1167:3: RULE_INT
+            // InternalMemorando.g:1274:2: ( RULE_INT )
+            // InternalMemorando.g:1275:3: RULE_INT
             {
              before(grammarAccess.getMemorandoAccess().getAnoINTTerminalRuleCall_15_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3849,17 +4194,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__CargoDestinatarioAssignment_17"
-    // InternalMemorando.g:1176:1: rule__Memorando__CargoDestinatarioAssignment_17 : ( RULE_STRING ) ;
+    // InternalMemorando.g:1284:1: rule__Memorando__CargoDestinatarioAssignment_17 : ( RULE_STRING ) ;
     public final void rule__Memorando__CargoDestinatarioAssignment_17() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1180:1: ( ( RULE_STRING ) )
-            // InternalMemorando.g:1181:2: ( RULE_STRING )
+            // InternalMemorando.g:1288:1: ( ( RULE_STRING ) )
+            // InternalMemorando.g:1289:2: ( RULE_STRING )
             {
-            // InternalMemorando.g:1181:2: ( RULE_STRING )
-            // InternalMemorando.g:1182:3: RULE_STRING
+            // InternalMemorando.g:1289:2: ( RULE_STRING )
+            // InternalMemorando.g:1290:3: RULE_STRING
             {
              before(grammarAccess.getMemorandoAccess().getCargoDestinatarioSTRINGTerminalRuleCall_17_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -3886,17 +4231,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__AssuntoAssignment_19"
-    // InternalMemorando.g:1191:1: rule__Memorando__AssuntoAssignment_19 : ( RULE_STRING ) ;
+    // InternalMemorando.g:1299:1: rule__Memorando__AssuntoAssignment_19 : ( RULE_STRING ) ;
     public final void rule__Memorando__AssuntoAssignment_19() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1195:1: ( ( RULE_STRING ) )
-            // InternalMemorando.g:1196:2: ( RULE_STRING )
+            // InternalMemorando.g:1303:1: ( ( RULE_STRING ) )
+            // InternalMemorando.g:1304:2: ( RULE_STRING )
             {
-            // InternalMemorando.g:1196:2: ( RULE_STRING )
-            // InternalMemorando.g:1197:3: RULE_STRING
+            // InternalMemorando.g:1304:2: ( RULE_STRING )
+            // InternalMemorando.g:1305:3: RULE_STRING
             {
              before(grammarAccess.getMemorandoAccess().getAssuntoSTRINGTerminalRuleCall_19_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -3923,17 +4268,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__DestinosAssignment_21"
-    // InternalMemorando.g:1206:1: rule__Memorando__DestinosAssignment_21 : ( ruleDestino ) ;
+    // InternalMemorando.g:1314:1: rule__Memorando__DestinosAssignment_21 : ( ruleDestino ) ;
     public final void rule__Memorando__DestinosAssignment_21() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1210:1: ( ( ruleDestino ) )
-            // InternalMemorando.g:1211:2: ( ruleDestino )
+            // InternalMemorando.g:1318:1: ( ( ruleDestino ) )
+            // InternalMemorando.g:1319:2: ( ruleDestino )
             {
-            // InternalMemorando.g:1211:2: ( ruleDestino )
-            // InternalMemorando.g:1212:3: ruleDestino
+            // InternalMemorando.g:1319:2: ( ruleDestino )
+            // InternalMemorando.g:1320:3: ruleDestino
             {
              before(grammarAccess.getMemorandoAccess().getDestinosDestinoParserRuleCall_21_0()); 
             pushFollow(FOLLOW_2);
@@ -3964,17 +4309,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__ParagrafosAssignment_23"
-    // InternalMemorando.g:1221:1: rule__Memorando__ParagrafosAssignment_23 : ( ruleParagrafo ) ;
+    // InternalMemorando.g:1329:1: rule__Memorando__ParagrafosAssignment_23 : ( ruleParagrafo ) ;
     public final void rule__Memorando__ParagrafosAssignment_23() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1225:1: ( ( ruleParagrafo ) )
-            // InternalMemorando.g:1226:2: ( ruleParagrafo )
+            // InternalMemorando.g:1333:1: ( ( ruleParagrafo ) )
+            // InternalMemorando.g:1334:2: ( ruleParagrafo )
             {
-            // InternalMemorando.g:1226:2: ( ruleParagrafo )
-            // InternalMemorando.g:1227:3: ruleParagrafo
+            // InternalMemorando.g:1334:2: ( ruleParagrafo )
+            // InternalMemorando.g:1335:3: ruleParagrafo
             {
              before(grammarAccess.getMemorandoAccess().getParagrafosParagrafoParserRuleCall_23_0()); 
             pushFollow(FOLLOW_2);
@@ -4005,17 +4350,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__RemetenteAssignment_25"
-    // InternalMemorando.g:1236:1: rule__Memorando__RemetenteAssignment_25 : ( RULE_STRING ) ;
+    // InternalMemorando.g:1344:1: rule__Memorando__RemetenteAssignment_25 : ( RULE_STRING ) ;
     public final void rule__Memorando__RemetenteAssignment_25() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1240:1: ( ( RULE_STRING ) )
-            // InternalMemorando.g:1241:2: ( RULE_STRING )
+            // InternalMemorando.g:1348:1: ( ( RULE_STRING ) )
+            // InternalMemorando.g:1349:2: ( RULE_STRING )
             {
-            // InternalMemorando.g:1241:2: ( RULE_STRING )
-            // InternalMemorando.g:1242:3: RULE_STRING
+            // InternalMemorando.g:1349:2: ( RULE_STRING )
+            // InternalMemorando.g:1350:3: RULE_STRING
             {
              before(grammarAccess.getMemorandoAccess().getRemetenteSTRINGTerminalRuleCall_25_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -4042,17 +4387,17 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Memorando__CargoRemetenteAssignment_27"
-    // InternalMemorando.g:1251:1: rule__Memorando__CargoRemetenteAssignment_27 : ( RULE_STRING ) ;
+    // InternalMemorando.g:1359:1: rule__Memorando__CargoRemetenteAssignment_27 : ( RULE_STRING ) ;
     public final void rule__Memorando__CargoRemetenteAssignment_27() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1255:1: ( ( RULE_STRING ) )
-            // InternalMemorando.g:1256:2: ( RULE_STRING )
+            // InternalMemorando.g:1363:1: ( ( RULE_STRING ) )
+            // InternalMemorando.g:1364:2: ( RULE_STRING )
             {
-            // InternalMemorando.g:1256:2: ( RULE_STRING )
-            // InternalMemorando.g:1257:3: RULE_STRING
+            // InternalMemorando.g:1364:2: ( RULE_STRING )
+            // InternalMemorando.g:1365:3: RULE_STRING
             {
              before(grammarAccess.getMemorandoAccess().getCargoRemetenteSTRINGTerminalRuleCall_27_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -4078,22 +4423,22 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Memorando__CargoRemetenteAssignment_27"
 
 
-    // $ANTLR start "rule__Destino__DestinoAssignment"
-    // InternalMemorando.g:1266:1: rule__Destino__DestinoAssignment : ( RULE_ID ) ;
-    public final void rule__Destino__DestinoAssignment() throws RecognitionException {
+    // $ANTLR start "rule__Destino__DestinoAssignment_0"
+    // InternalMemorando.g:1374:1: rule__Destino__DestinoAssignment_0 : ( RULE_ID ) ;
+    public final void rule__Destino__DestinoAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1270:1: ( ( RULE_ID ) )
-            // InternalMemorando.g:1271:2: ( RULE_ID )
+            // InternalMemorando.g:1378:1: ( ( RULE_ID ) )
+            // InternalMemorando.g:1379:2: ( RULE_ID )
             {
-            // InternalMemorando.g:1271:2: ( RULE_ID )
-            // InternalMemorando.g:1272:3: RULE_ID
+            // InternalMemorando.g:1379:2: ( RULE_ID )
+            // InternalMemorando.g:1380:3: RULE_ID
             {
-             before(grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0()); 
+             before(grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0()); 
+             after(grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0_0()); 
 
             }
 
@@ -4112,25 +4457,25 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Destino__DestinoAssignment"
+    // $ANTLR end "rule__Destino__DestinoAssignment_0"
 
 
-    // $ANTLR start "rule__Paragrafo__ParagrafoAssignment"
-    // InternalMemorando.g:1281:1: rule__Paragrafo__ParagrafoAssignment : ( RULE_STRING ) ;
-    public final void rule__Paragrafo__ParagrafoAssignment() throws RecognitionException {
+    // $ANTLR start "rule__Paragrafo__ParagrafoAssignment_0"
+    // InternalMemorando.g:1389:1: rule__Paragrafo__ParagrafoAssignment_0 : ( RULE_STRING ) ;
+    public final void rule__Paragrafo__ParagrafoAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMemorando.g:1285:1: ( ( RULE_STRING ) )
-            // InternalMemorando.g:1286:2: ( RULE_STRING )
+            // InternalMemorando.g:1393:1: ( ( RULE_STRING ) )
+            // InternalMemorando.g:1394:2: ( RULE_STRING )
             {
-            // InternalMemorando.g:1286:2: ( RULE_STRING )
-            // InternalMemorando.g:1287:3: RULE_STRING
+            // InternalMemorando.g:1394:2: ( RULE_STRING )
+            // InternalMemorando.g:1395:3: RULE_STRING
             {
-             before(grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0()); 
+             before(grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0()); 
+             after(grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0_0()); 
 
             }
 
@@ -4149,7 +4494,7 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Paragrafo__ParagrafoAssignment"
+    // $ANTLR end "rule__Paragrafo__ParagrafoAssignment_0"
 
     // Delegated rules
 
@@ -4184,5 +4529,6 @@ public class InternalMemorandoParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000400002L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000001000000L});
 
 }

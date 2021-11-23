@@ -20,6 +20,7 @@ import org.xtext.example.mydsl.services.MemorandoGrammarAccess;
 public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MemorandoGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Destino_SpaceKeyword_1_q;
 	protected AbstractElementAlias match_Memorando_AssuntoKeyword_18_p;
 	protected AbstractElementAlias match_Memorando_CargoRemetenteKeyword_26_p;
 	protected AbstractElementAlias match_Memorando_DestinosKeyword_20_p;
@@ -28,10 +29,12 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Memorando_RemetenteKeyword_24_p;
 	protected AbstractElementAlias match_Memorando_SetorDestinatarioKeyword_2_p;
 	protected AbstractElementAlias match_Memorando_SetorRemetenteKeyword_4_p;
+	protected AbstractElementAlias match_Paragrafo_SpaceKeyword_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MemorandoGrammarAccess) access;
+		match_Destino_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getDestinoAccess().getSpaceKeyword_1());
 		match_Memorando_AssuntoKeyword_18_p = new TokenAlias(true, false, grammarAccess.getMemorandoAccess().getAssuntoKeyword_18());
 		match_Memorando_CargoRemetenteKeyword_26_p = new TokenAlias(true, false, grammarAccess.getMemorandoAccess().getCargoRemetenteKeyword_26());
 		match_Memorando_DestinosKeyword_20_p = new TokenAlias(true, false, grammarAccess.getMemorandoAccess().getDestinosKeyword_20());
@@ -40,6 +43,7 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Memorando_RemetenteKeyword_24_p = new TokenAlias(true, false, grammarAccess.getMemorandoAccess().getRemetenteKeyword_24());
 		match_Memorando_SetorDestinatarioKeyword_2_p = new TokenAlias(true, false, grammarAccess.getMemorandoAccess().getSetorDestinatarioKeyword_2());
 		match_Memorando_SetorRemetenteKeyword_4_p = new TokenAlias(true, false, grammarAccess.getMemorandoAccess().getSetorRemetenteKeyword_4());
+		match_Paragrafo_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getParagrafoAccess().getSpaceKeyword_1());
 	}
 	
 	@Override
@@ -54,7 +58,9 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Memorando_AssuntoKeyword_18_p.equals(syntax))
+			if (match_Destino_SpaceKeyword_1_q.equals(syntax))
+				emit_Destino_SpaceKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Memorando_AssuntoKeyword_18_p.equals(syntax))
 				emit_Memorando_AssuntoKeyword_18_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Memorando_CargoRemetenteKeyword_26_p.equals(syntax))
 				emit_Memorando_CargoRemetenteKeyword_26_p(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -70,10 +76,23 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Memorando_SetorDestinatarioKeyword_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Memorando_SetorRemetenteKeyword_4_p.equals(syntax))
 				emit_Memorando_SetorRemetenteKeyword_4_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Paragrafo_SpaceKeyword_1_q.equals(syntax))
+				emit_Paragrafo_SpaceKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ' '?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     destino=ID (ambiguity) (rule end)
+	 */
+	protected void emit_Destino_SpaceKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     ', Assunto: '+
@@ -98,11 +117,11 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ', Destinos: '+
+	 *     ', Destinos: ['+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     assunto=STRING (ambiguity) ', Mensagem: '+ ', Remetente: '+ remetente=STRING
-	 *     assunto=STRING (ambiguity) ', Mensagem: '+ paragrafos+=Paragrafo
+	 *     assunto=STRING (ambiguity) '], Mensagem: ['+ '], Remetente: '+ remetente=STRING
+	 *     assunto=STRING (ambiguity) '], Mensagem: ['+ paragrafos+=Paragrafo
 	 *     assunto=STRING (ambiguity) destinos+=Destino
 	 */
 	protected void emit_Memorando_DestinosKeyword_20_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -111,12 +130,12 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ', Mensagem: '+
+	 *     '], Mensagem: ['+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     assunto=STRING ', Destinos: '+ (ambiguity) ', Remetente: '+ remetente=STRING
-	 *     assunto=STRING ', Destinos: '+ (ambiguity) paragrafos+=Paragrafo
-	 *     destinos+=Destino (ambiguity) ', Remetente: '+ remetente=STRING
+	 *     assunto=STRING ', Destinos: ['+ (ambiguity) '], Remetente: '+ remetente=STRING
+	 *     assunto=STRING ', Destinos: ['+ (ambiguity) paragrafos+=Paragrafo
+	 *     destinos+=Destino (ambiguity) '], Remetente: '+ remetente=STRING
 	 *     destinos+=Destino (ambiguity) paragrafos+=Paragrafo
 	 */
 	protected void emit_Memorando_MensagemKeyword_22_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -136,11 +155,11 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ', Remetente: '+
+	 *     '], Remetente: '+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     assunto=STRING ', Destinos: '+ ', Mensagem: '+ (ambiguity) remetente=STRING
-	 *     destinos+=Destino ', Mensagem: '+ (ambiguity) remetente=STRING
+	 *     assunto=STRING ', Destinos: ['+ '], Mensagem: ['+ (ambiguity) remetente=STRING
+	 *     destinos+=Destino '], Mensagem: ['+ (ambiguity) remetente=STRING
 	 *     paragrafos+=Paragrafo (ambiguity) remetente=STRING
 	 */
 	protected void emit_Memorando_RemetenteKeyword_24_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -166,6 +185,17 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     setorDestinatario=ID (ambiguity) setorRemetente=ID
 	 */
 	protected void emit_Memorando_SetorRemetenteKeyword_4_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ' '?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     paragrafo=STRING (ambiguity) (rule end)
+	 */
+	protected void emit_Paragrafo_SpaceKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

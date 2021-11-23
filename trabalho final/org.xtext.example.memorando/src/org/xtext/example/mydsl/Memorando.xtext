@@ -14,13 +14,13 @@ Memorando:
 	", Data: " dia=INT + "/" mes=ID + "/" ano=INT + 
 	", Cargo Destinatario: " cargoDestinatario=STRING + 
 	", Assunto: " + assunto=STRING + 
-	", Destinos: " + (destinos+=Destino*) +
-	", Mensagem: " + (paragrafos+=Paragrafo*) +
-	", Remetente: " + remetente=STRING +
+	", Destinos: [" + (destinos+=Destino*) +
+	"], Mensagem: [" + (paragrafos+=Paragrafo*) +
+	"], Remetente: " + remetente=STRING +
 	", Cargo Remetente: " + cargoRemetente=STRING;
 
 Destino:
-	destino=ID;
+	destino=ID " "?;
 	
 Paragrafo:
-	paragrafo=STRING;
+	paragrafo=STRING " "?;

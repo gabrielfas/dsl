@@ -65,7 +65,7 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MemorandoPackage.Literals.DESTINO__DESTINO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0(), semanticObject.getDestino());
+		feeder.accept(grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0_0(), semanticObject.getDestino());
 		feeder.finish();
 	}
 	
@@ -122,7 +122,7 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MemorandoPackage.Literals.PARAGRAFO__PARAGRAFO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0(), semanticObject.getParagrafo());
+		feeder.accept(grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0_0(), semanticObject.getParagrafo());
 		feeder.finish();
 	}
 	

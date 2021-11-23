@@ -32,6 +32,8 @@ public class MemorandoParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MemorandoGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getMemorandoAccess().getGroup(), "rule__Memorando__Group__0");
+			builder.put(grammarAccess.getDestinoAccess().getGroup(), "rule__Destino__Group__0");
+			builder.put(grammarAccess.getParagrafoAccess().getGroup(), "rule__Paragrafo__Group__0");
 			builder.put(grammarAccess.getModelAccess().getMemorandosAssignment(), "rule__Model__MemorandosAssignment");
 			builder.put(grammarAccess.getMemorandoAccess().getNumeroAssignment_1(), "rule__Memorando__NumeroAssignment_1");
 			builder.put(grammarAccess.getMemorandoAccess().getSetorDestinatarioAssignment_3(), "rule__Memorando__SetorDestinatarioAssignment_3");
@@ -47,8 +49,8 @@ public class MemorandoParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMemorandoAccess().getParagrafosAssignment_23(), "rule__Memorando__ParagrafosAssignment_23");
 			builder.put(grammarAccess.getMemorandoAccess().getRemetenteAssignment_25(), "rule__Memorando__RemetenteAssignment_25");
 			builder.put(grammarAccess.getMemorandoAccess().getCargoRemetenteAssignment_27(), "rule__Memorando__CargoRemetenteAssignment_27");
-			builder.put(grammarAccess.getDestinoAccess().getDestinoAssignment(), "rule__Destino__DestinoAssignment");
-			builder.put(grammarAccess.getParagrafoAccess().getParagrafoAssignment(), "rule__Paragrafo__ParagrafoAssignment");
+			builder.put(grammarAccess.getDestinoAccess().getDestinoAssignment_0(), "rule__Destino__DestinoAssignment_0");
+			builder.put(grammarAccess.getParagrafoAccess().getParagrafoAssignment_0(), "rule__Paragrafo__ParagrafoAssignment_0");
 		}
 	}
 	
