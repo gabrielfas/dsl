@@ -12,10 +12,12 @@ import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.example.mydsl.memorando.CargoDestinatario;
 import org.xtext.example.mydsl.memorando.Destino;
 import org.xtext.example.mydsl.memorando.Memorando;
 import org.xtext.example.mydsl.memorando.Model;
 import org.xtext.example.mydsl.memorando.Paragrafo;
+import org.xtext.example.mydsl.memorando.SetorDestinatario;
 
 /**
  * Generates code from your model files on save.
@@ -32,16 +34,20 @@ public class MemorandoGenerator extends AbstractGenerator {
         int i = 1;
         EList<Memorando> _memorandos = e.getMemorandos();
         for (final Memorando x : _memorandos) {
-          {
-            fsa.generateFile((("memorando" + Integer.valueOf(i)) + ".html"), this.toHtml(x));
-            i = (i + 1);
+          for (int j = 0; (j < x.getSetoresDestinatarios().size()); j++) {
+            {
+              SetorDestinatario setor = x.getSetoresDestinatarios().get(j);
+              CargoDestinatario cargo = x.getCargosDestinatarios().get(j);
+              fsa.generateFile((("memorando" + Integer.valueOf(i)) + ".html"), this.toHtml(x, setor, cargo));
+              i = (i + 1);
+            }
           }
         }
       }
     }
   }
   
-  public CharSequence toHtml(final Memorando c) {
+  public CharSequence toHtml(final Memorando c, final SetorDestinatario s, final CargoDestinatario ca) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<!DOCTYPE html>");
     _builder.newLine();
@@ -337,10 +343,10 @@ public class MemorandoGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("<P class=\"p3 ft2\">Ao Sr ");
-    String _cargoDestinatario = c.getCargoDestinatario();
+    String _cargoDestinatario = ca.getCargoDestinatario();
     _builder.append(_cargoDestinatario, "\t");
     _builder.append(" da ");
-    String _setorDestinatario = c.getSetorDestinatario();
+    String _setorDestinatario = s.getSetorDestinatario();
     _builder.append(_setorDestinatario, "\t");
     _builder.append("</P>");
     _builder.newLineIfNotEmpty();

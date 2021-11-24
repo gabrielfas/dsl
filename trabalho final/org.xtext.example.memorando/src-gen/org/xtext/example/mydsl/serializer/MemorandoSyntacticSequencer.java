@@ -20,14 +20,18 @@ import org.xtext.example.mydsl.services.MemorandoGrammarAccess;
 public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MemorandoGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_CargoDestinatario_SpaceKeyword_1_q;
 	protected AbstractElementAlias match_Destino_SpaceKeyword_1_q;
 	protected AbstractElementAlias match_Paragrafo_SpaceKeyword_1_q;
+	protected AbstractElementAlias match_SetorDestinatario_SpaceKeyword_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MemorandoGrammarAccess) access;
+		match_CargoDestinatario_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getCargoDestinatarioAccess().getSpaceKeyword_1());
 		match_Destino_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getDestinoAccess().getSpaceKeyword_1());
 		match_Paragrafo_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getParagrafoAccess().getSpaceKeyword_1());
+		match_SetorDestinatario_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getSetorDestinatarioAccess().getSpaceKeyword_1());
 	}
 	
 	@Override
@@ -42,14 +46,29 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Destino_SpaceKeyword_1_q.equals(syntax))
+			if (match_CargoDestinatario_SpaceKeyword_1_q.equals(syntax))
+				emit_CargoDestinatario_SpaceKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Destino_SpaceKeyword_1_q.equals(syntax))
 				emit_Destino_SpaceKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Paragrafo_SpaceKeyword_1_q.equals(syntax))
 				emit_Paragrafo_SpaceKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SetorDestinatario_SpaceKeyword_1_q.equals(syntax))
+				emit_SetorDestinatario_SpaceKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ' '?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     cargoDestinatario=STRING (ambiguity) (rule end)
+	 */
+	protected void emit_CargoDestinatario_SpaceKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     ' '?
@@ -69,6 +88,17 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     paragrafo=STRING (ambiguity) (rule end)
 	 */
 	protected void emit_Paragrafo_SpaceKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ' '?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     setorDestinatario=ID (ambiguity) (rule end)
+	 */
+	protected void emit_SetorDestinatario_SpaceKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

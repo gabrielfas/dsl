@@ -17,14 +17,14 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getNumero <em>Numero</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getSetorDestinatario <em>Setor Destinatario</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getSetoresDestinatarios <em>Setores Destinatarios</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getSetorRemetente <em>Setor Remetente</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getCidade <em>Cidade</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getEstado <em>Estado</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getDia <em>Dia</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getMes <em>Mes</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getAno <em>Ano</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getCargoDestinatario <em>Cargo Destinatario</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getCargosDestinatarios <em>Cargos Destinatarios</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getAssunto <em>Assunto</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getDestinos <em>Destinos</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getParagrafos <em>Paragrafos</em>}</li>
@@ -61,26 +61,16 @@ public interface Memorando extends EObject
   void setNumero(int value);
 
   /**
-   * Returns the value of the '<em><b>Setor Destinatario</b></em>' attribute.
+   * Returns the value of the '<em><b>Setores Destinatarios</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.memorando.SetorDestinatario}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Setor Destinatario</em>' attribute.
-   * @see #setSetorDestinatario(String)
-   * @see org.xtext.example.mydsl.memorando.MemorandoPackage#getMemorando_SetorDestinatario()
-   * @model
+   * @return the value of the '<em>Setores Destinatarios</em>' containment reference list.
+   * @see org.xtext.example.mydsl.memorando.MemorandoPackage#getMemorando_SetoresDestinatarios()
+   * @model containment="true"
    * @generated
    */
-  String getSetorDestinatario();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.memorando.Memorando#getSetorDestinatario <em>Setor Destinatario</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Setor Destinatario</em>' attribute.
-   * @see #getSetorDestinatario()
-   * @generated
-   */
-  void setSetorDestinatario(String value);
+  EList<SetorDestinatario> getSetoresDestinatarios();
 
   /**
    * Returns the value of the '<em><b>Setor Remetente</b></em>' attribute.
@@ -215,26 +205,16 @@ public interface Memorando extends EObject
   void setAno(int value);
 
   /**
-   * Returns the value of the '<em><b>Cargo Destinatario</b></em>' attribute.
+   * Returns the value of the '<em><b>Cargos Destinatarios</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.memorando.CargoDestinatario}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Cargo Destinatario</em>' attribute.
-   * @see #setCargoDestinatario(String)
-   * @see org.xtext.example.mydsl.memorando.MemorandoPackage#getMemorando_CargoDestinatario()
-   * @model
+   * @return the value of the '<em>Cargos Destinatarios</em>' containment reference list.
+   * @see org.xtext.example.mydsl.memorando.MemorandoPackage#getMemorando_CargosDestinatarios()
+   * @model containment="true"
    * @generated
    */
-  String getCargoDestinatario();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.memorando.Memorando#getCargoDestinatario <em>Cargo Destinatario</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Cargo Destinatario</em>' attribute.
-   * @see #getCargoDestinatario()
-   * @generated
-   */
-  void setCargoDestinatario(String value);
+  EList<CargoDestinatario> getCargosDestinatarios();
 
   /**
    * Returns the value of the '<em><b>Assunto</b></em>' attribute.

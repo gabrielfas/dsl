@@ -8,14 +8,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Memorando">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numero" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setorDestinatario" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="setoresDestinatarios" upperBound="-1"
+        eType="#//SetorDestinatario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="setorRemetente" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cidade" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="estado" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dia" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ano" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cargoDestinatario" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cargosDestinatarios" upperBound="-1"
+        eType="#//CargoDestinatario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assunto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destinos" upperBound="-1"
         eType="#//Destino" containment="true"/>
@@ -29,5 +31,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Paragrafo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="paragrafo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetorDestinatario">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setorDestinatario" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CargoDestinatario">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cargoDestinatario" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

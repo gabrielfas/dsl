@@ -11,14 +11,14 @@
     </genClasses>
     <genClasses ecoreClass="Memorando.ecore#//Memorando">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/numero"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/setorDestinatario"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Memorando.ecore#//Memorando/setoresDestinatarios"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/setorRemetente"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/cidade"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/estado"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/dia"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/mes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/ano"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/cargoDestinatario"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Memorando.ecore#//Memorando/cargosDestinatarios"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/assunto"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Memorando.ecore#//Memorando/destinos"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Memorando.ecore#//Memorando/paragrafos"/>
@@ -30,6 +30,12 @@
     </genClasses>
     <genClasses ecoreClass="Memorando.ecore#//Paragrafo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Paragrafo/paragrafo"/>
+    </genClasses>
+    <genClasses ecoreClass="Memorando.ecore#//SetorDestinatario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//SetorDestinatario/setorDestinatario"/>
+    </genClasses>
+    <genClasses ecoreClass="Memorando.ecore#//CargoDestinatario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//CargoDestinatario/cargoDestinatario"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

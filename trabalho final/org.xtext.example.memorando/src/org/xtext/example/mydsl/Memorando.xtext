@@ -7,12 +7,12 @@ Model:
 	
 Memorando:
 	"Numero" ':' numero=INT
-	"Setor Destinatario" ':' setorDestinatario=ID
+	"Setores Destinatarios" ':' '[' (setoresDestinatarios+=SetorDestinatario*) ']'
 	"Setor Remetente" ':' setorRemetente=ID
 	"Cidade" ':' cidade=ID
 	"Estado" ':' estado=ID
 	"Data" ':' dia=INT '/' mes=ID '/' ano=INT 
-	"Cargo Destinatario" ':' cargoDestinatario=STRING 
+	"Cargos Destinatarios" ':' '[' (cargosDestinatarios+=CargoDestinatario*) ']'
 	"Assunto" ':' assunto=STRING 
 	"Destinos" ':' '[' (destinos+=Destino*) ']' 
 	"Mensagem" ':' '[' (paragrafos+=Paragrafo*) ']' 
@@ -25,3 +25,9 @@ Destino:
 	
 Paragrafo:
 	paragrafo=STRING " "?;
+
+SetorDestinatario:
+	setorDestinatario=ID " "?;
+	
+CargoDestinatario:
+	cargoDestinatario=STRING " "?;

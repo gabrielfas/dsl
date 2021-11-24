@@ -60,6 +60,24 @@ public interface MemorandoFactory extends EFactory
   Paragrafo createParagrafo();
 
   /**
+   * Returns a new object of class '<em>Setor Destinatario</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Setor Destinatario</em>'.
+   * @generated
+   */
+  SetorDestinatario createSetorDestinatario();
+
+  /**
+   * Returns a new object of class '<em>Cargo Destinatario</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cargo Destinatario</em>'.
+   * @generated
+   */
+  CargoDestinatario createCargoDestinatario();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

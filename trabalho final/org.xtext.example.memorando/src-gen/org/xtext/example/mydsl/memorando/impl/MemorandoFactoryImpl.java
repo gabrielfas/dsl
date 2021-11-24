@@ -69,6 +69,8 @@ public class MemorandoFactoryImpl extends EFactoryImpl implements MemorandoFacto
       case MemorandoPackage.MEMORANDO: return createMemorando();
       case MemorandoPackage.DESTINO: return createDestino();
       case MemorandoPackage.PARAGRAFO: return createParagrafo();
+      case MemorandoPackage.SETOR_DESTINATARIO: return createSetorDestinatario();
+      case MemorandoPackage.CARGO_DESTINATARIO: return createCargoDestinatario();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -120,6 +122,30 @@ public class MemorandoFactoryImpl extends EFactoryImpl implements MemorandoFacto
   {
     ParagrafoImpl paragrafo = new ParagrafoImpl();
     return paragrafo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SetorDestinatario createSetorDestinatario()
+  {
+    SetorDestinatarioImpl setorDestinatario = new SetorDestinatarioImpl();
+    return setorDestinatario;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CargoDestinatario createCargoDestinatario()
+  {
+    CargoDestinatarioImpl cargoDestinatario = new CargoDestinatarioImpl();
+    return cargoDestinatario;
   }
 
   /**

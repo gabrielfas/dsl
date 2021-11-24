@@ -14,11 +14,13 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.example.mydsl.memorando.CargoDestinatario;
 import org.xtext.example.mydsl.memorando.Destino;
 import org.xtext.example.mydsl.memorando.Memorando;
 import org.xtext.example.mydsl.memorando.MemorandoPackage;
 import org.xtext.example.mydsl.memorando.Model;
 import org.xtext.example.mydsl.memorando.Paragrafo;
+import org.xtext.example.mydsl.memorando.SetorDestinatario;
 import org.xtext.example.mydsl.services.MemorandoGrammarAccess;
 
 @SuppressWarnings("all")
@@ -35,6 +37,9 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MemorandoPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case MemorandoPackage.CARGO_DESTINATARIO:
+				sequence_CargoDestinatario(context, (CargoDestinatario) semanticObject); 
+				return; 
 			case MemorandoPackage.DESTINO:
 				sequence_Destino(context, (Destino) semanticObject); 
 				return; 
@@ -47,10 +52,31 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case MemorandoPackage.PARAGRAFO:
 				sequence_Paragrafo(context, (Paragrafo) semanticObject); 
 				return; 
+			case MemorandoPackage.SETOR_DESTINATARIO:
+				sequence_SetorDestinatario(context, (SetorDestinatario) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     CargoDestinatario returns CargoDestinatario
+	 *
+	 * Constraint:
+	 *     cargoDestinatario=STRING
+	 */
+	protected void sequence_CargoDestinatario(ISerializationContext context, CargoDestinatario semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MemorandoPackage.Literals.CARGO_DESTINATARIO__CARGO_DESTINATARIO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MemorandoPackage.Literals.CARGO_DESTINATARIO__CARGO_DESTINATARIO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCargoDestinatarioAccess().getCargoDestinatarioSTRINGTerminalRuleCall_0_0(), semanticObject.getCargoDestinatario());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -77,14 +103,14 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         numero=INT 
-	 *         setorDestinatario=ID 
+	 *         setoresDestinatarios+=SetorDestinatario* 
 	 *         setorRemetente=ID 
 	 *         cidade=ID 
 	 *         estado=ID 
 	 *         dia=INT 
 	 *         mes=ID 
 	 *         ano=INT 
-	 *         cargoDestinatario=STRING 
+	 *         cargosDestinatarios+=CargoDestinatario* 
 	 *         assunto=STRING 
 	 *         destinos+=Destino* 
 	 *         paragrafos+=Paragrafo* 
@@ -123,6 +149,24 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0_0(), semanticObject.getParagrafo());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SetorDestinatario returns SetorDestinatario
+	 *
+	 * Constraint:
+	 *     setorDestinatario=ID
+	 */
+	protected void sequence_SetorDestinatario(ISerializationContext context, SetorDestinatario semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MemorandoPackage.Literals.SETOR_DESTINATARIO__SETOR_DESTINATARIO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MemorandoPackage.Literals.SETOR_DESTINATARIO__SETOR_DESTINATARIO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSetorDestinatarioAccess().getSetorDestinatarioIDTerminalRuleCall_0_0(), semanticObject.getSetorDestinatario());
 		feeder.finish();
 	}
 	

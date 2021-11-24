@@ -9,6 +9,8 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.example.mydsl.memorando.Model
 import org.xtext.example.mydsl.memorando.Memorando
+import org.xtext.example.mydsl.memorando.SetorDestinatario
+import org.xtext.example.mydsl.memorando.CargoDestinatario
 
 /**
  * Generates code from your model files on save.
@@ -21,15 +23,19 @@ class MemorandoGenerator extends AbstractGenerator {
 		for(e: resource.allContents.toIterable.filter(typeof(Model))) {
 			var int i = 1;
 			for(x: e.getMemorandos()){
-				fsa.generateFile('memorando' + i + '.html', toHtml(x))
-				i = i + 1;
+				for(var int j = 0; j < x.getSetoresDestinatarios().size(); j++){
+					var SetorDestinatario setor = x.getSetoresDestinatarios().get(j);
+					var CargoDestinatario cargo = x.getCargosDestinatarios().get(j);
+					fsa.generateFile('memorando' + i + '.html', toHtml(x, setor, cargo))
+					i = i + 1;
+				}
+				
 			}
 		}
-			//fsa.generateFile('memorando.html', toHtml(resource.contents.head as Model))
 		
 	}
 	
-	def toHtml(Memorando c) '''
+	def toHtml(Memorando c, SetorDestinatario s, CargoDestinatario ca) '''
 		<!DOCTYPE html>
 		<html>
 		<head>
@@ -123,7 +129,7 @@ class MemorandoGenerator extends AbstractGenerator {
 			<P class="p0 ft0">.</P>
 			<P class="p1 ft1">Memorando nº «c.numero»/ «c.ano» - «c.setorRemetente»</P>
 			<P class="p2 ft1">«c.cidade» («c.estado»), «c.dia» de «c.mes» de «c.ano».</P>
-			<P class="p3 ft2">Ao Sr «c.cargoDestinatario» da «c.setorDestinatario»</P>
+			<P class="p3 ft2">Ao Sr «ca.cargoDestinatario» da «s.setorDestinatario»</P>
 			<P class="p4 ft1"><SPAN class="ft2">Assunto: </SPAN>«c.assunto»</P>
 			<P class="p3 ft2">Destinos: 
 			«FOR d : c.destinos»

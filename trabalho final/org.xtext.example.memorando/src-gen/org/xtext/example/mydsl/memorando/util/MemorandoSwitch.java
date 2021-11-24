@@ -101,6 +101,20 @@ public class MemorandoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MemorandoPackage.SETOR_DESTINATARIO:
+      {
+        SetorDestinatario setorDestinatario = (SetorDestinatario)theEObject;
+        T result = caseSetorDestinatario(setorDestinatario);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MemorandoPackage.CARGO_DESTINATARIO:
+      {
+        CargoDestinatario cargoDestinatario = (CargoDestinatario)theEObject;
+        T result = caseCargoDestinatario(cargoDestinatario);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -165,6 +179,38 @@ public class MemorandoSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseParagrafo(Paragrafo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Setor Destinatario</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Setor Destinatario</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetorDestinatario(SetorDestinatario object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Cargo Destinatario</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Cargo Destinatario</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCargoDestinatario(CargoDestinatario object)
   {
     return null;
   }

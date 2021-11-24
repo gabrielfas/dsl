@@ -105,13 +105,13 @@ public interface MemorandoPackage extends EPackage
   int MEMORANDO__NUMERO = 0;
 
   /**
-   * The feature id for the '<em><b>Setor Destinatario</b></em>' attribute.
+   * The feature id for the '<em><b>Setores Destinatarios</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MEMORANDO__SETOR_DESTINATARIO = 1;
+  int MEMORANDO__SETORES_DESTINATARIOS = 1;
 
   /**
    * The feature id for the '<em><b>Setor Remetente</b></em>' attribute.
@@ -168,13 +168,13 @@ public interface MemorandoPackage extends EPackage
   int MEMORANDO__ANO = 7;
 
   /**
-   * The feature id for the '<em><b>Cargo Destinatario</b></em>' attribute.
+   * The feature id for the '<em><b>Cargos Destinatarios</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MEMORANDO__CARGO_DESTINATARIO = 8;
+  int MEMORANDO__CARGOS_DESTINATARIOS = 8;
 
   /**
    * The feature id for the '<em><b>Assunto</b></em>' attribute.
@@ -286,6 +286,62 @@ public interface MemorandoPackage extends EPackage
    */
   int PARAGRAFO_FEATURE_COUNT = 1;
 
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.memorando.impl.SetorDestinatarioImpl <em>Setor Destinatario</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.memorando.impl.SetorDestinatarioImpl
+   * @see org.xtext.example.mydsl.memorando.impl.MemorandoPackageImpl#getSetorDestinatario()
+   * @generated
+   */
+  int SETOR_DESTINATARIO = 4;
+
+  /**
+   * The feature id for the '<em><b>Setor Destinatario</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SETOR_DESTINATARIO__SETOR_DESTINATARIO = 0;
+
+  /**
+   * The number of structural features of the '<em>Setor Destinatario</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SETOR_DESTINATARIO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.memorando.impl.CargoDestinatarioImpl <em>Cargo Destinatario</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.memorando.impl.CargoDestinatarioImpl
+   * @see org.xtext.example.mydsl.memorando.impl.MemorandoPackageImpl#getCargoDestinatario()
+   * @generated
+   */
+  int CARGO_DESTINATARIO = 5;
+
+  /**
+   * The feature id for the '<em><b>Cargo Destinatario</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CARGO_DESTINATARIO__CARGO_DESTINATARIO = 0;
+
+  /**
+   * The number of structural features of the '<em>Cargo Destinatario</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CARGO_DESTINATARIO_FEATURE_COUNT = 1;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.memorando.Model <em>Model</em>}'.
@@ -330,15 +386,15 @@ public interface MemorandoPackage extends EPackage
   EAttribute getMemorando_Numero();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.memorando.Memorando#getSetorDestinatario <em>Setor Destinatario</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.memorando.Memorando#getSetoresDestinatarios <em>Setores Destinatarios</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Setor Destinatario</em>'.
-   * @see org.xtext.example.mydsl.memorando.Memorando#getSetorDestinatario()
+   * @return the meta object for the containment reference list '<em>Setores Destinatarios</em>'.
+   * @see org.xtext.example.mydsl.memorando.Memorando#getSetoresDestinatarios()
    * @see #getMemorando()
    * @generated
    */
-  EAttribute getMemorando_SetorDestinatario();
+  EReference getMemorando_SetoresDestinatarios();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.memorando.Memorando#getSetorRemetente <em>Setor Remetente</em>}'.
@@ -407,15 +463,15 @@ public interface MemorandoPackage extends EPackage
   EAttribute getMemorando_Ano();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.memorando.Memorando#getCargoDestinatario <em>Cargo Destinatario</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.memorando.Memorando#getCargosDestinatarios <em>Cargos Destinatarios</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cargo Destinatario</em>'.
-   * @see org.xtext.example.mydsl.memorando.Memorando#getCargoDestinatario()
+   * @return the meta object for the containment reference list '<em>Cargos Destinatarios</em>'.
+   * @see org.xtext.example.mydsl.memorando.Memorando#getCargosDestinatarios()
    * @see #getMemorando()
    * @generated
    */
-  EAttribute getMemorando_CargoDestinatario();
+  EReference getMemorando_CargosDestinatarios();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.memorando.Memorando#getAssunto <em>Assunto</em>}'.
@@ -515,6 +571,48 @@ public interface MemorandoPackage extends EPackage
   EAttribute getParagrafo_Paragrafo();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.memorando.SetorDestinatario <em>Setor Destinatario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Setor Destinatario</em>'.
+   * @see org.xtext.example.mydsl.memorando.SetorDestinatario
+   * @generated
+   */
+  EClass getSetorDestinatario();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.memorando.SetorDestinatario#getSetorDestinatario <em>Setor Destinatario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Setor Destinatario</em>'.
+   * @see org.xtext.example.mydsl.memorando.SetorDestinatario#getSetorDestinatario()
+   * @see #getSetorDestinatario()
+   * @generated
+   */
+  EAttribute getSetorDestinatario_SetorDestinatario();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.memorando.CargoDestinatario <em>Cargo Destinatario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Cargo Destinatario</em>'.
+   * @see org.xtext.example.mydsl.memorando.CargoDestinatario
+   * @generated
+   */
+  EClass getCargoDestinatario();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.memorando.CargoDestinatario#getCargoDestinatario <em>Cargo Destinatario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Cargo Destinatario</em>'.
+   * @see org.xtext.example.mydsl.memorando.CargoDestinatario#getCargoDestinatario()
+   * @see #getCargoDestinatario()
+   * @generated
+   */
+  EAttribute getCargoDestinatario_CargoDestinatario();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -574,12 +672,12 @@ public interface MemorandoPackage extends EPackage
     EAttribute MEMORANDO__NUMERO = eINSTANCE.getMemorando_Numero();
 
     /**
-     * The meta object literal for the '<em><b>Setor Destinatario</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Setores Destinatarios</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MEMORANDO__SETOR_DESTINATARIO = eINSTANCE.getMemorando_SetorDestinatario();
+    EReference MEMORANDO__SETORES_DESTINATARIOS = eINSTANCE.getMemorando_SetoresDestinatarios();
 
     /**
      * The meta object literal for the '<em><b>Setor Remetente</b></em>' attribute feature.
@@ -630,12 +728,12 @@ public interface MemorandoPackage extends EPackage
     EAttribute MEMORANDO__ANO = eINSTANCE.getMemorando_Ano();
 
     /**
-     * The meta object literal for the '<em><b>Cargo Destinatario</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Cargos Destinatarios</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MEMORANDO__CARGO_DESTINATARIO = eINSTANCE.getMemorando_CargoDestinatario();
+    EReference MEMORANDO__CARGOS_DESTINATARIOS = eINSTANCE.getMemorando_CargosDestinatarios();
 
     /**
      * The meta object literal for the '<em><b>Assunto</b></em>' attribute feature.
@@ -712,6 +810,42 @@ public interface MemorandoPackage extends EPackage
      * @generated
      */
     EAttribute PARAGRAFO__PARAGRAFO = eINSTANCE.getParagrafo_Paragrafo();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.memorando.impl.SetorDestinatarioImpl <em>Setor Destinatario</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.memorando.impl.SetorDestinatarioImpl
+     * @see org.xtext.example.mydsl.memorando.impl.MemorandoPackageImpl#getSetorDestinatario()
+     * @generated
+     */
+    EClass SETOR_DESTINATARIO = eINSTANCE.getSetorDestinatario();
+
+    /**
+     * The meta object literal for the '<em><b>Setor Destinatario</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SETOR_DESTINATARIO__SETOR_DESTINATARIO = eINSTANCE.getSetorDestinatario_SetorDestinatario();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.memorando.impl.CargoDestinatarioImpl <em>Cargo Destinatario</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.memorando.impl.CargoDestinatarioImpl
+     * @see org.xtext.example.mydsl.memorando.impl.MemorandoPackageImpl#getCargoDestinatario()
+     * @generated
+     */
+    EClass CARGO_DESTINATARIO = eINSTANCE.getCargoDestinatario();
+
+    /**
+     * The meta object literal for the '<em><b>Cargo Destinatario</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CARGO_DESTINATARIO__CARGO_DESTINATARIO = eINSTANCE.getCargoDestinatario_CargoDestinatario();
 
   }
 

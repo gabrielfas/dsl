@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-16">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/aspose.pdf-21.11-java/lib/aspose.pdf-21.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/bcpkix-jdk15on-1.67.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/bcprov-jdk15on-1.67.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/forms-7.1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/html2pdf-3.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/io-7.1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/itextpdf-5.5.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/kernel-7.1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/layout-7.1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/slf4j-api-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/styled-xml-parser-7.1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/svg-7.1.14.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
