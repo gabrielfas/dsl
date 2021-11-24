@@ -86,11 +86,6 @@ public class MemorandoAdapterFactory extends AdapterFactoryImpl
         return createMemorandoAdapter();
       }
       @Override
-      public Adapter caseDestino(Destino object)
-      {
-        return createDestinoAdapter();
-      }
-      @Override
       public Adapter caseParagrafo(Paragrafo object)
       {
         return createParagrafoAdapter();
@@ -153,21 +148,6 @@ public class MemorandoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMemorandoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.memorando.Destino <em>Destino</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.memorando.Destino
-   * @generated
-   */
-  public Adapter createDestinoAdapter()
   {
     return null;
   }

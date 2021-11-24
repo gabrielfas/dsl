@@ -186,22 +186,13 @@ public interface MemorandoPackage extends EPackage
   int MEMORANDO__ASSUNTO = 9;
 
   /**
-   * The feature id for the '<em><b>Destinos</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MEMORANDO__DESTINOS = 10;
-
-  /**
    * The feature id for the '<em><b>Paragrafos</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MEMORANDO__PARAGRAFOS = 11;
+  int MEMORANDO__PARAGRAFOS = 10;
 
   /**
    * The feature id for the '<em><b>Remetente</b></em>' attribute.
@@ -210,7 +201,7 @@ public interface MemorandoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MEMORANDO__REMETENTE = 12;
+  int MEMORANDO__REMETENTE = 11;
 
   /**
    * The feature id for the '<em><b>Cargo Remetente</b></em>' attribute.
@@ -219,7 +210,7 @@ public interface MemorandoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MEMORANDO__CARGO_REMETENTE = 13;
+  int MEMORANDO__CARGO_REMETENTE = 12;
 
   /**
    * The number of structural features of the '<em>Memorando</em>' class.
@@ -228,35 +219,7 @@ public interface MemorandoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MEMORANDO_FEATURE_COUNT = 14;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.memorando.impl.DestinoImpl <em>Destino</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.memorando.impl.DestinoImpl
-   * @see org.xtext.example.mydsl.memorando.impl.MemorandoPackageImpl#getDestino()
-   * @generated
-   */
-  int DESTINO = 2;
-
-  /**
-   * The feature id for the '<em><b>Destino</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DESTINO__DESTINO = 0;
-
-  /**
-   * The number of structural features of the '<em>Destino</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DESTINO_FEATURE_COUNT = 1;
+  int MEMORANDO_FEATURE_COUNT = 13;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.memorando.impl.ParagrafoImpl <em>Paragrafo</em>}' class.
@@ -266,7 +229,7 @@ public interface MemorandoPackage extends EPackage
    * @see org.xtext.example.mydsl.memorando.impl.MemorandoPackageImpl#getParagrafo()
    * @generated
    */
-  int PARAGRAFO = 3;
+  int PARAGRAFO = 2;
 
   /**
    * The feature id for the '<em><b>Paragrafo</b></em>' attribute.
@@ -294,7 +257,7 @@ public interface MemorandoPackage extends EPackage
    * @see org.xtext.example.mydsl.memorando.impl.MemorandoPackageImpl#getSetorDestinatario()
    * @generated
    */
-  int SETOR_DESTINATARIO = 4;
+  int SETOR_DESTINATARIO = 3;
 
   /**
    * The feature id for the '<em><b>Setor Destinatario</b></em>' attribute.
@@ -322,7 +285,7 @@ public interface MemorandoPackage extends EPackage
    * @see org.xtext.example.mydsl.memorando.impl.MemorandoPackageImpl#getCargoDestinatario()
    * @generated
    */
-  int CARGO_DESTINATARIO = 5;
+  int CARGO_DESTINATARIO = 4;
 
   /**
    * The feature id for the '<em><b>Cargo Destinatario</b></em>' attribute.
@@ -485,17 +448,6 @@ public interface MemorandoPackage extends EPackage
   EAttribute getMemorando_Assunto();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.memorando.Memorando#getDestinos <em>Destinos</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Destinos</em>'.
-   * @see org.xtext.example.mydsl.memorando.Memorando#getDestinos()
-   * @see #getMemorando()
-   * @generated
-   */
-  EReference getMemorando_Destinos();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.memorando.Memorando#getParagrafos <em>Paragrafos</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -527,27 +479,6 @@ public interface MemorandoPackage extends EPackage
    * @generated
    */
   EAttribute getMemorando_CargoRemetente();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.memorando.Destino <em>Destino</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Destino</em>'.
-   * @see org.xtext.example.mydsl.memorando.Destino
-   * @generated
-   */
-  EClass getDestino();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.memorando.Destino#getDestino <em>Destino</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Destino</em>'.
-   * @see org.xtext.example.mydsl.memorando.Destino#getDestino()
-   * @see #getDestino()
-   * @generated
-   */
-  EAttribute getDestino_Destino();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.memorando.Paragrafo <em>Paragrafo</em>}'.
@@ -744,14 +675,6 @@ public interface MemorandoPackage extends EPackage
     EAttribute MEMORANDO__ASSUNTO = eINSTANCE.getMemorando_Assunto();
 
     /**
-     * The meta object literal for the '<em><b>Destinos</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MEMORANDO__DESTINOS = eINSTANCE.getMemorando_Destinos();
-
-    /**
      * The meta object literal for the '<em><b>Paragrafos</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -774,24 +697,6 @@ public interface MemorandoPackage extends EPackage
      * @generated
      */
     EAttribute MEMORANDO__CARGO_REMETENTE = eINSTANCE.getMemorando_CargoRemetente();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.memorando.impl.DestinoImpl <em>Destino</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.memorando.impl.DestinoImpl
-     * @see org.xtext.example.mydsl.memorando.impl.MemorandoPackageImpl#getDestino()
-     * @generated
-     */
-    EClass DESTINO = eINSTANCE.getDestino();
-
-    /**
-     * The meta object literal for the '<em><b>Destino</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DESTINO__DESTINO = eINSTANCE.getDestino_Destino();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.memorando.impl.ParagrafoImpl <em>Paragrafo</em>}' class.

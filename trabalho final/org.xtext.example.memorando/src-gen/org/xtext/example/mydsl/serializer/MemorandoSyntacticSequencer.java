@@ -21,7 +21,6 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MemorandoGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_CargoDestinatario_SpaceKeyword_1_q;
-	protected AbstractElementAlias match_Destino_SpaceKeyword_1_q;
 	protected AbstractElementAlias match_Paragrafo_SpaceKeyword_1_q;
 	protected AbstractElementAlias match_SetorDestinatario_SpaceKeyword_1_q;
 	
@@ -29,7 +28,6 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MemorandoGrammarAccess) access;
 		match_CargoDestinatario_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getCargoDestinatarioAccess().getSpaceKeyword_1());
-		match_Destino_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getDestinoAccess().getSpaceKeyword_1());
 		match_Paragrafo_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getParagrafoAccess().getSpaceKeyword_1());
 		match_SetorDestinatario_SpaceKeyword_1_q = new TokenAlias(false, true, grammarAccess.getSetorDestinatarioAccess().getSpaceKeyword_1());
 	}
@@ -48,8 +46,6 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_CargoDestinatario_SpaceKeyword_1_q.equals(syntax))
 				emit_CargoDestinatario_SpaceKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Destino_SpaceKeyword_1_q.equals(syntax))
-				emit_Destino_SpaceKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Paragrafo_SpaceKeyword_1_q.equals(syntax))
 				emit_Paragrafo_SpaceKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_SetorDestinatario_SpaceKeyword_1_q.equals(syntax))
@@ -66,17 +62,6 @@ public class MemorandoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     cargoDestinatario=STRING (ambiguity) (rule end)
 	 */
 	protected void emit_CargoDestinatario_SpaceKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ' '?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     destino=ID (ambiguity) (rule end)
-	 */
-	protected void emit_Destino_SpaceKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

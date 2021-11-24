@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.mydsl.memorando.CargoDestinatario;
-import org.xtext.example.mydsl.memorando.Destino;
 import org.xtext.example.mydsl.memorando.Memorando;
 import org.xtext.example.mydsl.memorando.MemorandoFactory;
 import org.xtext.example.mydsl.memorando.MemorandoPackage;
@@ -40,13 +39,6 @@ public class MemorandoPackageImpl extends EPackageImpl implements MemorandoPacka
    * @generated
    */
   private EClass memorandoEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass destinoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -281,7 +273,7 @@ public class MemorandoPackageImpl extends EPackageImpl implements MemorandoPacka
    * @generated
    */
   @Override
-  public EReference getMemorando_Destinos()
+  public EReference getMemorando_Paragrafos()
   {
     return (EReference)memorandoEClass.getEStructuralFeatures().get(10);
   }
@@ -292,20 +284,9 @@ public class MemorandoPackageImpl extends EPackageImpl implements MemorandoPacka
    * @generated
    */
   @Override
-  public EReference getMemorando_Paragrafos()
-  {
-    return (EReference)memorandoEClass.getEStructuralFeatures().get(11);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EAttribute getMemorando_Remetente()
   {
-    return (EAttribute)memorandoEClass.getEStructuralFeatures().get(12);
+    return (EAttribute)memorandoEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -316,29 +297,7 @@ public class MemorandoPackageImpl extends EPackageImpl implements MemorandoPacka
   @Override
   public EAttribute getMemorando_CargoRemetente()
   {
-    return (EAttribute)memorandoEClass.getEStructuralFeatures().get(13);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getDestino()
-  {
-    return destinoEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDestino_Destino()
-  {
-    return (EAttribute)destinoEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)memorandoEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -452,13 +411,9 @@ public class MemorandoPackageImpl extends EPackageImpl implements MemorandoPacka
     createEAttribute(memorandoEClass, MEMORANDO__ANO);
     createEReference(memorandoEClass, MEMORANDO__CARGOS_DESTINATARIOS);
     createEAttribute(memorandoEClass, MEMORANDO__ASSUNTO);
-    createEReference(memorandoEClass, MEMORANDO__DESTINOS);
     createEReference(memorandoEClass, MEMORANDO__PARAGRAFOS);
     createEAttribute(memorandoEClass, MEMORANDO__REMETENTE);
     createEAttribute(memorandoEClass, MEMORANDO__CARGO_REMETENTE);
-
-    destinoEClass = createEClass(DESTINO);
-    createEAttribute(destinoEClass, DESTINO__DESTINO);
 
     paragrafoEClass = createEClass(PARAGRAFO);
     createEAttribute(paragrafoEClass, PARAGRAFO__PARAGRAFO);
@@ -515,13 +470,9 @@ public class MemorandoPackageImpl extends EPackageImpl implements MemorandoPacka
     initEAttribute(getMemorando_Ano(), ecorePackage.getEInt(), "ano", null, 0, 1, Memorando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMemorando_CargosDestinatarios(), this.getCargoDestinatario(), null, "cargosDestinatarios", null, 0, -1, Memorando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMemorando_Assunto(), ecorePackage.getEString(), "assunto", null, 0, 1, Memorando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMemorando_Destinos(), this.getDestino(), null, "destinos", null, 0, -1, Memorando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMemorando_Paragrafos(), this.getParagrafo(), null, "paragrafos", null, 0, -1, Memorando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMemorando_Remetente(), ecorePackage.getEString(), "remetente", null, 0, 1, Memorando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMemorando_CargoRemetente(), ecorePackage.getEString(), "cargoRemetente", null, 0, 1, Memorando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(destinoEClass, Destino.class, "Destino", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDestino_Destino(), ecorePackage.getEString(), "destino", null, 0, 1, Destino.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paragrafoEClass, Paragrafo.class, "Paragrafo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParagrafo_Paragrafo(), ecorePackage.getEString(), "paragrafo", null, 0, 1, Paragrafo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

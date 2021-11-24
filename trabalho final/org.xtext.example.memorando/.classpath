@@ -21,5 +21,6 @@
 	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/slf4j-api-1.7.30.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/styled-xml-parser-7.1.14.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/svg-7.1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ormaz/Desktop/workspace dsl/jar_files/pdfcrowd-4.3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

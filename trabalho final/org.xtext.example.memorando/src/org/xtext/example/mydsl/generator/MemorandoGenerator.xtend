@@ -11,6 +11,7 @@ import org.xtext.example.mydsl.memorando.Model
 import org.xtext.example.mydsl.memorando.Memorando
 import org.xtext.example.mydsl.memorando.SetorDestinatario
 import org.xtext.example.mydsl.memorando.CargoDestinatario
+import com.pdfcrowd.Pdfcrowd
 
 /**
  * Generates code from your model files on save.
@@ -28,6 +29,8 @@ class MemorandoGenerator extends AbstractGenerator {
 					var CargoDestinatario cargo = x.getCargosDestinatarios().get(j);
 					fsa.generateFile('memorando' + i + '.html', toHtml(x, setor, cargo))
 					i = i + 1;
+					
+					//new Pdfcrowd.HtmlToPdfClient("ormazabal", "ad7af89d2bc6e6a53456b4ec57bae0de").convertUrlToFile("https://en.wikipedia.org", "result.pdf");
 				}
 				
 			}
@@ -131,11 +134,7 @@ class MemorandoGenerator extends AbstractGenerator {
 			<P class="p2 ft1">«c.cidade» («c.estado»), «c.dia» de «c.mes» de «c.ano».</P>
 			<P class="p3 ft2">Ao Sr «ca.cargoDestinatario» da «s.setorDestinatario»</P>
 			<P class="p4 ft1"><SPAN class="ft2">Assunto: </SPAN>«c.assunto»</P>
-			<P class="p3 ft2">Destinos: 
-			«FOR d : c.destinos»
-			«d.destino»
-			«ENDFOR»
-			</P>
+			<P class="p3 ft2">Destinos: «s.setorDestinatario»</P>
 			«FOR e : c.paragrafos»
 			<P class="p5 ft3">
 			«e.paragrafo»

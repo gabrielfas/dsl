@@ -13,7 +13,6 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.mydsl.memorando.CargoDestinatario;
-import org.xtext.example.mydsl.memorando.Destino;
 import org.xtext.example.mydsl.memorando.Memorando;
 import org.xtext.example.mydsl.memorando.Model;
 import org.xtext.example.mydsl.memorando.Paragrafo;
@@ -358,19 +357,10 @@ public class MemorandoGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("<P class=\"p3 ft2\">Destinos: ");
-    _builder.newLine();
-    {
-      EList<Destino> _destinos = c.getDestinos();
-      for(final Destino d : _destinos) {
-        _builder.append("\t");
-        String _destino = d.getDestino();
-        _builder.append(_destino, "\t");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("\t");
+    String _setorDestinatario_1 = s.getSetorDestinatario();
+    _builder.append(_setorDestinatario_1, "\t");
     _builder.append("</P>");
-    _builder.newLine();
+    _builder.newLineIfNotEmpty();
     {
       EList<Paragrafo> _paragrafos = c.getParagrafos();
       for(final Paragrafo e : _paragrafos) {

@@ -15,7 +15,6 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.memorando.CargoDestinatario;
-import org.xtext.example.mydsl.memorando.Destino;
 import org.xtext.example.mydsl.memorando.Memorando;
 import org.xtext.example.mydsl.memorando.MemorandoPackage;
 import org.xtext.example.mydsl.memorando.Model;
@@ -39,9 +38,6 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 			switch (semanticObject.eClass().getClassifierID()) {
 			case MemorandoPackage.CARGO_DESTINATARIO:
 				sequence_CargoDestinatario(context, (CargoDestinatario) semanticObject); 
-				return; 
-			case MemorandoPackage.DESTINO:
-				sequence_Destino(context, (Destino) semanticObject); 
 				return; 
 			case MemorandoPackage.MEMORANDO:
 				sequence_Memorando(context, (Memorando) semanticObject); 
@@ -80,24 +76,6 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
-	 *     Destino returns Destino
-	 *
-	 * Constraint:
-	 *     destino=ID
-	 */
-	protected void sequence_Destino(ISerializationContext context, Destino semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MemorandoPackage.Literals.DESTINO__DESTINO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MemorandoPackage.Literals.DESTINO__DESTINO));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0_0(), semanticObject.getDestino());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Memorando returns Memorando
 	 *
 	 * Constraint:
@@ -112,7 +90,6 @@ public class MemorandoSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *         ano=INT 
 	 *         cargosDestinatarios+=CargoDestinatario* 
 	 *         assunto=STRING 
-	 *         destinos+=Destino* 
 	 *         paragrafos+=Paragrafo* 
 	 *         remetente=STRING 
 	 *         cargoRemetente=STRING

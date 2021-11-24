@@ -67,7 +67,6 @@ public class MemorandoFactoryImpl extends EFactoryImpl implements MemorandoFacto
     {
       case MemorandoPackage.MODEL: return createModel();
       case MemorandoPackage.MEMORANDO: return createMemorando();
-      case MemorandoPackage.DESTINO: return createDestino();
       case MemorandoPackage.PARAGRAFO: return createParagrafo();
       case MemorandoPackage.SETOR_DESTINATARIO: return createSetorDestinatario();
       case MemorandoPackage.CARGO_DESTINATARIO: return createCargoDestinatario();
@@ -98,18 +97,6 @@ public class MemorandoFactoryImpl extends EFactoryImpl implements MemorandoFacto
   {
     MemorandoImpl memorando = new MemorandoImpl();
     return memorando;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Destino createDestino()
-  {
-    DestinoImpl destino = new DestinoImpl();
-    return destino;
   }
 
   /**

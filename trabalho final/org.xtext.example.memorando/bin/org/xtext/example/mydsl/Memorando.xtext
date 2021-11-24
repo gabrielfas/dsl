@@ -14,14 +14,10 @@ Memorando:
 	"Data" ':' dia=INT '/' mes=ID '/' ano=INT 
 	"Cargos Destinatarios" ':' '[' (cargosDestinatarios+=CargoDestinatario*) ']'
 	"Assunto" ':' assunto=STRING 
-	"Destinos" ':' '[' (destinos+=Destino*) ']' 
 	"Mensagem" ':' '[' (paragrafos+=Paragrafo*) ']' 
 	"Remetente" ':' remetente=STRING 
 	"Cargo Remetente" ':' cargoRemetente=STRING ';'
 	;
-
-Destino:
-	destino=ID " "?;
 	
 Paragrafo:
 	paragrafo=STRING " "?;

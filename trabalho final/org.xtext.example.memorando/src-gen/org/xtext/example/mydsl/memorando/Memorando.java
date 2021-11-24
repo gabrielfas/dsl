@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getAno <em>Ano</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getCargosDestinatarios <em>Cargos Destinatarios</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getAssunto <em>Assunto</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getDestinos <em>Destinos</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getParagrafos <em>Paragrafos</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getRemetente <em>Remetente</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.Memorando#getCargoRemetente <em>Cargo Remetente</em>}</li>
@@ -237,18 +236,6 @@ public interface Memorando extends EObject
    * @generated
    */
   void setAssunto(String value);
-
-  /**
-   * Returns the value of the '<em><b>Destinos</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.memorando.Destino}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Destinos</em>' containment reference list.
-   * @see org.xtext.example.mydsl.memorando.MemorandoPackage#getMemorando_Destinos()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Destino> getDestinos();
 
   /**
    * Returns the value of the '<em><b>Paragrafos</b></em>' containment reference list.

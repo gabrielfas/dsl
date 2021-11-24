@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMemorandoParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Numero'", "':'", "'Setores Destinatarios'", "'['", "']'", "'Setor Remetente'", "'Cidade'", "'Estado'", "'Data'", "'/'", "'Cargos Destinatarios'", "'Assunto'", "'Destinos'", "'Mensagem'", "'Remetente'", "'Cargo Remetente'", "';'", "' '"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Numero'", "':'", "'Setores Destinatarios'", "'['", "']'", "'Setor Remetente'", "'Cidade'", "'Estado'", "'Data'", "'/'", "'Cargos Destinatarios'", "'Assunto'", "'Mensagem'", "'Remetente'", "'Cargo Remetente'", "';'", "' '"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -40,7 +40,6 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
-    public static final int T__28=28;
     public static final int RULE_INT=4;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -245,7 +244,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMemorando"
-    // InternalMemorando.g:107:1: ruleMemorando returns [EObject current=null] : (otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Destinos' otherlv_33= ':' otherlv_34= '[' ( (lv_destinos_35_0= ruleDestino ) )* otherlv_36= ']' otherlv_37= 'Mensagem' otherlv_38= ':' otherlv_39= '[' ( (lv_paragrafos_40_0= ruleParagrafo ) )* otherlv_41= ']' otherlv_42= 'Remetente' otherlv_43= ':' ( (lv_remetente_44_0= RULE_STRING ) ) otherlv_45= 'Cargo Remetente' otherlv_46= ':' ( (lv_cargoRemetente_47_0= RULE_STRING ) ) otherlv_48= ';' ) ;
+    // InternalMemorando.g:107:1: ruleMemorando returns [EObject current=null] : (otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Mensagem' otherlv_33= ':' otherlv_34= '[' ( (lv_paragrafos_35_0= ruleParagrafo ) )* otherlv_36= ']' otherlv_37= 'Remetente' otherlv_38= ':' ( (lv_remetente_39_0= RULE_STRING ) ) otherlv_40= 'Cargo Remetente' otherlv_41= ':' ( (lv_cargoRemetente_42_0= RULE_STRING ) ) otherlv_43= ';' ) ;
     public final EObject ruleMemorando() throws RecognitionException {
         EObject current = null;
 
@@ -285,33 +284,27 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
         Token otherlv_36=null;
         Token otherlv_37=null;
         Token otherlv_38=null;
-        Token otherlv_39=null;
+        Token lv_remetente_39_0=null;
+        Token otherlv_40=null;
         Token otherlv_41=null;
-        Token otherlv_42=null;
+        Token lv_cargoRemetente_42_0=null;
         Token otherlv_43=null;
-        Token lv_remetente_44_0=null;
-        Token otherlv_45=null;
-        Token otherlv_46=null;
-        Token lv_cargoRemetente_47_0=null;
-        Token otherlv_48=null;
         EObject lv_setoresDestinatarios_6_0 = null;
 
         EObject lv_cargosDestinatarios_27_0 = null;
 
-        EObject lv_destinos_35_0 = null;
-
-        EObject lv_paragrafos_40_0 = null;
+        EObject lv_paragrafos_35_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalMemorando.g:113:2: ( (otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Destinos' otherlv_33= ':' otherlv_34= '[' ( (lv_destinos_35_0= ruleDestino ) )* otherlv_36= ']' otherlv_37= 'Mensagem' otherlv_38= ':' otherlv_39= '[' ( (lv_paragrafos_40_0= ruleParagrafo ) )* otherlv_41= ']' otherlv_42= 'Remetente' otherlv_43= ':' ( (lv_remetente_44_0= RULE_STRING ) ) otherlv_45= 'Cargo Remetente' otherlv_46= ':' ( (lv_cargoRemetente_47_0= RULE_STRING ) ) otherlv_48= ';' ) )
-            // InternalMemorando.g:114:2: (otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Destinos' otherlv_33= ':' otherlv_34= '[' ( (lv_destinos_35_0= ruleDestino ) )* otherlv_36= ']' otherlv_37= 'Mensagem' otherlv_38= ':' otherlv_39= '[' ( (lv_paragrafos_40_0= ruleParagrafo ) )* otherlv_41= ']' otherlv_42= 'Remetente' otherlv_43= ':' ( (lv_remetente_44_0= RULE_STRING ) ) otherlv_45= 'Cargo Remetente' otherlv_46= ':' ( (lv_cargoRemetente_47_0= RULE_STRING ) ) otherlv_48= ';' )
+            // InternalMemorando.g:113:2: ( (otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Mensagem' otherlv_33= ':' otherlv_34= '[' ( (lv_paragrafos_35_0= ruleParagrafo ) )* otherlv_36= ']' otherlv_37= 'Remetente' otherlv_38= ':' ( (lv_remetente_39_0= RULE_STRING ) ) otherlv_40= 'Cargo Remetente' otherlv_41= ':' ( (lv_cargoRemetente_42_0= RULE_STRING ) ) otherlv_43= ';' ) )
+            // InternalMemorando.g:114:2: (otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Mensagem' otherlv_33= ':' otherlv_34= '[' ( (lv_paragrafos_35_0= ruleParagrafo ) )* otherlv_36= ']' otherlv_37= 'Remetente' otherlv_38= ':' ( (lv_remetente_39_0= RULE_STRING ) ) otherlv_40= 'Cargo Remetente' otherlv_41= ':' ( (lv_cargoRemetente_42_0= RULE_STRING ) ) otherlv_43= ';' )
             {
-            // InternalMemorando.g:114:2: (otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Destinos' otherlv_33= ':' otherlv_34= '[' ( (lv_destinos_35_0= ruleDestino ) )* otherlv_36= ']' otherlv_37= 'Mensagem' otherlv_38= ':' otherlv_39= '[' ( (lv_paragrafos_40_0= ruleParagrafo ) )* otherlv_41= ']' otherlv_42= 'Remetente' otherlv_43= ':' ( (lv_remetente_44_0= RULE_STRING ) ) otherlv_45= 'Cargo Remetente' otherlv_46= ':' ( (lv_cargoRemetente_47_0= RULE_STRING ) ) otherlv_48= ';' )
-            // InternalMemorando.g:115:3: otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Destinos' otherlv_33= ':' otherlv_34= '[' ( (lv_destinos_35_0= ruleDestino ) )* otherlv_36= ']' otherlv_37= 'Mensagem' otherlv_38= ':' otherlv_39= '[' ( (lv_paragrafos_40_0= ruleParagrafo ) )* otherlv_41= ']' otherlv_42= 'Remetente' otherlv_43= ':' ( (lv_remetente_44_0= RULE_STRING ) ) otherlv_45= 'Cargo Remetente' otherlv_46= ':' ( (lv_cargoRemetente_47_0= RULE_STRING ) ) otherlv_48= ';'
+            // InternalMemorando.g:114:2: (otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Mensagem' otherlv_33= ':' otherlv_34= '[' ( (lv_paragrafos_35_0= ruleParagrafo ) )* otherlv_36= ']' otherlv_37= 'Remetente' otherlv_38= ':' ( (lv_remetente_39_0= RULE_STRING ) ) otherlv_40= 'Cargo Remetente' otherlv_41= ':' ( (lv_cargoRemetente_42_0= RULE_STRING ) ) otherlv_43= ';' )
+            // InternalMemorando.g:115:3: otherlv_0= 'Numero' otherlv_1= ':' ( (lv_numero_2_0= RULE_INT ) ) otherlv_3= 'Setores Destinatarios' otherlv_4= ':' otherlv_5= '[' ( (lv_setoresDestinatarios_6_0= ruleSetorDestinatario ) )* otherlv_7= ']' otherlv_8= 'Setor Remetente' otherlv_9= ':' ( (lv_setorRemetente_10_0= RULE_ID ) ) otherlv_11= 'Cidade' otherlv_12= ':' ( (lv_cidade_13_0= RULE_ID ) ) otherlv_14= 'Estado' otherlv_15= ':' ( (lv_estado_16_0= RULE_ID ) ) otherlv_17= 'Data' otherlv_18= ':' ( (lv_dia_19_0= RULE_INT ) ) otherlv_20= '/' ( (lv_mes_21_0= RULE_ID ) ) otherlv_22= '/' ( (lv_ano_23_0= RULE_INT ) ) otherlv_24= 'Cargos Destinatarios' otherlv_25= ':' otherlv_26= '[' ( (lv_cargosDestinatarios_27_0= ruleCargoDestinatario ) )* otherlv_28= ']' otherlv_29= 'Assunto' otherlv_30= ':' ( (lv_assunto_31_0= RULE_STRING ) ) otherlv_32= 'Mensagem' otherlv_33= ':' otherlv_34= '[' ( (lv_paragrafos_35_0= ruleParagrafo ) )* otherlv_36= ']' otherlv_37= 'Remetente' otherlv_38= ':' ( (lv_remetente_39_0= RULE_STRING ) ) otherlv_40= 'Cargo Remetente' otherlv_41= ':' ( (lv_cargoRemetente_42_0= RULE_STRING ) ) otherlv_43= ';'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
@@ -709,39 +702,39 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
             otherlv_32=(Token)match(input,23,FOLLOW_4); 
 
-            			newLeafNode(otherlv_32, grammarAccess.getMemorandoAccess().getDestinosKeyword_32());
+            			newLeafNode(otherlv_32, grammarAccess.getMemorandoAccess().getMensagemKeyword_32());
             		
             otherlv_33=(Token)match(input,12,FOLLOW_7); 
 
             			newLeafNode(otherlv_33, grammarAccess.getMemorandoAccess().getColonKeyword_33());
             		
-            otherlv_34=(Token)match(input,14,FOLLOW_8); 
+            otherlv_34=(Token)match(input,14,FOLLOW_16); 
 
             			newLeafNode(otherlv_34, grammarAccess.getMemorandoAccess().getLeftSquareBracketKeyword_34());
             		
-            // InternalMemorando.g:397:3: ( (lv_destinos_35_0= ruleDestino ) )*
+            // InternalMemorando.g:397:3: ( (lv_paragrafos_35_0= ruleParagrafo ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==RULE_ID) ) {
+                if ( (LA4_0==RULE_STRING) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalMemorando.g:398:4: (lv_destinos_35_0= ruleDestino )
+            	    // InternalMemorando.g:398:4: (lv_paragrafos_35_0= ruleParagrafo )
             	    {
-            	    // InternalMemorando.g:398:4: (lv_destinos_35_0= ruleDestino )
-            	    // InternalMemorando.g:399:5: lv_destinos_35_0= ruleDestino
+            	    // InternalMemorando.g:398:4: (lv_paragrafos_35_0= ruleParagrafo )
+            	    // InternalMemorando.g:399:5: lv_paragrafos_35_0= ruleParagrafo
             	    {
 
-            	    					newCompositeNode(grammarAccess.getMemorandoAccess().getDestinosDestinoParserRuleCall_35_0());
+            	    					newCompositeNode(grammarAccess.getMemorandoAccess().getParagrafosParagrafoParserRuleCall_35_0());
             	    				
-            	    pushFollow(FOLLOW_8);
-            	    lv_destinos_35_0=ruleDestino();
+            	    pushFollow(FOLLOW_16);
+            	    lv_paragrafos_35_0=ruleParagrafo();
 
             	    state._fsp--;
 
@@ -751,9 +744,9 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
             	    					}
             	    					add(
             	    						current,
-            	    						"destinos",
-            	    						lv_destinos_35_0,
-            	    						"org.xtext.example.mydsl.Memorando.Destino");
+            	    						"paragrafos",
+            	    						lv_paragrafos_35_0,
+            	    						"org.xtext.example.mydsl.Memorando.Paragrafo");
             	    					afterParserOrEnumRuleCall();
             	    				
 
@@ -774,86 +767,21 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
             		
             otherlv_37=(Token)match(input,24,FOLLOW_4); 
 
-            			newLeafNode(otherlv_37, grammarAccess.getMemorandoAccess().getMensagemKeyword_37());
+            			newLeafNode(otherlv_37, grammarAccess.getMemorandoAccess().getRemetenteKeyword_37());
             		
-            otherlv_38=(Token)match(input,12,FOLLOW_7); 
+            otherlv_38=(Token)match(input,12,FOLLOW_18); 
 
             			newLeafNode(otherlv_38, grammarAccess.getMemorandoAccess().getColonKeyword_38());
             		
-            otherlv_39=(Token)match(input,14,FOLLOW_16); 
-
-            			newLeafNode(otherlv_39, grammarAccess.getMemorandoAccess().getLeftSquareBracketKeyword_39());
-            		
-            // InternalMemorando.g:432:3: ( (lv_paragrafos_40_0= ruleParagrafo ) )*
-            loop5:
-            do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
-
-                if ( (LA5_0==RULE_STRING) ) {
-                    alt5=1;
-                }
-
-
-                switch (alt5) {
-            	case 1 :
-            	    // InternalMemorando.g:433:4: (lv_paragrafos_40_0= ruleParagrafo )
-            	    {
-            	    // InternalMemorando.g:433:4: (lv_paragrafos_40_0= ruleParagrafo )
-            	    // InternalMemorando.g:434:5: lv_paragrafos_40_0= ruleParagrafo
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getMemorandoAccess().getParagrafosParagrafoParserRuleCall_40_0());
-            	    				
-            	    pushFollow(FOLLOW_16);
-            	    lv_paragrafos_40_0=ruleParagrafo();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getMemorandoRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"paragrafos",
-            	    						lv_paragrafos_40_0,
-            	    						"org.xtext.example.mydsl.Memorando.Paragrafo");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop5;
-                }
-            } while (true);
-
-            otherlv_41=(Token)match(input,15,FOLLOW_21); 
-
-            			newLeafNode(otherlv_41, grammarAccess.getMemorandoAccess().getRightSquareBracketKeyword_41());
-            		
-            otherlv_42=(Token)match(input,25,FOLLOW_4); 
-
-            			newLeafNode(otherlv_42, grammarAccess.getMemorandoAccess().getRemetenteKeyword_42());
-            		
-            otherlv_43=(Token)match(input,12,FOLLOW_18); 
-
-            			newLeafNode(otherlv_43, grammarAccess.getMemorandoAccess().getColonKeyword_43());
-            		
-            // InternalMemorando.g:463:3: ( (lv_remetente_44_0= RULE_STRING ) )
-            // InternalMemorando.g:464:4: (lv_remetente_44_0= RULE_STRING )
+            // InternalMemorando.g:428:3: ( (lv_remetente_39_0= RULE_STRING ) )
+            // InternalMemorando.g:429:4: (lv_remetente_39_0= RULE_STRING )
             {
-            // InternalMemorando.g:464:4: (lv_remetente_44_0= RULE_STRING )
-            // InternalMemorando.g:465:5: lv_remetente_44_0= RULE_STRING
+            // InternalMemorando.g:429:4: (lv_remetente_39_0= RULE_STRING )
+            // InternalMemorando.g:430:5: lv_remetente_39_0= RULE_STRING
             {
-            lv_remetente_44_0=(Token)match(input,RULE_STRING,FOLLOW_22); 
+            lv_remetente_39_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
 
-            					newLeafNode(lv_remetente_44_0, grammarAccess.getMemorandoAccess().getRemetenteSTRINGTerminalRuleCall_44_0());
+            					newLeafNode(lv_remetente_39_0, grammarAccess.getMemorandoAccess().getRemetenteSTRINGTerminalRuleCall_39_0());
             				
 
             					if (current==null) {
@@ -862,7 +790,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"remetente",
-            						lv_remetente_44_0,
+            						lv_remetente_39_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -871,23 +799,23 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_45=(Token)match(input,26,FOLLOW_4); 
+            otherlv_40=(Token)match(input,25,FOLLOW_4); 
 
-            			newLeafNode(otherlv_45, grammarAccess.getMemorandoAccess().getCargoRemetenteKeyword_45());
+            			newLeafNode(otherlv_40, grammarAccess.getMemorandoAccess().getCargoRemetenteKeyword_40());
             		
-            otherlv_46=(Token)match(input,12,FOLLOW_18); 
+            otherlv_41=(Token)match(input,12,FOLLOW_18); 
 
-            			newLeafNode(otherlv_46, grammarAccess.getMemorandoAccess().getColonKeyword_46());
+            			newLeafNode(otherlv_41, grammarAccess.getMemorandoAccess().getColonKeyword_41());
             		
-            // InternalMemorando.g:489:3: ( (lv_cargoRemetente_47_0= RULE_STRING ) )
-            // InternalMemorando.g:490:4: (lv_cargoRemetente_47_0= RULE_STRING )
+            // InternalMemorando.g:454:3: ( (lv_cargoRemetente_42_0= RULE_STRING ) )
+            // InternalMemorando.g:455:4: (lv_cargoRemetente_42_0= RULE_STRING )
             {
-            // InternalMemorando.g:490:4: (lv_cargoRemetente_47_0= RULE_STRING )
-            // InternalMemorando.g:491:5: lv_cargoRemetente_47_0= RULE_STRING
+            // InternalMemorando.g:455:4: (lv_cargoRemetente_42_0= RULE_STRING )
+            // InternalMemorando.g:456:5: lv_cargoRemetente_42_0= RULE_STRING
             {
-            lv_cargoRemetente_47_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
+            lv_cargoRemetente_42_0=(Token)match(input,RULE_STRING,FOLLOW_22); 
 
-            					newLeafNode(lv_cargoRemetente_47_0, grammarAccess.getMemorandoAccess().getCargoRemetenteSTRINGTerminalRuleCall_47_0());
+            					newLeafNode(lv_cargoRemetente_42_0, grammarAccess.getMemorandoAccess().getCargoRemetenteSTRINGTerminalRuleCall_42_0());
             				
 
             					if (current==null) {
@@ -896,7 +824,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"cargoRemetente",
-            						lv_cargoRemetente_47_0,
+            						lv_cargoRemetente_42_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -905,9 +833,9 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_48=(Token)match(input,27,FOLLOW_2); 
+            otherlv_43=(Token)match(input,26,FOLLOW_2); 
 
-            			newLeafNode(otherlv_48, grammarAccess.getMemorandoAccess().getSemicolonKeyword_48());
+            			newLeafNode(otherlv_43, grammarAccess.getMemorandoAccess().getSemicolonKeyword_43());
             		
 
             }
@@ -931,131 +859,8 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMemorando"
 
 
-    // $ANTLR start "entryRuleDestino"
-    // InternalMemorando.g:515:1: entryRuleDestino returns [EObject current=null] : iv_ruleDestino= ruleDestino EOF ;
-    public final EObject entryRuleDestino() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleDestino = null;
-
-
-        try {
-            // InternalMemorando.g:515:48: (iv_ruleDestino= ruleDestino EOF )
-            // InternalMemorando.g:516:2: iv_ruleDestino= ruleDestino EOF
-            {
-             newCompositeNode(grammarAccess.getDestinoRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleDestino=ruleDestino();
-
-            state._fsp--;
-
-             current =iv_ruleDestino; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleDestino"
-
-
-    // $ANTLR start "ruleDestino"
-    // InternalMemorando.g:522:1: ruleDestino returns [EObject current=null] : ( ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )? ) ;
-    public final EObject ruleDestino() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_destino_0_0=null;
-        Token otherlv_1=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalMemorando.g:528:2: ( ( ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )? ) )
-            // InternalMemorando.g:529:2: ( ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )? )
-            {
-            // InternalMemorando.g:529:2: ( ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )? )
-            // InternalMemorando.g:530:3: ( (lv_destino_0_0= RULE_ID ) ) (otherlv_1= ' ' )?
-            {
-            // InternalMemorando.g:530:3: ( (lv_destino_0_0= RULE_ID ) )
-            // InternalMemorando.g:531:4: (lv_destino_0_0= RULE_ID )
-            {
-            // InternalMemorando.g:531:4: (lv_destino_0_0= RULE_ID )
-            // InternalMemorando.g:532:5: lv_destino_0_0= RULE_ID
-            {
-            lv_destino_0_0=(Token)match(input,RULE_ID,FOLLOW_24); 
-
-            					newLeafNode(lv_destino_0_0, grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getDestinoRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"destino",
-            						lv_destino_0_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalMemorando.g:548:3: (otherlv_1= ' ' )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==28) ) {
-                alt6=1;
-            }
-            switch (alt6) {
-                case 1 :
-                    // InternalMemorando.g:549:4: otherlv_1= ' '
-                    {
-                    otherlv_1=(Token)match(input,28,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_1, grammarAccess.getDestinoAccess().getSpaceKeyword_1());
-                    			
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleDestino"
-
-
     // $ANTLR start "entryRuleParagrafo"
-    // InternalMemorando.g:558:1: entryRuleParagrafo returns [EObject current=null] : iv_ruleParagrafo= ruleParagrafo EOF ;
+    // InternalMemorando.g:480:1: entryRuleParagrafo returns [EObject current=null] : iv_ruleParagrafo= ruleParagrafo EOF ;
     public final EObject entryRuleParagrafo() throws RecognitionException {
         EObject current = null;
 
@@ -1063,8 +868,8 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMemorando.g:558:50: (iv_ruleParagrafo= ruleParagrafo EOF )
-            // InternalMemorando.g:559:2: iv_ruleParagrafo= ruleParagrafo EOF
+            // InternalMemorando.g:480:50: (iv_ruleParagrafo= ruleParagrafo EOF )
+            // InternalMemorando.g:481:2: iv_ruleParagrafo= ruleParagrafo EOF
             {
              newCompositeNode(grammarAccess.getParagrafoRule()); 
             pushFollow(FOLLOW_1);
@@ -1091,7 +896,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParagrafo"
-    // InternalMemorando.g:565:1: ruleParagrafo returns [EObject current=null] : ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) ;
+    // InternalMemorando.g:487:1: ruleParagrafo returns [EObject current=null] : ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) ;
     public final EObject ruleParagrafo() throws RecognitionException {
         EObject current = null;
 
@@ -1102,19 +907,19 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMemorando.g:571:2: ( ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) )
-            // InternalMemorando.g:572:2: ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
+            // InternalMemorando.g:493:2: ( ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) )
+            // InternalMemorando.g:494:2: ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
             {
-            // InternalMemorando.g:572:2: ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
-            // InternalMemorando.g:573:3: ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )?
+            // InternalMemorando.g:494:2: ( ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
+            // InternalMemorando.g:495:3: ( (lv_paragrafo_0_0= RULE_STRING ) ) (otherlv_1= ' ' )?
             {
-            // InternalMemorando.g:573:3: ( (lv_paragrafo_0_0= RULE_STRING ) )
-            // InternalMemorando.g:574:4: (lv_paragrafo_0_0= RULE_STRING )
+            // InternalMemorando.g:495:3: ( (lv_paragrafo_0_0= RULE_STRING ) )
+            // InternalMemorando.g:496:4: (lv_paragrafo_0_0= RULE_STRING )
             {
-            // InternalMemorando.g:574:4: (lv_paragrafo_0_0= RULE_STRING )
-            // InternalMemorando.g:575:5: lv_paragrafo_0_0= RULE_STRING
+            // InternalMemorando.g:496:4: (lv_paragrafo_0_0= RULE_STRING )
+            // InternalMemorando.g:497:5: lv_paragrafo_0_0= RULE_STRING
             {
-            lv_paragrafo_0_0=(Token)match(input,RULE_STRING,FOLLOW_24); 
+            lv_paragrafo_0_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
 
             					newLeafNode(lv_paragrafo_0_0, grammarAccess.getParagrafoAccess().getParagrafoSTRINGTerminalRuleCall_0_0());
             				
@@ -1134,18 +939,18 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMemorando.g:591:3: (otherlv_1= ' ' )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalMemorando.g:513:3: (otherlv_1= ' ' )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA7_0==28) ) {
-                alt7=1;
+            if ( (LA5_0==27) ) {
+                alt5=1;
             }
-            switch (alt7) {
+            switch (alt5) {
                 case 1 :
-                    // InternalMemorando.g:592:4: otherlv_1= ' '
+                    // InternalMemorando.g:514:4: otherlv_1= ' '
                     {
-                    otherlv_1=(Token)match(input,28,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,27,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getParagrafoAccess().getSpaceKeyword_1());
                     			
@@ -1178,7 +983,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSetorDestinatario"
-    // InternalMemorando.g:601:1: entryRuleSetorDestinatario returns [EObject current=null] : iv_ruleSetorDestinatario= ruleSetorDestinatario EOF ;
+    // InternalMemorando.g:523:1: entryRuleSetorDestinatario returns [EObject current=null] : iv_ruleSetorDestinatario= ruleSetorDestinatario EOF ;
     public final EObject entryRuleSetorDestinatario() throws RecognitionException {
         EObject current = null;
 
@@ -1186,8 +991,8 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMemorando.g:601:58: (iv_ruleSetorDestinatario= ruleSetorDestinatario EOF )
-            // InternalMemorando.g:602:2: iv_ruleSetorDestinatario= ruleSetorDestinatario EOF
+            // InternalMemorando.g:523:58: (iv_ruleSetorDestinatario= ruleSetorDestinatario EOF )
+            // InternalMemorando.g:524:2: iv_ruleSetorDestinatario= ruleSetorDestinatario EOF
             {
              newCompositeNode(grammarAccess.getSetorDestinatarioRule()); 
             pushFollow(FOLLOW_1);
@@ -1214,7 +1019,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSetorDestinatario"
-    // InternalMemorando.g:608:1: ruleSetorDestinatario returns [EObject current=null] : ( ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )? ) ;
+    // InternalMemorando.g:530:1: ruleSetorDestinatario returns [EObject current=null] : ( ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )? ) ;
     public final EObject ruleSetorDestinatario() throws RecognitionException {
         EObject current = null;
 
@@ -1225,19 +1030,19 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMemorando.g:614:2: ( ( ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )? ) )
-            // InternalMemorando.g:615:2: ( ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )? )
+            // InternalMemorando.g:536:2: ( ( ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )? ) )
+            // InternalMemorando.g:537:2: ( ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )? )
             {
-            // InternalMemorando.g:615:2: ( ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )? )
-            // InternalMemorando.g:616:3: ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )?
+            // InternalMemorando.g:537:2: ( ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )? )
+            // InternalMemorando.g:538:3: ( (lv_setorDestinatario_0_0= RULE_ID ) ) (otherlv_1= ' ' )?
             {
-            // InternalMemorando.g:616:3: ( (lv_setorDestinatario_0_0= RULE_ID ) )
-            // InternalMemorando.g:617:4: (lv_setorDestinatario_0_0= RULE_ID )
+            // InternalMemorando.g:538:3: ( (lv_setorDestinatario_0_0= RULE_ID ) )
+            // InternalMemorando.g:539:4: (lv_setorDestinatario_0_0= RULE_ID )
             {
-            // InternalMemorando.g:617:4: (lv_setorDestinatario_0_0= RULE_ID )
-            // InternalMemorando.g:618:5: lv_setorDestinatario_0_0= RULE_ID
+            // InternalMemorando.g:539:4: (lv_setorDestinatario_0_0= RULE_ID )
+            // InternalMemorando.g:540:5: lv_setorDestinatario_0_0= RULE_ID
             {
-            lv_setorDestinatario_0_0=(Token)match(input,RULE_ID,FOLLOW_24); 
+            lv_setorDestinatario_0_0=(Token)match(input,RULE_ID,FOLLOW_23); 
 
             					newLeafNode(lv_setorDestinatario_0_0, grammarAccess.getSetorDestinatarioAccess().getSetorDestinatarioIDTerminalRuleCall_0_0());
             				
@@ -1257,18 +1062,18 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMemorando.g:634:3: (otherlv_1= ' ' )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalMemorando.g:556:3: (otherlv_1= ' ' )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA8_0==28) ) {
-                alt8=1;
+            if ( (LA6_0==27) ) {
+                alt6=1;
             }
-            switch (alt8) {
+            switch (alt6) {
                 case 1 :
-                    // InternalMemorando.g:635:4: otherlv_1= ' '
+                    // InternalMemorando.g:557:4: otherlv_1= ' '
                     {
-                    otherlv_1=(Token)match(input,28,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,27,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getSetorDestinatarioAccess().getSpaceKeyword_1());
                     			
@@ -1301,7 +1106,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCargoDestinatario"
-    // InternalMemorando.g:644:1: entryRuleCargoDestinatario returns [EObject current=null] : iv_ruleCargoDestinatario= ruleCargoDestinatario EOF ;
+    // InternalMemorando.g:566:1: entryRuleCargoDestinatario returns [EObject current=null] : iv_ruleCargoDestinatario= ruleCargoDestinatario EOF ;
     public final EObject entryRuleCargoDestinatario() throws RecognitionException {
         EObject current = null;
 
@@ -1309,8 +1114,8 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMemorando.g:644:58: (iv_ruleCargoDestinatario= ruleCargoDestinatario EOF )
-            // InternalMemorando.g:645:2: iv_ruleCargoDestinatario= ruleCargoDestinatario EOF
+            // InternalMemorando.g:566:58: (iv_ruleCargoDestinatario= ruleCargoDestinatario EOF )
+            // InternalMemorando.g:567:2: iv_ruleCargoDestinatario= ruleCargoDestinatario EOF
             {
              newCompositeNode(grammarAccess.getCargoDestinatarioRule()); 
             pushFollow(FOLLOW_1);
@@ -1337,7 +1142,7 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCargoDestinatario"
-    // InternalMemorando.g:651:1: ruleCargoDestinatario returns [EObject current=null] : ( ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) ;
+    // InternalMemorando.g:573:1: ruleCargoDestinatario returns [EObject current=null] : ( ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) ;
     public final EObject ruleCargoDestinatario() throws RecognitionException {
         EObject current = null;
 
@@ -1348,19 +1153,19 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMemorando.g:657:2: ( ( ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) )
-            // InternalMemorando.g:658:2: ( ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
+            // InternalMemorando.g:579:2: ( ( ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? ) )
+            // InternalMemorando.g:580:2: ( ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
             {
-            // InternalMemorando.g:658:2: ( ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
-            // InternalMemorando.g:659:3: ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )?
+            // InternalMemorando.g:580:2: ( ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )? )
+            // InternalMemorando.g:581:3: ( (lv_cargoDestinatario_0_0= RULE_STRING ) ) (otherlv_1= ' ' )?
             {
-            // InternalMemorando.g:659:3: ( (lv_cargoDestinatario_0_0= RULE_STRING ) )
-            // InternalMemorando.g:660:4: (lv_cargoDestinatario_0_0= RULE_STRING )
+            // InternalMemorando.g:581:3: ( (lv_cargoDestinatario_0_0= RULE_STRING ) )
+            // InternalMemorando.g:582:4: (lv_cargoDestinatario_0_0= RULE_STRING )
             {
-            // InternalMemorando.g:660:4: (lv_cargoDestinatario_0_0= RULE_STRING )
-            // InternalMemorando.g:661:5: lv_cargoDestinatario_0_0= RULE_STRING
+            // InternalMemorando.g:582:4: (lv_cargoDestinatario_0_0= RULE_STRING )
+            // InternalMemorando.g:583:5: lv_cargoDestinatario_0_0= RULE_STRING
             {
-            lv_cargoDestinatario_0_0=(Token)match(input,RULE_STRING,FOLLOW_24); 
+            lv_cargoDestinatario_0_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
 
             					newLeafNode(lv_cargoDestinatario_0_0, grammarAccess.getCargoDestinatarioAccess().getCargoDestinatarioSTRINGTerminalRuleCall_0_0());
             				
@@ -1380,18 +1185,18 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMemorando.g:677:3: (otherlv_1= ' ' )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalMemorando.g:599:3: (otherlv_1= ' ' )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA9_0==28) ) {
-                alt9=1;
+            if ( (LA7_0==27) ) {
+                alt7=1;
             }
-            switch (alt9) {
+            switch (alt7) {
                 case 1 :
-                    // InternalMemorando.g:678:4: otherlv_1= ' '
+                    // InternalMemorando.g:600:4: otherlv_1= ' '
                     {
-                    otherlv_1=(Token)match(input,28,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,27,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getCargoDestinatarioAccess().getSpaceKeyword_1());
                     			
@@ -1449,7 +1254,6 @@ public class InternalMemorandoParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000008000002L});
 
 }

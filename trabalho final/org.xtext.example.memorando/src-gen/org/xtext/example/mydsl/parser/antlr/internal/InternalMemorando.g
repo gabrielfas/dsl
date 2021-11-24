@@ -382,9 +382,9 @@ ruleMemorando returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_32='Destinos'
+		otherlv_32='Mensagem'
 		{
-			newLeafNode(otherlv_32, grammarAccess.getMemorandoAccess().getDestinosKeyword_32());
+			newLeafNode(otherlv_32, grammarAccess.getMemorandoAccess().getMensagemKeyword_32());
 		}
 		otherlv_33=':'
 		{
@@ -397,18 +397,18 @@ ruleMemorando returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMemorandoAccess().getDestinosDestinoParserRuleCall_35_0());
+					newCompositeNode(grammarAccess.getMemorandoAccess().getParagrafosParagrafoParserRuleCall_35_0());
 				}
-				lv_destinos_35_0=ruleDestino
+				lv_paragrafos_35_0=ruleParagrafo
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMemorandoRule());
 					}
 					add(
 						$current,
-						"destinos",
-						lv_destinos_35_0,
-						"org.xtext.example.mydsl.Memorando.Destino");
+						"paragrafos",
+						lv_paragrafos_35_0,
+						"org.xtext.example.mydsl.Memorando.Paragrafo");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -417,54 +417,19 @@ ruleMemorando returns [EObject current=null]
 		{
 			newLeafNode(otherlv_36, grammarAccess.getMemorandoAccess().getRightSquareBracketKeyword_36());
 		}
-		otherlv_37='Mensagem'
+		otherlv_37='Remetente'
 		{
-			newLeafNode(otherlv_37, grammarAccess.getMemorandoAccess().getMensagemKeyword_37());
+			newLeafNode(otherlv_37, grammarAccess.getMemorandoAccess().getRemetenteKeyword_37());
 		}
 		otherlv_38=':'
 		{
 			newLeafNode(otherlv_38, grammarAccess.getMemorandoAccess().getColonKeyword_38());
 		}
-		otherlv_39='['
-		{
-			newLeafNode(otherlv_39, grammarAccess.getMemorandoAccess().getLeftSquareBracketKeyword_39());
-		}
 		(
 			(
+				lv_remetente_39_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getMemorandoAccess().getParagrafosParagrafoParserRuleCall_40_0());
-				}
-				lv_paragrafos_40_0=ruleParagrafo
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getMemorandoRule());
-					}
-					add(
-						$current,
-						"paragrafos",
-						lv_paragrafos_40_0,
-						"org.xtext.example.mydsl.Memorando.Paragrafo");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_41=']'
-		{
-			newLeafNode(otherlv_41, grammarAccess.getMemorandoAccess().getRightSquareBracketKeyword_41());
-		}
-		otherlv_42='Remetente'
-		{
-			newLeafNode(otherlv_42, grammarAccess.getMemorandoAccess().getRemetenteKeyword_42());
-		}
-		otherlv_43=':'
-		{
-			newLeafNode(otherlv_43, grammarAccess.getMemorandoAccess().getColonKeyword_43());
-		}
-		(
-			(
-				lv_remetente_44_0=RULE_STRING
-				{
-					newLeafNode(lv_remetente_44_0, grammarAccess.getMemorandoAccess().getRemetenteSTRINGTerminalRuleCall_44_0());
+					newLeafNode(lv_remetente_39_0, grammarAccess.getMemorandoAccess().getRemetenteSTRINGTerminalRuleCall_39_0());
 				}
 				{
 					if ($current==null) {
@@ -473,24 +438,24 @@ ruleMemorando returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"remetente",
-						lv_remetente_44_0,
+						lv_remetente_39_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_45='Cargo Remetente'
+		otherlv_40='Cargo Remetente'
 		{
-			newLeafNode(otherlv_45, grammarAccess.getMemorandoAccess().getCargoRemetenteKeyword_45());
+			newLeafNode(otherlv_40, grammarAccess.getMemorandoAccess().getCargoRemetenteKeyword_40());
 		}
-		otherlv_46=':'
+		otherlv_41=':'
 		{
-			newLeafNode(otherlv_46, grammarAccess.getMemorandoAccess().getColonKeyword_46());
+			newLeafNode(otherlv_41, grammarAccess.getMemorandoAccess().getColonKeyword_41());
 		}
 		(
 			(
-				lv_cargoRemetente_47_0=RULE_STRING
+				lv_cargoRemetente_42_0=RULE_STRING
 				{
-					newLeafNode(lv_cargoRemetente_47_0, grammarAccess.getMemorandoAccess().getCargoRemetenteSTRINGTerminalRuleCall_47_0());
+					newLeafNode(lv_cargoRemetente_42_0, grammarAccess.getMemorandoAccess().getCargoRemetenteSTRINGTerminalRuleCall_42_0());
 				}
 				{
 					if ($current==null) {
@@ -499,58 +464,15 @@ ruleMemorando returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"cargoRemetente",
-						lv_cargoRemetente_47_0,
+						lv_cargoRemetente_42_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_48=';'
+		otherlv_43=';'
 		{
-			newLeafNode(otherlv_48, grammarAccess.getMemorandoAccess().getSemicolonKeyword_48());
+			newLeafNode(otherlv_43, grammarAccess.getMemorandoAccess().getSemicolonKeyword_43());
 		}
-	)
-;
-
-// Entry rule entryRuleDestino
-entryRuleDestino returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDestinoRule()); }
-	iv_ruleDestino=ruleDestino
-	{ $current=$iv_ruleDestino.current; }
-	EOF;
-
-// Rule Destino
-ruleDestino returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_destino_0_0=RULE_ID
-				{
-					newLeafNode(lv_destino_0_0, grammarAccess.getDestinoAccess().getDestinoIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDestinoRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"destino",
-						lv_destino_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			otherlv_1=' '
-			{
-				newLeafNode(otherlv_1, grammarAccess.getDestinoAccess().getSpaceKeyword_1());
-			}
-		)?
 	)
 ;
 

@@ -20,13 +20,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/ano"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Memorando.ecore#//Memorando/cargosDestinatarios"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/assunto"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Memorando.ecore#//Memorando/destinos"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Memorando.ecore#//Memorando/paragrafos"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/remetente"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Memorando/cargoRemetente"/>
-    </genClasses>
-    <genClasses ecoreClass="Memorando.ecore#//Destino">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Destino/destino"/>
     </genClasses>
     <genClasses ecoreClass="Memorando.ecore#//Paragrafo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Memorando.ecore#//Paragrafo/paragrafo"/>

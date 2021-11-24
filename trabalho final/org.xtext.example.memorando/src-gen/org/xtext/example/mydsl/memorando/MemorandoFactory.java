@@ -42,15 +42,6 @@ public interface MemorandoFactory extends EFactory
   Memorando createMemorando();
 
   /**
-   * Returns a new object of class '<em>Destino</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Destino</em>'.
-   * @generated
-   */
-  Destino createDestino();
-
-  /**
    * Returns a new object of class '<em>Paragrafo</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

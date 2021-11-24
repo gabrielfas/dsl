@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.memorando.CargoDestinatario;
-import org.xtext.example.mydsl.memorando.Destino;
 import org.xtext.example.mydsl.memorando.Memorando;
 import org.xtext.example.mydsl.memorando.MemorandoPackage;
 import org.xtext.example.mydsl.memorando.Paragrafo;
@@ -44,7 +43,6 @@ import org.xtext.example.mydsl.memorando.SetorDestinatario;
  *   <li>{@link org.xtext.example.mydsl.memorando.impl.MemorandoImpl#getAno <em>Ano</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.impl.MemorandoImpl#getCargosDestinatarios <em>Cargos Destinatarios</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.impl.MemorandoImpl#getAssunto <em>Assunto</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.memorando.impl.MemorandoImpl#getDestinos <em>Destinos</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.impl.MemorandoImpl#getParagrafos <em>Paragrafos</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.impl.MemorandoImpl#getRemetente <em>Remetente</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.memorando.impl.MemorandoImpl#getCargoRemetente <em>Cargo Remetente</em>}</li>
@@ -233,16 +231,6 @@ public class MemorandoImpl extends MinimalEObjectImpl.Container implements Memor
    * @ordered
    */
   protected String assunto = ASSUNTO_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getDestinos() <em>Destinos</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDestinos()
-   * @generated
-   * @ordered
-   */
-  protected EList<Destino> destinos;
 
   /**
    * The cached value of the '{@link #getParagrafos() <em>Paragrafos</em>}' containment reference list.
@@ -551,21 +539,6 @@ public class MemorandoImpl extends MinimalEObjectImpl.Container implements Memor
    * @generated
    */
   @Override
-  public EList<Destino> getDestinos()
-  {
-    if (destinos == null)
-    {
-      destinos = new EObjectContainmentEList<Destino>(Destino.class, this, MemorandoPackage.MEMORANDO__DESTINOS);
-    }
-    return destinos;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<Paragrafo> getParagrafos()
   {
     if (paragrafos == null)
@@ -639,8 +612,6 @@ public class MemorandoImpl extends MinimalEObjectImpl.Container implements Memor
         return ((InternalEList<?>)getSetoresDestinatarios()).basicRemove(otherEnd, msgs);
       case MemorandoPackage.MEMORANDO__CARGOS_DESTINATARIOS:
         return ((InternalEList<?>)getCargosDestinatarios()).basicRemove(otherEnd, msgs);
-      case MemorandoPackage.MEMORANDO__DESTINOS:
-        return ((InternalEList<?>)getDestinos()).basicRemove(otherEnd, msgs);
       case MemorandoPackage.MEMORANDO__PARAGRAFOS:
         return ((InternalEList<?>)getParagrafos()).basicRemove(otherEnd, msgs);
     }
@@ -677,8 +648,6 @@ public class MemorandoImpl extends MinimalEObjectImpl.Container implements Memor
         return getCargosDestinatarios();
       case MemorandoPackage.MEMORANDO__ASSUNTO:
         return getAssunto();
-      case MemorandoPackage.MEMORANDO__DESTINOS:
-        return getDestinos();
       case MemorandoPackage.MEMORANDO__PARAGRAFOS:
         return getParagrafos();
       case MemorandoPackage.MEMORANDO__REMETENTE:
@@ -731,10 +700,6 @@ public class MemorandoImpl extends MinimalEObjectImpl.Container implements Memor
         return;
       case MemorandoPackage.MEMORANDO__ASSUNTO:
         setAssunto((String)newValue);
-        return;
-      case MemorandoPackage.MEMORANDO__DESTINOS:
-        getDestinos().clear();
-        getDestinos().addAll((Collection<? extends Destino>)newValue);
         return;
       case MemorandoPackage.MEMORANDO__PARAGRAFOS:
         getParagrafos().clear();
@@ -790,9 +755,6 @@ public class MemorandoImpl extends MinimalEObjectImpl.Container implements Memor
       case MemorandoPackage.MEMORANDO__ASSUNTO:
         setAssunto(ASSUNTO_EDEFAULT);
         return;
-      case MemorandoPackage.MEMORANDO__DESTINOS:
-        getDestinos().clear();
-        return;
       case MemorandoPackage.MEMORANDO__PARAGRAFOS:
         getParagrafos().clear();
         return;
@@ -836,8 +798,6 @@ public class MemorandoImpl extends MinimalEObjectImpl.Container implements Memor
         return cargosDestinatarios != null && !cargosDestinatarios.isEmpty();
       case MemorandoPackage.MEMORANDO__ASSUNTO:
         return ASSUNTO_EDEFAULT == null ? assunto != null : !ASSUNTO_EDEFAULT.equals(assunto);
-      case MemorandoPackage.MEMORANDO__DESTINOS:
-        return destinos != null && !destinos.isEmpty();
       case MemorandoPackage.MEMORANDO__PARAGRAFOS:
         return paragrafos != null && !paragrafos.isEmpty();
       case MemorandoPackage.MEMORANDO__REMETENTE:

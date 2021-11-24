@@ -19,15 +19,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="cargosDestinatarios" upperBound="-1"
         eType="#//CargoDestinatario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assunto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="destinos" upperBound="-1"
-        eType="#//Destino" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="paragrafos" upperBound="-1"
         eType="#//Paragrafo" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="remetente" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cargoRemetente" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Destino">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="destino" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Paragrafo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="paragrafo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

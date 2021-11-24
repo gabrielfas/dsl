@@ -81,27 +81,21 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cColonKeyword_30 = (Keyword)cGroup.eContents().get(30);
 		private final Assignment cAssuntoAssignment_31 = (Assignment)cGroup.eContents().get(31);
 		private final RuleCall cAssuntoSTRINGTerminalRuleCall_31_0 = (RuleCall)cAssuntoAssignment_31.eContents().get(0);
-		private final Keyword cDestinosKeyword_32 = (Keyword)cGroup.eContents().get(32);
+		private final Keyword cMensagemKeyword_32 = (Keyword)cGroup.eContents().get(32);
 		private final Keyword cColonKeyword_33 = (Keyword)cGroup.eContents().get(33);
 		private final Keyword cLeftSquareBracketKeyword_34 = (Keyword)cGroup.eContents().get(34);
-		private final Assignment cDestinosAssignment_35 = (Assignment)cGroup.eContents().get(35);
-		private final RuleCall cDestinosDestinoParserRuleCall_35_0 = (RuleCall)cDestinosAssignment_35.eContents().get(0);
+		private final Assignment cParagrafosAssignment_35 = (Assignment)cGroup.eContents().get(35);
+		private final RuleCall cParagrafosParagrafoParserRuleCall_35_0 = (RuleCall)cParagrafosAssignment_35.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_36 = (Keyword)cGroup.eContents().get(36);
-		private final Keyword cMensagemKeyword_37 = (Keyword)cGroup.eContents().get(37);
+		private final Keyword cRemetenteKeyword_37 = (Keyword)cGroup.eContents().get(37);
 		private final Keyword cColonKeyword_38 = (Keyword)cGroup.eContents().get(38);
-		private final Keyword cLeftSquareBracketKeyword_39 = (Keyword)cGroup.eContents().get(39);
-		private final Assignment cParagrafosAssignment_40 = (Assignment)cGroup.eContents().get(40);
-		private final RuleCall cParagrafosParagrafoParserRuleCall_40_0 = (RuleCall)cParagrafosAssignment_40.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_41 = (Keyword)cGroup.eContents().get(41);
-		private final Keyword cRemetenteKeyword_42 = (Keyword)cGroup.eContents().get(42);
-		private final Keyword cColonKeyword_43 = (Keyword)cGroup.eContents().get(43);
-		private final Assignment cRemetenteAssignment_44 = (Assignment)cGroup.eContents().get(44);
-		private final RuleCall cRemetenteSTRINGTerminalRuleCall_44_0 = (RuleCall)cRemetenteAssignment_44.eContents().get(0);
-		private final Keyword cCargoRemetenteKeyword_45 = (Keyword)cGroup.eContents().get(45);
-		private final Keyword cColonKeyword_46 = (Keyword)cGroup.eContents().get(46);
-		private final Assignment cCargoRemetenteAssignment_47 = (Assignment)cGroup.eContents().get(47);
-		private final RuleCall cCargoRemetenteSTRINGTerminalRuleCall_47_0 = (RuleCall)cCargoRemetenteAssignment_47.eContents().get(0);
-		private final Keyword cSemicolonKeyword_48 = (Keyword)cGroup.eContents().get(48);
+		private final Assignment cRemetenteAssignment_39 = (Assignment)cGroup.eContents().get(39);
+		private final RuleCall cRemetenteSTRINGTerminalRuleCall_39_0 = (RuleCall)cRemetenteAssignment_39.eContents().get(0);
+		private final Keyword cCargoRemetenteKeyword_40 = (Keyword)cGroup.eContents().get(40);
+		private final Keyword cColonKeyword_41 = (Keyword)cGroup.eContents().get(41);
+		private final Assignment cCargoRemetenteAssignment_42 = (Assignment)cGroup.eContents().get(42);
+		private final RuleCall cCargoRemetenteSTRINGTerminalRuleCall_42_0 = (RuleCall)cCargoRemetenteAssignment_42.eContents().get(0);
+		private final Keyword cSemicolonKeyword_43 = (Keyword)cGroup.eContents().get(43);
 		
 		//Memorando:
 		//    "Numero" ':' numero=INT
@@ -112,7 +106,6 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//    "Data" ':' dia=INT '/' mes=ID '/' ano=INT
 		//    "Cargos Destinatarios" ':' '[' (cargosDestinatarios+=CargoDestinatario*) ']'
 		//    "Assunto" ':' assunto=STRING
-		//    "Destinos" ':' '[' (destinos+=Destino*) ']'
 		//    "Mensagem" ':' '[' (paragrafos+=Paragrafo*) ']'
 		//    "Remetente" ':' remetente=STRING
 		//    "Cargo Remetente" ':' cargoRemetente=STRING ';'
@@ -127,7 +120,6 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//"Data" ':' dia=INT '/' mes=ID '/' ano=INT
 		//"Cargos Destinatarios" ':' '[' (cargosDestinatarios+=CargoDestinatario*) ']'
 		//"Assunto" ':' assunto=STRING
-		//"Destinos" ':' '[' (destinos+=Destino*) ']'
 		//"Mensagem" ':' '[' (paragrafos+=Paragrafo*) ']'
 		//"Remetente" ':' remetente=STRING
 		//"Cargo Remetente" ':' cargoRemetente=STRING ';'
@@ -259,8 +251,8 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//STRING
 		public RuleCall getAssuntoSTRINGTerminalRuleCall_31_0() { return cAssuntoSTRINGTerminalRuleCall_31_0; }
 		
-		//"Destinos"
-		public Keyword getDestinosKeyword_32() { return cDestinosKeyword_32; }
+		//"Mensagem"
+		public Keyword getMensagemKeyword_32() { return cMensagemKeyword_32; }
 		
 		//':'
 		public Keyword getColonKeyword_33() { return cColonKeyword_33; }
@@ -268,82 +260,41 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'['
 		public Keyword getLeftSquareBracketKeyword_34() { return cLeftSquareBracketKeyword_34; }
 		
-		//(destinos+=Destino*)
-		public Assignment getDestinosAssignment_35() { return cDestinosAssignment_35; }
+		//(paragrafos+=Paragrafo*)
+		public Assignment getParagrafosAssignment_35() { return cParagrafosAssignment_35; }
 		
-		//Destino
-		public RuleCall getDestinosDestinoParserRuleCall_35_0() { return cDestinosDestinoParserRuleCall_35_0; }
+		//Paragrafo
+		public RuleCall getParagrafosParagrafoParserRuleCall_35_0() { return cParagrafosParagrafoParserRuleCall_35_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_36() { return cRightSquareBracketKeyword_36; }
 		
-		//"Mensagem"
-		public Keyword getMensagemKeyword_37() { return cMensagemKeyword_37; }
+		//"Remetente"
+		public Keyword getRemetenteKeyword_37() { return cRemetenteKeyword_37; }
 		
 		//':'
 		public Keyword getColonKeyword_38() { return cColonKeyword_38; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_39() { return cLeftSquareBracketKeyword_39; }
-		
-		//(paragrafos+=Paragrafo*)
-		public Assignment getParagrafosAssignment_40() { return cParagrafosAssignment_40; }
-		
-		//Paragrafo
-		public RuleCall getParagrafosParagrafoParserRuleCall_40_0() { return cParagrafosParagrafoParserRuleCall_40_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_41() { return cRightSquareBracketKeyword_41; }
-		
-		//"Remetente"
-		public Keyword getRemetenteKeyword_42() { return cRemetenteKeyword_42; }
-		
-		//':'
-		public Keyword getColonKeyword_43() { return cColonKeyword_43; }
-		
 		//remetente=STRING
-		public Assignment getRemetenteAssignment_44() { return cRemetenteAssignment_44; }
+		public Assignment getRemetenteAssignment_39() { return cRemetenteAssignment_39; }
 		
 		//STRING
-		public RuleCall getRemetenteSTRINGTerminalRuleCall_44_0() { return cRemetenteSTRINGTerminalRuleCall_44_0; }
+		public RuleCall getRemetenteSTRINGTerminalRuleCall_39_0() { return cRemetenteSTRINGTerminalRuleCall_39_0; }
 		
 		//"Cargo Remetente"
-		public Keyword getCargoRemetenteKeyword_45() { return cCargoRemetenteKeyword_45; }
+		public Keyword getCargoRemetenteKeyword_40() { return cCargoRemetenteKeyword_40; }
 		
 		//':'
-		public Keyword getColonKeyword_46() { return cColonKeyword_46; }
+		public Keyword getColonKeyword_41() { return cColonKeyword_41; }
 		
 		//cargoRemetente=STRING
-		public Assignment getCargoRemetenteAssignment_47() { return cCargoRemetenteAssignment_47; }
+		public Assignment getCargoRemetenteAssignment_42() { return cCargoRemetenteAssignment_42; }
 		
 		//STRING
-		public RuleCall getCargoRemetenteSTRINGTerminalRuleCall_47_0() { return cCargoRemetenteSTRINGTerminalRuleCall_47_0; }
+		public RuleCall getCargoRemetenteSTRINGTerminalRuleCall_42_0() { return cCargoRemetenteSTRINGTerminalRuleCall_42_0; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_48() { return cSemicolonKeyword_48; }
-	}
-	public class DestinoElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Memorando.Destino");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cDestinoAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cDestinoIDTerminalRuleCall_0_0 = (RuleCall)cDestinoAssignment_0.eContents().get(0);
-		private final Keyword cSpaceKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		
-		//Destino:
-		//    destino=ID " "?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//destino=ID " "?
-		public Group getGroup() { return cGroup; }
-		
-		//destino=ID
-		public Assignment getDestinoAssignment_0() { return cDestinoAssignment_0; }
-		
-		//ID
-		public RuleCall getDestinoIDTerminalRuleCall_0_0() { return cDestinoIDTerminalRuleCall_0_0; }
-		
-		//" "?
-		public Keyword getSpaceKeyword_1() { return cSpaceKeyword_1; }
+		public Keyword getSemicolonKeyword_43() { return cSemicolonKeyword_43; }
 	}
 	public class ParagrafoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Memorando.Paragrafo");
@@ -418,7 +369,6 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	private final ModelElements pModel;
 	private final MemorandoElements pMemorando;
-	private final DestinoElements pDestino;
 	private final ParagrafoElements pParagrafo;
 	private final SetorDestinatarioElements pSetorDestinatario;
 	private final CargoDestinatarioElements pCargoDestinatario;
@@ -434,7 +384,6 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pMemorando = new MemorandoElements();
-		this.pDestino = new DestinoElements();
 		this.pParagrafo = new ParagrafoElements();
 		this.pSetorDestinatario = new SetorDestinatarioElements();
 		this.pCargoDestinatario = new CargoDestinatarioElements();
@@ -486,7 +435,6 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    "Data" ':' dia=INT '/' mes=ID '/' ano=INT
 	//    "Cargos Destinatarios" ':' '[' (cargosDestinatarios+=CargoDestinatario*) ']'
 	//    "Assunto" ':' assunto=STRING
-	//    "Destinos" ':' '[' (destinos+=Destino*) ']'
 	//    "Mensagem" ':' '[' (paragrafos+=Paragrafo*) ']'
 	//    "Remetente" ':' remetente=STRING
 	//    "Cargo Remetente" ':' cargoRemetente=STRING ';'
@@ -497,16 +445,6 @@ public class MemorandoGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	public ParserRule getMemorandoRule() {
 		return getMemorandoAccess().getRule();
-	}
-	
-	//Destino:
-	//    destino=ID " "?;
-	public DestinoElements getDestinoAccess() {
-		return pDestino;
-	}
-	
-	public ParserRule getDestinoRule() {
-		return getDestinoAccess().getRule();
 	}
 	
 	//Paragrafo:
