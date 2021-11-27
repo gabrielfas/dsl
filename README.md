@@ -1,5 +1,9 @@
 # PPGTI1007 - LINGUAGENS DE DOMÍNIO ESPECÍFICO - Trabalho Final
 
+Repositório criado para armazenar os arquivos do trabalho final da disciplina de DSL do Mestrado Profissional do PPGTI do IMD-UFRN
+
+O trabalho implementou uma DSL para criação de memorandos para o TCE-RN
+
 Todos os arquivos do projeto estão presentes dentro da pasta "trabalho final".
 
 A apresentação se encontra na tela inicial do repositório.
